@@ -11,8 +11,8 @@
 //#region imports
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
-import Warning from './components/warning';
-import Quote from '../quote';
+import Warning from './components/warning/index.jsx';
+import Quote from './components/quote/index.jsx';
 //#endregion
 
 const Output = (editorData, style) => {
@@ -49,8 +49,8 @@ export const headerOutput = (data, style) => {
 	else if (typeof data === 'object' && data.text && typeof data.text === 'string') content = data.text;
 	
 	if (!content) return '';
-
-	if (data.level && typeof data.level === 'number') {
+console.log(content);
+	if (typeof data === 'object' && data.level && typeof data.level === 'number') {
 		switch (data.level) {
 			case 1: return <h1 style={ headerStyle }>{ ReactHtmlParser(content) }</h1>;
 			case 2: return <h2 style={ headerStyle }>{ ReactHtmlParser(content) }</h2>;
@@ -124,9 +124,9 @@ export const imageOutput = (data, style) => {
 		maxWidth: '100%',
 		maxHeight: '400px',
 		overflow: 'hidden',
-		border: data.withBorder ? '1px solid var(--primary-grey)' : 'none',
-		// backgroundColor: data.withBackground ? 'var(--primary-blue)' : 'none',
-		backgroundColor: 'var(--primary-blue)',
+		border: data.withBorder ? '1px solid #eee' : 'none',
+		// backgroundColor: data.withBackground ? 'aliceblue' : 'none',
+		backgroundColor: 'aliceblue',
 	};
 	const figcaptionStyle = { 
 		position: 'absolute',
@@ -134,8 +134,8 @@ export const imageOutput = (data, style) => {
 		right: '8px',
 		padding: '10px',
 		fontSize: '12px',
-		backgroundColor: 'var(--primary-black)',
-		color: 'var(--primary-white)',
+		backgroundColor: '#2d333a',
+		color: 'white',
 		borderRadius: '50px',
 		cursor: 'default'
 	};
