@@ -1,0 +1,55 @@
+{
+  "name": "editorjs-react-renderer",
+  "version": "1.0.0",
+  "description": "A small library that provides functions to parse and render data saved by EditorJS into beautifully styled, responsive and flexible React components",
+  "keywords": [
+    "Editor JS",
+    "Renderer"
+  ],
+  "author": "Bomdi Munang <dzedock@gmail.com> (https://portfolio.bomdi.now.sh)",
+  "contributors": [],
+  "engines": {
+    "node": "8.10.0",
+    "npm": "5.5.1"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:ete": "node ./tests/ete/runTests.js"
+  },
+  "license": "ISC",
+  "repository": {},
+  "dependencies": {
+    "@editorjs/checklist": "^1.1.0",
+    "@editorjs/editorjs": "^2.13.0",
+    "@editorjs/embed": "^2.2.0",
+    "@editorjs/header": "^2.2.3",
+    "@editorjs/image": "^2.3.0",
+    "@editorjs/inline-code": "^1.3.0",
+    "@editorjs/list": "^1.3.4",
+    "@editorjs/marker": "^1.2.0",
+    "@editorjs/paragraph": "^2.5.0",
+    "@editorjs/quote": "^2.2.0",
+    "@editorjs/raw": "^2.1.1",
+    "@editorjs/table": "^1.2.0",
+    "@editorjs/warning": "^1.1.0",
+    "enzyme-to-json": "^3.3.5",
+    "react": "^16.8.6",
+    "react-html-parser": "^2.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.8.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.13.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.8.0",
+    "prop-types": "^15.7.2",
+    "react-test-renderer": "^16.8.6"
+  }
+}
