@@ -7,31 +7,16 @@ module.exports = {
 	entry: path.normalize(`${__dirname}/index.jsx`),
 	output: {
 		path: path.normalize(`${__dirname}/dist`),
-		filename: 'index.min.js',
-	},
+    filename: 'index.min.js',
+    libraryTarget: 'umd',
+    libraryExport: 'default',
+    globalObject: "typeof self !== 'undefined' ? self : this"
+  },
 	module: {
 		rules: [
 			{
 				test: /\.(js|jsx)$/,
-				use: {
-					loader: 'babel-loader',
-					options: {
-						presets: ['@babel/react', '@babel/env']
-					}
-				}
-			},
-			{
-				test: /\.(jpg|png|jpeg|ico|gif)$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: '[name]_[hash].[ext]',
-							outputPath: 'images/',
-							publicPath: 'images/'
-						}
-					}
-				]
+        loader: 'babel-loader',
 			}
 		]
 	},

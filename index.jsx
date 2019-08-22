@@ -34,7 +34,7 @@ const Output = (editorData, style) => {
 	});
 };
 
-export const headerOutput = (data, style) => {
+const headerOutput = (data, style) => {
 	if (!data) return '';
 	if (!style || typeof style !== 'object') style = {};
 
@@ -49,7 +49,6 @@ export const headerOutput = (data, style) => {
 	else if (typeof data === 'object' && data.text && typeof data.text === 'string') content = data.text;
 	
 	if (!content) return '';
-console.log(content);
 	if (typeof data === 'object' && data.level && typeof data.level === 'number') {
 		switch (data.level) {
 			case 1: return <h1 style={ headerStyle }>{ ReactHtmlParser(content) }</h1>;
@@ -64,7 +63,7 @@ console.log(content);
 	else return <h4 style={ headerStyle }>{ ReactHtmlParser(content) }</h4>;
 };
 
-export const paragraphOutput = (data, style) => {
+const paragraphOutput = (data, style) => {
 	if (!data) return '';
 	if (!style || typeof style !== 'object') style = {};
 
@@ -80,7 +79,7 @@ export const paragraphOutput = (data, style) => {
 	return content ? <p style={ paragraphStyle }>{ ReactHtmlParser(content) }</p> : '';
 };
 
-export const quoteOutput = (data, style) => {
+const quoteOutput = (data, style) => {
 	if (!data) return '';
 	if (!style || typeof style !== 'object') style = {};
 
@@ -103,7 +102,7 @@ export const quoteOutput = (data, style) => {
 	return <Quote author={ ReactHtmlParser(caption) } message={ ReactHtmlParser(content) } customStyle={ quoteStyle } />;
 };
 
-export const imageOutput = (data, style) => {
+const imageOutput = (data, style) => {
 	if (!data || !data.file || !data.file.url) return '';
 	if (!style || typeof style !== 'object') style = {};
 
@@ -148,7 +147,7 @@ export const imageOutput = (data, style) => {
 	); 
 };
 
-// export const rawOutput = (data, style) => {
+// const rawOutput = (data, style) => {
 // 	if (!data) return '';
 // 	if (!style || typeof style !== 'object') style = {};
 
@@ -165,7 +164,7 @@ export const imageOutput = (data, style) => {
 // 	return content ? ReactHtmlParser(content) : '';
 // };
 
-export const listOutput = (data, style) => {
+const listOutput = (data, style) => {
 	if (!data) return '';
 	if (!style || typeof style !== 'object') style = {};
 
@@ -189,7 +188,7 @@ export const listOutput = (data, style) => {
 	return <ul style={ listStyle }>{ content }</ul>;
 };
 
-export const warningOutput = (data, style) => {
+const warningOutput = (data, style) => {
 	if (!data) return '';
 	if (!style || typeof style !== 'object') style = {};
 
