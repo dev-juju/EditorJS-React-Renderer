@@ -1,9 +1,9 @@
 # EditorJS-React Renderer
 
-A library that provides functions to parse and render data saved in [EditorJS](https://editorjs.io/) block style into beautifully styled, responsive and flexible React components.
+A library that provides functions to parse and render data saved in [Editor.js](https://editorjs.io/) block style into beautifully styled, responsive and flexible React components.
 
-This package works best with output from the [EditorJS](https://editorjs.io/) next generation block style rich text editor library. 
-However, there is no dependency on [EditorJS](https://editorjs.io/). We only require that your data is in a similar [block style](https://editorjs.io/saving-data) format.
+This package works best with output from the [Editor.js](https://editorjs.io/) next generation block style rich text editor library. 
+However, there is no dependency on [Editor.js](https://editorjs.io/). We only require that your data is in a similar [block style](https://editorjs.io/saving-data) format.
 
 ## ⭐️ Support ⭐️ 
 
@@ -84,6 +84,15 @@ Each object in the *blocks* property of your block style data is converted to a 
 
 **Output()** also accepts a second optional 'style' object parameter through which you can add custom style to the generated components. 
 More on this later...
+
+## Supported [Editor.js](https://editorjs.io/) tools/blocks
+* [Header](https://github.com/editor-js/header)
+* [Paragraph](https://github.com/editor-js/paragraph)
+* [Image](https://github.com/editor-js/image)
+* [List](https://github.com/editor-js/list)
+* [Quote](https://github.com/editor-js/quote)
+* [Warning](https://github.com/editor-js/warning)
+
 
 ## Keywords
 
