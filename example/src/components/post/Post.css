@@ -1,6 +1,6 @@
 section {
-  width: 100%;
-  padding: 10px 5%;
+  overflow-x: hidden;
+  padding: 10px 20%;
   margin: 10px 0;
   display: flex;
   flex-direction: column;

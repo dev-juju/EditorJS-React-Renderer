@@ -3,8 +3,9 @@
 }
 
 .App-header {
-  background-color: coral;
-  padding: 8px;
+  background-color: #222;
+  padding: 3px;
+  font-family: 'Indie Flower';
   color: white;
 }
 

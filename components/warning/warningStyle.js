@@ -9,7 +9,7 @@ const warningStyle = {
 	contentStyle: {
 		minWidth: '240px',
 		margin: '5px 0',
-		padding: '5px 8px',
+		padding: '0 8px',
 		display: 'flex',
 		justifyContent: 'flex-start',
 		alignItems: 'center',
@@ -21,8 +21,8 @@ const warningStyle = {
 	iconStyle: {
 		color: 'goldenrod',
 		marginRight: '5px',
-		width: '15px',
-		height: '15px'
+		width: '20px',
+		height: '20px'
 	},
 	titleStyle: {
 		fontWeight: 'bold',

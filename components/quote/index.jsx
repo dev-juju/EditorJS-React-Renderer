@@ -16,8 +16,8 @@ import PropTypes from 'prop-types';
 const Quote = ({ author, message, customStyle }) => (
 	<div style={{ ...quoteStyle.quoteStyle, ...customStyle }}>
 		<span style={ quoteStyle.contentStyle }>
-			<p><strong>"</strong>{ message }<strong>"</strong></p>
-			<p style={ quoteStyle.authorStyle }><strong>{ author }</strong></p>
+			<p style={{ textAlign: customStyle.textAlign }}><strong>"</strong>{ message }<strong>"</strong></p>
+			<p style={ quoteStyle.authorStyle }><strong><small>{ author }</small></strong></p>
 		</span>
 	</div>
 );

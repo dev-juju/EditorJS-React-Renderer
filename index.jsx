@@ -69,6 +69,7 @@ const paragraphOutput = (data, style) => {
 
 	const paragraphStyle = { 
 		margin: '5px 0', 
+		textAlign: 'left',
 		...style 
 	};
 	let content = null;
@@ -85,17 +86,17 @@ const quoteOutput = (data, style) => {
 
 	const quoteStyle = { 
 		margin: '5px 0', 
+		textAlign: 'left',
 		...style 
 	};
 	let content = null;
 	let caption = 'Unknown';
-	// let textAlign = 'left';
 
 	if (typeof data === 'string') content = data;
 	else if (typeof data === 'object' && data.text && typeof data.text === 'string') {
 		content = data.text;
 		if (data.caption && typeof data.caption === 'string') caption = data.caption;
-		// if (data.alignment && typeof data.alignment === 'string') textAlign = data.alignment;
+		if (data.alignment && typeof data.alignment === 'string') quoteStyle.textAlign = data.alignment;
 	}
 
 	if (!content) return '';
@@ -135,7 +136,7 @@ const imageOutput = (data, style) => {
 		fontSize: '12px',
 		backgroundColor: '#2d333a',
 		color: 'white',
-		borderRadius: '50px',
+		borderRadius: '5px',
 		cursor: 'default'
 	};
 
