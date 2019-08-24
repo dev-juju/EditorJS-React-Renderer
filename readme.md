@@ -19,6 +19,12 @@ Install the package via NPM
 npm i editorjs-react-renderer
 ```
 
+Install peer dependencies if you don't already have them in your project
+
+```shell
+npm i react prop-types
+```
+
 CDN usage will be available soon...
 
 Add to your module/application

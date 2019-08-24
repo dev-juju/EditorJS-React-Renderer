@@ -8,6 +8,7 @@
  */
 
 //#region imports
+import React from 'react';
 import quoteStyle from './quoteStyle';
 import PropTypes from 'prop-types';
 //#endregion
