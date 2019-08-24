@@ -9,7 +9,7 @@ However, there is no dependency on Editor.js. We only require that your data is 
 
 If you like EditorJS-React Renderer you can support with a small donation on [Patreon](https://www.patreon.com/editorjs_react_renderer). 
 
-🙏 You support will help with project improvements and development of new features 🙏
+🙏 Your support will help with project improvements and development of new features 🙏
 
 ## Setup
 
@@ -166,7 +166,7 @@ const Post = () => (
 export default Post;
 ```
 
-![](https://cdn1.imggmi.com/uploads/2019/8/24/2cf37e1a4041a109c3c282ab3ea9e1d5-full.png)
+![](https://drive.google.com/file/d/1crjhm49_LHppYDlBEKEzz6DOAujHV2NB/view)
 
 ## Author
 
