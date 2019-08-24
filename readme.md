@@ -137,7 +137,8 @@ const listData = {
 	"style" : "unordered" // ordered or unordered
 };
 
-// Your custom style will be merged with the defaults, with yours as priority
+// Your custom style will be merged with the defaults, 
+// with yours as priority
 const listStyle = {
     textAlign: 'left'
 };
