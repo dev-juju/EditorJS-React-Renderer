@@ -21,20 +21,20 @@ const Output = (editorData, style) => {
 
 	return editorData.blocks.map(block => {
 		switch (block.type) {
-			case 'header': return headerOutput(block.data, style.header || {});
-			case 'paragraph': return paragraphOutput(block.data, style.paragraph || {});
-			case 'quote': return quoteOutput(block.data, style.quote || {});
-			case 'list': return listOutput(block.data, style.list || {});
-			// case 'raw': return rawOutput(block.data, style.raw || {});
-			case 'image': return imageOutput(block.data, style.image || {});
-			case 'warning': return warningOutput(block.data, style.warning || {});
+			case 'header': return HeaderOutput(block.data, style.header || {});
+			case 'paragraph': return ParagraphOutput(block.data, style.paragraph || {});
+			case 'quote': return QuoteOutput(block.data, style.quote || {});
+			case 'list': return ListOutput(block.data, style.list || {});
+			// case 'raw': return RawOutput(block.data, style.raw || {});
+			case 'image': return ImageOutput(block.data, style.image || {});
+			case 'warning': return WarningOutput(block.data, style.warning || {});
 		
 			default: return '';
 		}
 	});
 };
 
-const headerOutput = (data, style) => {
+export const HeaderOutput = (data, style) => {
 	if (!data) return '';
 	if (!style || typeof style !== 'object') style = {};
 
@@ -63,7 +63,7 @@ const headerOutput = (data, style) => {
 	else return <h4 style={ headerStyle }>{ ReactHtmlParser(content) }</h4>;
 };
 
-const paragraphOutput = (data, style) => {
+export const ParagraphOutput = (data, style) => {
 	if (!data) return '';
 	if (!style || typeof style !== 'object') style = {};
 
@@ -80,7 +80,7 @@ const paragraphOutput = (data, style) => {
 	return content ? <p style={ paragraphStyle }>{ ReactHtmlParser(content) }</p> : '';
 };
 
-const quoteOutput = (data, style) => {
+export const QuoteOutput = (data, style) => {
 	if (!data) return '';
 	if (!style || typeof style !== 'object') style = {};
 
@@ -103,7 +103,7 @@ const quoteOutput = (data, style) => {
 	return <Quote author={ ReactHtmlParser(caption) } message={ ReactHtmlParser(content) } customStyle={ quoteStyle } />;
 };
 
-const imageOutput = (data, style) => {
+export const ImageOutput = (data, style) => {
 	if (!data || !data.file || !data.file.url) return '';
 	if (!style || typeof style !== 'object') style = {};
 
@@ -148,7 +148,7 @@ const imageOutput = (data, style) => {
 	); 
 };
 
-// const rawOutput = (data, style) => {
+// export const RawOutput = (data, style) => {
 // 	if (!data) return '';
 // 	if (!style || typeof style !== 'object') style = {};
 
@@ -165,7 +165,7 @@ const imageOutput = (data, style) => {
 // 	return content ? ReactHtmlParser(content) : '';
 // };
 
-const listOutput = (data, style) => {
+export const ListOutput = (data, style) => {
 	if (!data) return '';
 	if (!style || typeof style !== 'object') style = {};
 
@@ -189,7 +189,7 @@ const listOutput = (data, style) => {
 	return <ul style={ listStyle }>{ content }</ul>;
 };
 
-const warningOutput = (data, style) => {
+export const WarningOutput = (data, style) => {
 	if (!data) return '';
 	if (!style || typeof style !== 'object') style = {};
 

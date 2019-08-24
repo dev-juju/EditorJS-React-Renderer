@@ -9,7 +9,7 @@ module.exports = {
 		path: path.normalize(`${__dirname}/dist`),
     filename: 'index.min.js',
     libraryTarget: 'umd',
-    libraryExport: 'default',
+    // libraryExport: 'default',
     globalObject: "typeof self !== 'undefined' ? self : this"
   },
 	module: {

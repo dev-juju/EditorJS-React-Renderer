@@ -11,6 +11,7 @@ If you like EditorJS-React Renderer you can support with a small donation on [Pa
 
 🙏 Your support will help with project improvements and development of new features 🙏
 
+
 ## Setup
 
 Install the package via NPM
@@ -35,7 +36,7 @@ OR
 const Output = require('editorjs-react-renderer');
 ```
 
-**Output** accepts a block style data object as first parameter.
+**Output** accepts a block style data object as first argument.
 
 ```javascript
 const data = {
@@ -119,21 +120,39 @@ export default Post;
 
 Each object in the *blocks* property of your block style data is converted to a responsive, styled React component.
 
-**Output()** also accepts a second optional object parameter through which you can add custom style to the supported components. 
+**Output()** also accepts a second optional object argument through which you can add custom style to the supported components. 
 
-See [Style](#style) section for more
+See the [Style](#style) section for more
 
-## Supported blocks/components
-* [Header](https://github.com/editor-js/header)
-* [Paragraph](https://github.com/editor-js/paragraph)
-* [Image](https://github.com/editor-js/image)
-* [List](https://github.com/editor-js/list)
-* [Quote](https://github.com/editor-js/quote)
-* [Warning](https://github.com/editor-js/warning)
+
+## Render Single Block
+
+Sometimes you might want to render just a single component like a paragraph or header. While this is possible with the Output() function, you should consider using one of the more specific block output functions.
+
+```javascript
+import { ListOutput } from 'editorjs-react-renderer';
+
+const listData = {
+	"items" : ["Item one", "Another item", "Item 3"],
+	"style" : "unordered" // ordered or unordered
+};
+
+// Your custom style will be merged with the defaults, with yours as priority
+const listStyle = {
+    textAlign: 'left'
+};
+
+const Todo = () => ListOutput(listData, style);
+
+export default Todo;
+```
+
+See the [API](#api) section for more block output functions
+
 
 ## Style
 
-You can style all supported components/blocks by passing a second parameter to the Output() function. This is an object whose keys correspond to the names of the supported blocks you intend to style. The keys must be in lowercase. 
+You can style all supported components/blocks by passing a second argument to the Output() function. This is an object whose keys correspond to the names of the supported blocks you intend to style. The keys must be in lowercase. 
 
 ```javascript
 const style = {
@@ -166,7 +185,30 @@ const Post = () => (
 export default Post;
 ```
 
-![](https://drive.google.com/file/d/1crjhm49_LHppYDlBEKEzz6DOAujHV2NB/view)
+![](https://drive.google.com/file/d/1crjhm49_LHppYDlBEKEzz6DOAujHV2NB)
+
+
+## API
+
+### Methods/Functions
+
+* Output(data[,style])
+* HeaderOutput(data[,style])
+* ParagraphOutput(data[,style])
+* QuoteOutput(data[,style])
+* ListOutput(data[,style])
+* ImageOutput(data[,style])
+* WarningOutput(data[,style])
+
+
+## Supported blocks/components
+* [Header](https://github.com/editor-js/header)
+* [Paragraph](https://github.com/editor-js/paragraph)
+* [Image](https://github.com/editor-js/image)
+* [List](https://github.com/editor-js/list)
+* [Quote](https://github.com/editor-js/quote)
+* [Warning](https://github.com/editor-js/warning)
+
 
 ## Author
 
