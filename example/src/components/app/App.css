@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: coral;
+  padding: 8px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}

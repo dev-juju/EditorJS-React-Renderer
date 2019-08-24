@@ -2,8 +2,8 @@
 
 A library that provides functions to parse and render data saved in [Editor.js](https://editorjs.io/) block style into beautifully styled, responsive and flexible React components.
 
-This package works best with output from the [Editor.js](https://editorjs.io/) next generation block style rich text editor library. 
-However, there is no dependency on [Editor.js](https://editorjs.io/). We only require that your data is in a similar [block style](https://editorjs.io/saving-data) format.
+This package works best with output from the Editor.js next generation block style rich text editor library. 
+However, there is no dependency on Editor.js. We only require that your data is in a similar [block style](https://editorjs.io/saving-data) format.
 
 ## ⭐️ Support ⭐️ 
 
@@ -53,7 +53,7 @@ const data = {
 			"type": "image",
 			"data": {
 				"file": {
-					"url": "/static/images/iwall.png_1564767057102.png"
+					"url": "/static/images/iwall_1564767057102.png"
 				},
 				"caption": "",
 				"withBorder": false,
@@ -92,11 +92,6 @@ More on this later...
 * [List](https://github.com/editor-js/list)
 * [Quote](https://github.com/editor-js/quote)
 * [Warning](https://github.com/editor-js/warning)
-
-
-## Keywords
-
-Editor.js, React, Codex Editor, Rich Text Editor, Editor, EditorJS-React, EditorJS Renderer, EditorJS React Renderer
 
 ## Author
 

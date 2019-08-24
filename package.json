@@ -1,13 +1,21 @@
 {
   "name": "editorjs-react-renderer",
   "version": "1.1.3",
+  "license": "ISC",
   "description": "A small library that provides functions to parse and render data saved by EditorJS into beautifully styled, responsive and flexible React components",
   "keywords": [
-    "Editor JS",
-    "Renderer"
+    "Editor.js",
+    "React",
+    "Codex Editor",
+    "Rich Text Editor",
+    "Editor",
+    "EditorJS-React",
+    "EditorJS Renderer",
+    "EditorJS React Renderer"
   ],
-  "author": "Bomdi Munang <dzedock@gmail.com> (https://portfolio.bomdi.now.sh)",
+  "author": "Adombang Munang Mbomndih <dzedock@gmail.com> (https://portfolio.bomdi.now.sh)",
   "contributors": [],
+  "repository": {},
   "engines": {
     "node": "8.10.0",
     "npm": "5.5.1"
@@ -20,37 +28,45 @@
     "test:coverage": "jest --coverage",
     "test:ete": "node ./tests/ete/runTests.js"
   },
-  "license": "ISC",
-  "repository": {},
   "dependencies": {
-    "babel-core": "^6.26.3",
-    "react": "^16.8.6",
-    "react-html-parser": "^2.0.2"
+    "react-html-parser": "2.0.2"
   },
   "peerDependencies": {
-    "react": "^16.8.6"
+    "prop-types": "15.7.2",
+    "react": "16.9.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.8.0",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "*",
-    "clean-webpack-plugin": "^0.1.19",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "enzyme-to-json": "^3.3.5",
-    "eslint": "^5.16.0",
-    "eslint-plugin-react": "^7.13.0",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^24.8.0",
-    "prop-types": "^15.7.2",
-    "react-test-renderer": "^16.8.6",
-    "uglifyjs-webpack-plugin": "^1.2.5",
-    "webpack": "*",
-    "webpack-cli": "*"
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "7.5.5",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.5.5",
+    "@babel/preset-env": "7.5.5",
+    "@babel/preset-react": "7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "10.0.2",
+    "babel-jest": "^23.4.2",
+    "babel-loader": "8.0.6",
+    "clean-webpack-plugin": "3.0.0",
+    "enzyme": "3.10.0",
+    "enzyme-adapter-react-16": "1.14.0",
+    "enzyme-to-json": "3.4.0",
+    "eslint": "6.2.2",
+    "eslint-plugin-react": "7.14.3",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "24.9.0",
+    "react-test-renderer": "16.9.0",
+    "terser-webpack-plugin": "^1.4.1",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-object-rest-spread"
+    ]
   },
   "files": [
     "dist"

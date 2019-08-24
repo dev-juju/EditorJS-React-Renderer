@@ -9,7 +9,6 @@
 
 //#region imports
 import quoteStyle from './quoteStyle';
-
 import PropTypes from 'prop-types';
 //#endregion
 
