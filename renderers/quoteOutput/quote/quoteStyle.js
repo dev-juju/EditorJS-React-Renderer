@@ -1,10 +1,13 @@
+import { MARGIN } from '../../../style/template';
+
 const quoteStyle = {
 	quoteStyle: { 
 		width: '100%',
-		margin: '5px 0',
 		display: 'flex',
 		justifyContent: 'center',
-		alignItems: 'center'
+		alignItems: 'center',
+		margin: MARGIN, 
+		textAlign: 'left',
 	},
 	contentStyle: {
 		minWidth: '240px',

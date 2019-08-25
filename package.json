@@ -25,8 +25,7 @@
     "start": "babel-node test.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "test:ete": "node ./tests/ete/runTests.js"
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "react-html-parser": "2.0.2"

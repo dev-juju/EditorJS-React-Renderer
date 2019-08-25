@@ -22,9 +22,7 @@ module.exports = {
 
 	// An array of glob patterns indicating a set of files for which coverage information should be collected
 	collectCoverageFrom: [
-		'<rootDir>/components/**/*.jsx',
-		'<rootDir>/pages/**/*.jsx',
-		'<rootDir>/utils/**/*.js',
+		'<rootDir>/renderers/**/*.jsx',
 	],
 
 	// The directory where Jest should output its coverage files
@@ -115,8 +113,7 @@ module.exports = {
 	// A list of paths to directories that Jest should use to search for files in
 	roots: [
 		'<rootDir>/tests/unit/',
-		'<rootDir>/components/',
-		'<rootDir>/pages/',
+		'<rootDir>/renderers/',
 	],
 
 	// Allows you to use a custom runner instead of Jest's default test runner
@@ -147,7 +144,7 @@ module.exports = {
 	// ],
 
 	// An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-	testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/build/', '<rootDir>/node_modules/'],
+	testPathIgnorePatterns: ['<rootDir>/example/', '<rootDir>/dist/', '<rootDir>/node_modules/'],
 
 	// The regexp pattern Jest uses to detect test files
 	// testRegex: "",
