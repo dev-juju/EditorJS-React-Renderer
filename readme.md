@@ -186,7 +186,12 @@ const Post = () => (
 export default Post;
 ```
 
-![](https://drive.google.com/file/d/1crjhm49_LHppYDlBEKEzz6DOAujHV2NB)
+![](https://firebasestorage.googleapis.com/v0/b/editorjs-react-renderer.appspot.com/o/editorjs%20react%20renderer.png?alt=media&token=61b67058-7072-447b-a9e8-f0a911e8bd2b)
+
+
+## Server Side Rendering
+
+There is full support for SSR
 
 
 ## API
@@ -210,6 +215,8 @@ export default Post;
 * [Quote](https://github.com/editor-js/quote)
 * [Warning](https://github.com/editor-js/warning)
 
+There's more coming...
+
 
 ## Author
 
@@ -218,3 +225,5 @@ Adombang Munang Mbomndih (Bomdi)
 LinkedIn: [LinkedIn](http://www.linkedin.com/in/adombangmunang)
 
 Email: <dzedock@gmail.com>
+
+![](https://firebasestorage.googleapis.com/v0/b/editorjs-react-renderer.appspot.com/o/bomdi-small.jpg?alt=media&token=32be5654-7f60-4826-84dd-eb6bda6ba6d9)
