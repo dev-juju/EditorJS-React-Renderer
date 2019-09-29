@@ -2,14 +2,8 @@
 
 A library that provides functions to parse and render data saved in [Editor.js](https://editorjs.io/) block style into beautifully styled, responsive and flexible React components.
 
-This package works well with output from the Editor.js rich text editor library. 
+This package works well with output from the Editor.js rich text editor library.
 However, there is no dependency on Editor.js. We only require that your data is in a similar [block style](https://editorjs.io/saving-data) format.
-
-## ⭐️ Support ⭐️ 
-
-If you like EditorJS-React Renderer you can support with a small donation on [Patreon](https://www.patreon.com/editorjs_react_renderer). 
-
-🙏 Your support will help with project improvements and development of new features 🙏
 
 
 ## Setup
@@ -110,9 +104,9 @@ Pass your block style data to **Output()** in your react component and watch the
 
 ```javascript
 const Post = () => (
-	<section>
-		{ Output(data) }
-	</section>
+  <section>
+    { Output(data) }
+  </section>
 );
 
 export default Post;
@@ -120,7 +114,7 @@ export default Post;
 
 Each object in the *blocks* property of your block style data is converted to a responsive, styled React component.
 
-**Output()** also accepts a second optional object argument through which you can add custom style to the supported components. 
+**Output()** also accepts a second optional object argument through which you can add custom style to the supported components.
 
 See the [Style](#style) section for more
 
@@ -133,11 +127,11 @@ Sometimes you might want to render just a single component like a paragraph or h
 import { ListOutput } from 'editorjs-react-renderer';
 
 const listData = {
-	"items" : ["Item one", "Another item", "Item 3"],
-	"style" : "unordered" // ordered or unordered
+  "items" : ["Item one", "Another item", "Item 3"],
+  "style" : "unordered" // ordered or unordered
 };
 
-// Your custom style will be merged with the defaults, 
+// Your custom style will be merged with the defaults,
 // with yours as priority
 const listStyle = {
     textAlign: 'left'
@@ -153,7 +147,7 @@ See the [API](#api) section for more block output functions
 
 ## Style
 
-You can style all supported components/blocks by passing a second argument to the Output() function. This is an object whose keys correspond to the names of the supported blocks you intend to style. The keys must be in lowercase. 
+You can style all supported components/blocks by passing a second argument to the Output() function. This is an object whose keys correspond to the names of the supported blocks you intend to style. The keys must be in lowercase.
 
 ```javascript
 const style = {
@@ -178,16 +172,13 @@ const style = {
 };
 
 const Post = () => (
-	<section>
-		{ Output(data, style) }
-	</section>
+  <section>
+    { Output(data, style) }
+  </section>
 );
 
 export default Post;
 ```
-
-![](https://firebasestorage.googleapis.com/v0/b/editorjs-react-renderer.appspot.com/o/editorjs%20react%20renderer.png?alt=media&token=61b67058-7072-447b-a9e8-f0a911e8bd2b)
-
 
 ## Server Side Rendering
 
@@ -220,10 +211,8 @@ There's more coming...
 
 ## Author
 
-Adombang Munang Mbomndih (Bomdi) 
+Adombang Munang Mbomndih (Bomdi)
 
 LinkedIn: [LinkedIn](http://www.linkedin.com/in/adombangmunang)
 
-Email: <dzedock@gmail.com>
-
-![](https://firebasestorage.googleapis.com/v0/b/editorjs-react-renderer.appspot.com/o/bomdi-small.jpg?alt=media&token=32be5654-7f60-4826-84dd-eb6bda6ba6d9)
+![](https://firebasestorage.googleapis.com/v0/b/editorjs-react-renderer.appspot.com/o/Bomdi%202.jpg?alt=media&token=323c4b3e-8542-4031-9660-74280a8cfefc)
