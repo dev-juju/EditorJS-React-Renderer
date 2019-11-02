@@ -1,5 +1,7 @@
 import ImageOutput from './index';
 
 describe('ImageOutput renderer:', () => {
-	// @TODO
+	const imageOutput = shallow(<ImageOutput />);
+
+	it('should match snapshot', () => expect(imageOutput).toMatchSnapshot());
 });

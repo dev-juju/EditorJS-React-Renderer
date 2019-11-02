@@ -1,5 +1,7 @@
 import WarningOutput from './index';
 
 describe('WarningOutput renderer:', () => {
-	// @TODO
+	const warningOutput = shallow(<WarningOutput />);
+
+	it('should match snapshot', () => expect(warningOutput).toMatchSnapshot());
 });

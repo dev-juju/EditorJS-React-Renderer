@@ -1,5 +1,7 @@
 import ListOutput from './index';
 
 describe('ListOutput renderer:', () => {
-	// @TODO
+	const listOutput = shallow(<ListOutput />);
+
+	it('should match snapshot', () => expect(listOutput).toMatchSnapshot());
 });

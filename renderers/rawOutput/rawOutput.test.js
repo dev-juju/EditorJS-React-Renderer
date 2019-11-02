@@ -1,5 +1,7 @@
 import RawOutput from './index';
 
 describe('RawOutput renderer:', () => {
-	// @TODO
+	const rawOutput = shallow(<RawOutput />);
+
+	it('should match snapshot', () => expect(rawOutput).toMatchSnapshot());
 });

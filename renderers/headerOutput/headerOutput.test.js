@@ -1,5 +1,7 @@
 import HeaderOutput from './index';
 
 describe('HeaderOutput renderer:', () => {
-	// @TODO
+	const headerOutput = shallow(<HeaderOutput />);
+
+	it('should match snapshot', () => expect(headerOutput).toMatchSnapshot());
 });

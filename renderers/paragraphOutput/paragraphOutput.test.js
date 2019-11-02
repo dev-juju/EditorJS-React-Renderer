@@ -1,5 +1,7 @@
 import ParagraphOutput from './index';
 
 describe('ParagraphOutput renderer:', () => {
-	// @TODO
+	const paragraphOutput = shallow(<ParagraphOutput />);
+
+	it('should match snapshot', () => expect(paragraphOutput).toMatchSnapshot());
 });
