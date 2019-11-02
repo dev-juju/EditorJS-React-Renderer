@@ -1,4 +1,4 @@
-import { fontFamily } from '../../../style/template';
+import { fontFamily } from '../../style/template';
 
 const headerOutputStyle = {
 	margin: '8px 0',

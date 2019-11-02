@@ -20,7 +20,7 @@ const TableOutput = (data, style) => {
 
 	if (!Array.isArray(content) || content.length < 1) return '';
 
-	const table = `<table style={${ tableOutputStyle.table, listStyle }}><thead><tr>`;
+	let table = `<table style={${ tableOutputStyle.table, listStyle }}><thead><tr>`;
 	const columnNames = content[0];
 
 	columnNames.forEach(columnName => table += `<th style={${ tableOutputStyle.th }}>${ columnName }</th>`);
@@ -30,7 +30,7 @@ const TableOutput = (data, style) => {
 		const row = content[i];
 		if (!Array.isArray(row) || row.length < 1) continue;
 
-		const output = `<tr style={{ backgroundColor: ${ i % 2 === 0 ? 'white' : '#fdfdfd' } }}>`;
+		let output = `<tr style={{ backgroundColor: ${ i % 2 === 0 ? 'white' : '#fdfdfd' } }}>`;
 
 		row.forEach(columnValue => output += `<td style={${ tableOutputStyle.td }}>${ columnValue }</td>`);
 		output += '</tr>';
