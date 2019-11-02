@@ -194,6 +194,7 @@ There is full support for SSR
 * ParagraphOutput(data[,style])
 * QuoteOutput(data[,style])
 * ListOutput(data[,style])
+* TableOutput(data[,style])
 * ImageOutput(data[,style])
 * WarningOutput(data[,style])
 
@@ -203,6 +204,7 @@ There is full support for SSR
 * [Paragraph](https://github.com/editor-js/paragraph)
 * [Image](https://github.com/editor-js/image)
 * [List](https://github.com/editor-js/list)
+* [Table](https://github.com/editor-js/table)
 * [Quote](https://github.com/editor-js/quote)
 * [Warning](https://github.com/editor-js/warning)
 
