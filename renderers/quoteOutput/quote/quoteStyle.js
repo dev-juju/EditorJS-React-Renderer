@@ -1,13 +1,14 @@
-import { MARGIN } from '../../../style/template';
+import { MARGIN, fontFamily } from '../../../style/template';
 
 const quoteStyle = {
-	quoteStyle: { 
+	quoteStyle: {
 		width: '100%',
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
-		margin: MARGIN, 
+		margin: MARGIN,
 		textAlign: 'left',
+		fontFamily
 	},
 	contentStyle: {
 		minWidth: '240px',
@@ -20,11 +21,16 @@ const quoteStyle = {
 		alignItems: 'flex-start',
 		border: '1px solid var(--primary-grey)',
 		backgroundColor: 'var(--secondary-white)',
-		borderRadius: 'var(--default-radius)'
+		borderRadius: 'var(--default-radius)',
+		fontFamily
 	},
 	authorStyle: {
 		fontWeight: 'bold',
 		margin: '0 5px 5px 5px',
+		fontFamily
+	},
+	messageStyle: {
+		fontFamily
 	}
 };
 

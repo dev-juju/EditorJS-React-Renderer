@@ -1,9 +1,9 @@
 /** QuoteOutput
- * 
- * @version 1.0.0
- * @created - 2019.08.20
- * @author - Adombang Munang Mbomndih (Bomdi) <dzedock@gmail.com> (https://portfolio.bomdi.now.sh)
- */
+	*
+	* @version 1.0.0
+	* @created - 2019.08.20
+	* @author - Adombang Munang Mbomndih (Bomdi) <dzedock@gmail.com> (https://portfolio.bomdi.now.sh)
+	*/
 
 //#region imports
 import React from 'react';

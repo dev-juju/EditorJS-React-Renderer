@@ -1,9 +1,9 @@
 /** ImageOutput
- * 
- * @version 1.0.0
- * @created - 2019.08.20
- * @author - Adombang Munang Mbomndih (Bomdi) <dzedock@gmail.com> (https://portfolio.bomdi.now.sh)
- */
+	*
+	* @version 1.0.0
+	* @created - 2019.08.20
+	* @author - Adombang Munang Mbomndih (Bomdi) <dzedock@gmail.com> (https://portfolio.bomdi.now.sh)
+	*/
 
 //#region imports
 import React from 'react';
@@ -20,7 +20,7 @@ const ImageOutput = (data, style) => {
 		width: data.stretched ? '100%' : '',
 		...style
 	};
-	const figureStyle = { 
+	const figureStyle = {
 		...imageOutputStyle.figureStyle,
 		border: data.withBorder ? '1px solid #eee' : 'none',
 		// backgroundColor: data.withBackground ? 'aliceblue' : 'none',
@@ -29,14 +29,9 @@ const ImageOutput = (data, style) => {
 	return (
 		<figure style={ figureStyle }>
 			<img src={ data.file.url } alt={ data.caption || '' } style={ imageStyle } />
-			{ 
-				data.caption && 
-				<figcaption style={ imageOutputStyle.figcaptionStyle }>
-					{ ReactHtmlParser(data.caption) }
-				</figcaption> 
-			}
+			{ data.caption && <figcaption style={ imageOutputStyle.figcaptionStyle }>{ ReactHtmlParser(data.caption) }</figcaption> }
 		</figure>
-	); 
+	);
 };
 
 export default ImageOutput;

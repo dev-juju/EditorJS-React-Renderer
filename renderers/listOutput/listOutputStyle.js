@@ -1,7 +1,8 @@
-import { MARGIN } from '../../style/template';
+import { MARGIN, fontFamily } from '../../style/template';
 
-const listOutputStyle = { 
-	margin: MARGIN
+const listOutputStyle = {
+	margin: MARGIN,
+	fontFamily
 };
 
 export default listOutputStyle;

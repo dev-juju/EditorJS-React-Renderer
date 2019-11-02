@@ -1,8 +1,9 @@
-import { MARGIN } from '../../style/template';
+import { MARGIN, fontFamily } from '../../style/template';
 
-const rawOutputStyle = { 
+const rawOutputStyle = {
 	width: '100%',
-	margin: MARGIN
+	margin: MARGIN,
+	fontFamily
 };
 
 export default rawOutputStyle;

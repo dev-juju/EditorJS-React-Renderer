@@ -1,9 +1,9 @@
 /** HeaderOutput
- * 
- * @version 1.0.0
- * @created - 2019.08.20
- * @author - Adombang Munang Mbomndih (Bomdi) <dzedock@gmail.com> (https://portfolio.bomdi.now.sh)
- */
+	*
+	* @version 1.0.0
+	* @created - 2019.08.20
+	* @author - Adombang Munang Mbomndih (Bomdi) <dzedock@gmail.com> (https://portfolio.bomdi.now.sh)
+	*/
 
 //#region imports
 import React from 'react';
@@ -20,7 +20,7 @@ const HeaderOutput = (data, style) => {
 
 	if (typeof data === 'string') content = data;
 	else if (typeof data === 'object' && data.text && typeof data.text === 'string') content = data.text;
-	
+
 	if (!content) return '';
 	if (typeof data === 'object' && data.level && typeof data.level === 'number') {
 		switch (data.level) {

@@ -1,22 +1,24 @@
-const imageOutputStyle = { 
+import { fontFamily } from '../../style/template';
+
+const imageOutputStyle = {
 	imageStyle: {
 		maxWidth: '100%',
 		maxHeight: '400px',
 	},
-	figureStyle: { 
+	figureStyle: {
 		position: 'relative',
 		display: 'flex',
 		flexDirection: 'column',
 		justifyContent: 'center',
 		alignItems: 'center',
-		margin: '20px 0', 
+		margin: '20px 0',
 		width: '100%',
 		maxWidth: '100%',
 		maxHeight: '400px',
 		overflow: 'hidden',
-		backgroundColor: 'aliceblue',
+		backgroundColor: 'aliceblue'
 	},
-	figcaptionStyle: { 
+	figcaptionStyle: {
 		position: 'absolute',
 		top: '8px',
 		right: '8px',
@@ -25,7 +27,8 @@ const imageOutputStyle = {
 		backgroundColor: '#2d333a',
 		color: 'white',
 		borderRadius: '5px',
-		cursor: 'default'
+		cursor: 'default',
+		fontFamily
 	}
 };
 

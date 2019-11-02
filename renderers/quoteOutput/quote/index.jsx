@@ -1,11 +1,11 @@
 /** Quote Component
- * 
- * Component to display Quote messages to client
- * 
- * @version 1.0.0
- * @created - 2019.08.20
- * @author - Adombang Munang Mbomndih (Bomdi) <dzedock@gmail.com> (https://portfolio.bomdi.now.sh)
- */
+	*
+	* Component to display Quote messages to client
+	*
+	* @version 1.0.0
+	* @created - 2019.08.20
+	* @author - Adombang Munang Mbomndih (Bomdi) <dzedock@gmail.com> (https://portfolio.bomdi.now.sh)
+	*/
 
 //#region imports
 import React from 'react';
@@ -16,7 +16,7 @@ import PropTypes from 'prop-types';
 const Quote = ({ author, message, customStyle }) => (
 	<div style={{ ...quoteStyle.quoteStyle, ...customStyle }}>
 		<span style={ quoteStyle.contentStyle }>
-			<p style={{ textAlign: customStyle.textAlign }}><strong>"</strong>{ message }<strong>"</strong></p>
+			<p style={{ textAlign: customStyle.textAlign, ...quoteStyle.messageStyle }}><strong>"</strong>{ message }<strong>"</strong></p>
 			<p style={ quoteStyle.authorStyle }><strong><small>{ author }</small></strong></p>
 		</span>
 	</div>
