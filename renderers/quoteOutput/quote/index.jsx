@@ -13,11 +13,11 @@ import quoteStyle from './quoteStyle';
 import PropTypes from 'prop-types';
 //#endregion
 
-const Quote = ({ author, message, customStyle }) => (
-	<div style={{ ...quoteStyle.quoteStyle, ...customStyle }}>
-		<span style={ quoteStyle.contentStyle }>
-			<p style={{ textAlign: customStyle.textAlign, ...quoteStyle.messageStyle }}><strong>"</strong>{ message }<strong>"</strong></p>
-			<p style={ quoteStyle.authorStyle }><strong><small>{ author }</small></strong></p>
+const Quote = ({ author, message, style }) => (
+	<div style={{ ...quoteStyle.quoteStyle, ...style.container }}>
+		<span style={{ ...quoteStyle.contentStyle, ...style.content }}>
+			<p style={{ ...quoteStyle.messageStyle, ...style.message }}><strong>"</strong>{ message }<strong>"</strong></p>
+			<p style={{ ...quoteStyle.authorStyle, ...style.author }}><strong><small>{ author }</small></strong></p>
 		</span>
 	</div>
 );
@@ -25,12 +25,11 @@ const Quote = ({ author, message, customStyle }) => (
 Quote.propTypes = {
 	author: PropTypes.string,
 	message: PropTypes.string.isRequired,
-	customStyle: PropTypes.object,
+	style: PropTypes.object.isRequired,
 };
 
 Quote.defaultProps = {
-	author: 'Unknown',
-	customStyle: {}
+	author: 'Unknown'
 };
 
 export default Quote;

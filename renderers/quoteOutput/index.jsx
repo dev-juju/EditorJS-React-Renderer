@@ -11,9 +11,15 @@ import ReactHtmlParser from 'react-html-parser';
 import Quote from './quote/index.jsx';
 //#endregion
 
+const supportedStyles = ['container', 'content', 'author', 'message'];
+
 const QuoteOutput = (data, style) => {
 	if (!data) return '';
 	if (!style || typeof style !== 'object') style = {};
+
+	supportedStyles.forEach(customStyle => {
+		if (!style[customStyle] || typeof style[customStyle] !== 'object') style[customStyle] = {};
+	});
 
 	let content = null;
 	let caption = 'Unknown';
@@ -26,7 +32,7 @@ const QuoteOutput = (data, style) => {
 	}
 
 	if (!content) return '';
-	return <Quote author={ ReactHtmlParser(caption) } message={ ReactHtmlParser(content) } customStyle={ style } />;
+	return <Quote author={ ReactHtmlParser(caption) } message={ ReactHtmlParser(content) } style={ style } />;
 };
 
 export default QuoteOutput;
