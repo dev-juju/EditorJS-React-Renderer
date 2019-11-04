@@ -14,31 +14,33 @@ import tableOutputStyle from './tableOutputStyle';
 const TableOutput = (data, style) => {
 	if (!data) return '';
 	if (!style || typeof style !== 'object') style = {};
+	if (!style.table || typeof style.table !== 'object') style.table = {};
+	if (!style.tr || typeof style.tr !== 'object') style.tr = {};
+	if (!style.th || typeof style.th !== 'object') style.th = {};
+	if (!style.td || typeof style.td !== 'object') style.td = {};
 
-	const listStyle = { ...tableOutputStyle, ...style };
 	let content = data.content || [];
-
 	if (!Array.isArray(content) || content.length < 1) return '';
 
-	let table = `<table style={${ tableOutputStyle.table, listStyle }}><thead><tr>`;
-	const columnNames = content[0];
+	const columnNames = content.shift();
 
-	columnNames.forEach(columnName => table += `<th style={${ tableOutputStyle.th }}>${ columnName }</th>`);
-	table += '</tr></thead><tbody>';
-
-	for (let i = 1, len = content.length; i < len; i++) {
-		const row = content[i];
-		if (!Array.isArray(row) || row.length < 1) continue;
-
-		let output = `<tr style={{ backgroundColor: ${ i % 2 === 0 ? 'white' : '#fdfdfd' } }}>`;
-
-		row.forEach(columnValue => output += `<td style={${ tableOutputStyle.td }}>${ columnValue }</td>`);
-		output += '</tr>';
-		table += output;
-	}
-	table += '</tbody></table>';
-
-	return ReactHtmlParser(table);
+	return <table style={{ ...tableOutputStyle.table, ...style.table }}>
+		<thead>
+			<tr style={{ ...style.tr }}>{ columnNames.map(columnName => <th style={{ ...tableOutputStyle.th, ...style.th }}>${ columnName }</th>) }</tr>
+		</thead>
+		<tbody>
+			{
+				content.map((row, index) => (
+					<tr style={{ backgroundColor: index % 2 === 0 ? 'white' : '#fdfdfd', ...style.tr }}>
+						{
+							Array.isArray(row) && row.length < 1 &&
+							row.map(columnValue => <td style={{ ...tableOutputStyle.td, ...style.td }}>${ ReactHtmlParser(columnValue) }</td>)
+						}
+					</tr>
+				))
+			}
+		</tbody>
+	</table>;
 };
 
 export default TableOutput;

@@ -16,6 +16,7 @@ import ListOutput from './renderers/listOutput/index.jsx';
 import QuoteOutput from './renderers/quoteOutput/index.jsx';
 import WarningOutput from './renderers/warningOutput/index.jsx';
 import TableOutput from './renderers/tableOutput/index.jsx';
+import ChecklistOutput from './renderers/checklistOutput/index.jsx';
 // import RawOutput from './renderers/rawOutput/index.jsx';
 //#endregion
 
@@ -32,6 +33,7 @@ const Output = (editorData, style) => {
 			// case 'raw': return RawOutput(block.data, style.raw || {});
 			case 'image': return ImageOutput(block.data, style.image || {});
 			case 'warning': return WarningOutput(block.data, style.warning || {});
+			case 'checklist': return ChecklistOutput(block.data, style.checklist || {});
 			case 'table': return TableOutput(block.data, style.table || {});
 
 			default: return '';

@@ -21,6 +21,9 @@ const tableOutputStyle = {
 		textAlign: 'left',
 		fontFamily
 	},
+	// table: `margin: 0;border-spacing: 1px 2px;margin: ${ MARGIN };font-family: ${ fontFamily };`,
+	// th: `min-width: 100px;padding: 12px 15px;border-radius: 2px;background-color: lightblue;font-family: ${ fontFamily };`,
+	// td: `min-width: 100px;padding: 12px 15px;border-radius: 2px;text-align: left;font-family: ${ fontFamily };`
 };
 
 export default tableOutputStyle;
