@@ -28,7 +28,7 @@ const TableOutput = (data, style) => {
 
 	return <table style={{ ...tableOutputStyle.table, ...style.table }}>
 		<thead>
-			<tr style={{ ...style.tr }}>{ columnNames.map(columnName => <th style={{ ...tableOutputStyle.th, ...style.th }}>${ columnName }</th>) }</tr>
+			<tr style={{ ...style.tr }}>{ columnNames.map(columnName => <th style={{ ...tableOutputStyle.th, ...style.th }}>{ ReactHtmlParser(columnName) }</th>) }</tr>
 		</thead>
 		<tbody>
 			{
@@ -36,7 +36,7 @@ const TableOutput = (data, style) => {
 					<tr style={{ backgroundColor: index % 2 === 0 ? 'white' : '#fdfdfd', ...style.tr }}>
 						{
 							Array.isArray(row) && row.length > 1 &&
-							row.map(columnValue => <td style={{ ...tableOutputStyle.td, ...style.td }}>${ ReactHtmlParser(columnValue) }</td>)
+							row.map(columnValue => <td style={{ ...tableOutputStyle.td, ...style.td }}>{ ReactHtmlParser(columnValue) }</td>)
 						}
 					</tr>
 				))
