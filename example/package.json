@@ -1,9 +1,9 @@
 {
   "name": "example",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
-    "editorjs-react-renderer": "^1.2.10",
+    "editorjs-react-renderer": "^1.2.11",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",

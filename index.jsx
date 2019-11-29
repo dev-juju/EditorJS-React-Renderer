@@ -17,6 +17,7 @@ import QuoteOutput from './renderers/quoteOutput/index.jsx';
 import WarningOutput from './renderers/warningOutput/index.jsx';
 import TableOutput from './renderers/tableOutput/index.jsx';
 import ChecklistOutput from './renderers/checklistOutput/index.jsx';
+import DelimiterOutput from './renderers/delimiterOutput/index.jsx';
 // import RawOutput from './renderers/rawOutput/index.jsx';
 //#endregion
 
@@ -35,6 +36,7 @@ const Output = (editorData, style) => {
 			case 'warning': return WarningOutput(block.data, style.warning || {});
 			case 'checklist': return ChecklistOutput(block.data, style.checklist || {});
 			case 'table': return TableOutput(block.data, style.table || {});
+			case 'delimiter': return DelimiterOutput(style.delimiter || {});
 
 			default: return '';
 		}
