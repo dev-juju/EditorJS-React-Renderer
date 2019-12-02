@@ -1,4 +1,4 @@
-/** ListOutput
+/** DelimiterOutput
  *
  * @version 1.0.0
  * @created - 2019.11.30
@@ -16,7 +16,7 @@ const DelimiterOutput = style => {
 
   const delimiterStyle = { ...delimiterOutputStyle, ...style };
 
-  return <hr style={delimiterStyle} />;
+  return <hr style={ delimiterStyle } />;
 };
 
 export default DelimiterOutput;
