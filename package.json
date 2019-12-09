@@ -14,7 +14,9 @@
     "EditorJS React Renderer"
   ],
   "author": "Adombang Munang Mbomndih <dzedock@gmail.com> (https://portfolio.bomdi.now.sh)",
-  "contributors": [],
+  "contributors": [
+    "Tomáš Hylský <thylsky@gmail.com> (https://linktr.ee/thylsky)"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BomdiZane/EditorJS-React-Renderer.git"
