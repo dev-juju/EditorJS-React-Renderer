@@ -86,6 +86,10 @@ module.exports = {
       }
     },
     {
+      "type": "delimiter",
+      "data": {}
+    },
+    {
       "type": "header",
       "data": {
         "text": "Milestones",
