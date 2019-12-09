@@ -4,59 +4,25 @@ import PropTypes from 'prop-types';
 import './Post.css';
 
 const style = {
-  header: {
-    textAlign: 'left',
-  },
+  header: {},
   image: {
-    img: {
-      maxHeight: '400px',
-    },
-    figure: {
-      backgroundColor: 'aliceblue',
-    },
-    figcaption: {
-      borderRadius: '20px',
-    }
+    img: {},
+    figure: {},
+    figcaption: {}
   },
-  paragraph: {
-    textAlign: 'left',
-    cursor: 'default',
-  },
-  list: {
-    textAlign: 'left',
-    margin: '10px'
-  },
+  paragraph: {},
+  list: {},
   table: {
-    table: {
-      margin: '15px 0',
-    },
-    tr: {
-      margin: 0,
-    },
-    th: {
-      padding: '8px 15px',
-      backgroundColor: 'lightgreen',
-    },
-    td: {
-      padding: '8px 15px',
-    },
+    table: {},
+    tr: {},
+    th: {},
+    td: {},
   },
   quote: {
-    container: {
-      width: '100%',
-      padding: '5px 10px',
-    },
-    content: {
-      minWidth: '240px',
-      padding: '5px 10px',
-    },
-    author: {
-      fontWeight: 'bold',
-    },
-    message: {
-      textAlign: 'left',
-      margin: 0
-    }
+    container: {},
+    content: {},
+    author: {},
+    message: {}
   },
 };
 

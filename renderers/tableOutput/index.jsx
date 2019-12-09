@@ -33,7 +33,7 @@ const TableOutput = (data, style) => {
 		<tbody>
 			{
 				content.map((row, index) => (
-					<tr style={{ backgroundColor: index % 2 === 0 ? 'white' : '#fbfbfb', ...style.tr }}>
+					<tr style={{ backgroundColor: index % 2 === 0 ? 'white' : '#f9f9f9', ...style.tr }}>
 						{
 							Array.isArray(row) && row.length > 1 &&
 							row.map(columnValue => <td style={{ ...tableOutputStyle.td, ...style.td }}>{ ReactHtmlParser(columnValue) }</td>)

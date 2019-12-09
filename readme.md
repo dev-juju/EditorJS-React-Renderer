@@ -1,4 +1,4 @@
-# EditorJS-React Renderer
+# EditorJS-React Renderer (ERR)
 
 A library that provides functions to parse and render data saved in [Editor.js](https://editorjs.io/) block style into beautifully styled, responsive and flexible React components.
 
