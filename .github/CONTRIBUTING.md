@@ -24,7 +24,7 @@ If you want to help on new API, please follow our API Naming Rules.
 ## Your First Pull Request
 Working on your first Pull Request? You can learn how from this free video series:
 
-(How to Contribute to an Open Source Project on GitHub)[https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github]
+[How to Contribute to an Open Source Project on GitHub](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
 
 
 ## Sending a Pull Request

@@ -2,10 +2,10 @@
   text-align: center;
 }
 
-.App-header {
+header {
+  text-align: left;
+  padding: 15px 5%;
   background-color: #222;
-  padding: 3px;
-  font-family: 'Indie Flower';
   color: white;
 }
 
