@@ -45,6 +45,6 @@ const Output = (editorData, style) => {
 
 export {
 	HeaderOutput, ParagraphOutput, ImageOutput,
-	ListOutput, QuoteOutput, WarningOutput,
+	ListOutput, QuoteOutput, WarningOutput, DelimiterOutput,
 	Output as default
 };

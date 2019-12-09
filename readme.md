@@ -97,6 +97,10 @@ const data = {
         "style" : "ordered"
       }
     },
+    {
+      "type": "delimiter",
+      "data": {}
+    },
   ],
   "version": "2.14.0"
 };
@@ -222,6 +226,10 @@ const style = {
       // All other valid JSX inline styles are allowed here
     }
   },
+  delimiter: {
+    width: '80%',
+    // All other valid JSX inline styles are allowed here
+  },
 };
 
 const Post = () => (
@@ -270,6 +278,7 @@ There is full support for SSR
 * TableOutput(data[,style])
 * ImageOutput(data[,style])
 * WarningOutput(data[,style])
+* DelimiterOutput([,style])
 
 
 ## Supported blocks/components
@@ -280,6 +289,7 @@ There is full support for SSR
 * [Table](https://github.com/editor-js/table)
 * [Quote](https://github.com/editor-js/quote)
 * [Warning](https://github.com/editor-js/warning)
+* [Delimiter](https://github.com/editor-js/delimiter)
 
 There's more coming...
 
