@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "http://bomdizane.github.io/err",
   "dependencies": {
-    "editorjs-react-renderer": "^1.3.0",
+    "editorjs-react-renderer": "^1.3.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
