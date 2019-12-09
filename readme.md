@@ -1,4 +1,6 @@
-# EditorJS-React Renderer (ERR) [View live demo]("http://bomdizane.github.io/err")
+# EditorJS-React Renderer (ERR)
+
+[View live example](http://bomdizane.github.io/err)
 
 A library that provides functions to parse and render data saved in [Editor.js](https://editorjs.io/) block style into beautifully styled, responsive and flexible React components.
 
