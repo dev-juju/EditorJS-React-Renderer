@@ -27,11 +27,11 @@ import DelimiterOutput from './renderers/delimiterOutput/index.jsx';
 import CodeBoxOutput from './renderers/codeBoxOutput/index.jsx';
 //#endregion
 
-const Output = ({ editorData, style }) => {
-  if (!editorData || typeof editorData !== 'object') return '';
+const Output = ({ data, style }) => {
+  if (!data || typeof data !== 'object') return '';
   if (!style || typeof style !== 'object') style = {};
 
-  return editorData.blocks.map(block => {
+  return data.blocks.map(block => {
     switch (block.type) {
       case 'codeBox': return <CodeBoxOutput data={ block.data } style={ style.codeBox || {}} />;
       case 'header': return <HeaderOutput data={ block.data } style={ style.header || {}} />;
@@ -51,5 +51,5 @@ const Output = ({ editorData, style }) => {
 export {
   HeaderOutput, ParagraphOutput, ImageOutput, CodeBoxOutput, TableOutput,
   ListOutput, QuoteOutput, WarningOutput, DelimiterOutput,
-  Output as default
+  Output
 };
