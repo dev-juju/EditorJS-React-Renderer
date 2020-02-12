@@ -32,7 +32,7 @@ OR
 const Output = require('editorjs-react-renderer');
 ```
 
-**Output** accepts a block style data object as first argument.
+**Output** accepts a block style data object as prop
 
 ```javascript
 const data = {
@@ -112,24 +112,24 @@ const data = {
 
 Notice that your block data can also be HTML markup.
 
-Pass your block style data to **Output()** in your react component and ERR will take care of the rest :)
+Pass your block style data to **Output()** and ERR will take care of the rest :)
 
 ```javascript
-const Post = () => <section>{ Output(data) }</section>;
+const Post = () => <section><Output data={ data } /></section>;
 
 export default Post;
 ```
 
 Each object in the *blocks* property of your block style data is converted to a responsive, styled React component.
 
-**Output()** accepts a second optional object argument through which you can add custom style to the supported components.
+**Output()** accepts a style prop through which you can add custom style to the supported components.
 
 See the [Style](#style) section for more
 
 
 ## Render Single Block
 
-Sometimes you might want to render just a single component like a paragraph or header. While this is possible with the Output() function, you should consider using one of the more specific block output components.
+Sometimes you might want to render just a single component like a paragraph or header. While this is possible with the **Output** component, you should consider using one of the more specific block output components.
 
 ```javascript
 import { ListOutput } from 'editorjs-react-renderer';
@@ -154,7 +154,9 @@ See the [API](#api) section for more block output components
 
 ## Style
 
-You can style all supported components/blocks by passing a second argument to the Output() function. This is an object whose keys correspond to the names of the supported blocks you intend to style. The keys must be in lowercase.
+You can style all supported components/blocks by passing a style prop to the **Output** component. This is an object whose keys correspond to the names of the supported blocks you intend to style.
+
+**NB:** The keys to the style prop object must be in all lowercase.
 
 The values can be nested objects. The following example highlights the current possible nestings and keys for the supported block.
 
@@ -229,7 +231,7 @@ const style = {
   },
 };
 
-const Post = () => <section>{ Output(data, style) }</section>;
+const Post = () => <section><Output data={ data } style={ style } /></section>;
 
 export default Post;
 ```

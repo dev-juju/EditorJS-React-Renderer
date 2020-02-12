@@ -15,6 +15,7 @@
   */
 
 //#region imports
+import React from 'react';
 import HeaderOutput from './renderers/headerOutput/index.jsx';
 import ParagraphOutput from './renderers/paragraphOutput/index.jsx';
 import ImageOutput from './renderers/imageOutput/index.jsx';
@@ -26,7 +27,7 @@ import DelimiterOutput from './renderers/delimiterOutput/index.jsx';
 import CodeBoxOutput from './renderers/codeBoxOutput/index.jsx';
 //#endregion
 
-const Output = (editorData, style) => {
+const Output = ({ editorData, style }) => {
   if (!editorData || typeof editorData !== 'object') return '';
   if (!style || typeof style !== 'object') style = {};
 
