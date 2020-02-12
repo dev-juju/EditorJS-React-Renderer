@@ -61,13 +61,13 @@ const CodeBoxOutput = ({ data, style }) => {
     }
   };
 
-  useEffect(() => {
-    if (data && data.theme && codeAreaRef && codeAreaRef.current) {
-      injectHighlightJSCSSElement(data.theme);
-      injectHighlightJSScriptElement();
-      hljs.highlightBlock(codeAreaRef.current);
-    }
-  }, [data, codeAreaRef]);
+  // useEffect(() => {
+  //   if (data && data.theme && codeAreaRef && codeAreaRef.current) {
+  //     injectHighlightJSCSSElement(data.theme);
+  //     injectHighlightJSScriptElement();
+  //     hljs.highlightBlock(codeAreaRef.current);
+  //   }
+  // }, [data, codeAreaRef]);
 
   if (typeof data === 'string') content = data;
   else if (typeof data === 'object') {

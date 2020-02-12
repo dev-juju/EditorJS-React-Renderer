@@ -1,7 +1,8 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'production',
+  // mode: 'production',
+  mode: 'development',
   entry: path.normalize(`${__dirname}/index.jsx`),
   output: {
     path: path.normalize(`${__dirname}/dist`),
