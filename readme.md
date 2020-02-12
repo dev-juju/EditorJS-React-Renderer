@@ -27,9 +27,9 @@ CDN usage will be available soon...
 Add to your module/application
 
 ```javascript
-import Output from 'editorjs-react-renderer';
+import { Output } from 'editorjs-react-renderer';
 OR
-const Output = require('editorjs-react-renderer');
+const { Output } = require('editorjs-react-renderer');
 ```
 
 **Output** accepts a block style data object as prop
