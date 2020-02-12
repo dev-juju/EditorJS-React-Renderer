@@ -1,6 +1,6 @@
 {
   "name": "editorjs-react-renderer",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "license": "ISC",
   "description": "A small library that provides functions to parse and render data saved by EditorJS into beautifully styled, responsive and flexible React components",
   "keywords": [
