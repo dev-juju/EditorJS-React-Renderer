@@ -56,7 +56,7 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "^24.9.0",
     "react-test-renderer": "^16.12.0",
-    "webpack": "^4.41.6",
+    "webpack": "^4.41.5",
     "webpack-cli": "^3.3.11"
   },
   "babel": {
