@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "prop-types": "^15.7.2",
-    "react": "^16.9.0",
+    "react": "^16.12.0",
     "react-html-parser": "2.0.2"
   },
   "peerDependencies": {
@@ -38,28 +38,26 @@
     "react": ">=16.9.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "7.5.5",
-    "@babel/node": "^7.0.0",
-    "@babel/plugin-proposal-object-rest-spread": "7.5.5",
-    "@babel/preset-env": "7.5.5",
-    "@babel/preset-react": "7.0.0",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.3",
-    "babel-jest": "^24.9.0",
+    "babel-jest": "^25.1.0",
     "babel-loader": "8.0.6",
-    "clean-webpack-plugin": "3.0.0",
-    "enzyme": "3.10.0",
-    "enzyme-adapter-react-16": "1.14.0",
-    "enzyme-to-json": "3.4.0",
-    "eslint": "^6.6.0",
-    "eslint-plugin-react": "7.14.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.18.3",
     "identity-obj-proxy": "3.0.0",
-    "jest": "24.9.0",
-    "react-test-renderer": "16.9.0",
-    "terser-webpack-plugin": "^1.4.1",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.7"
+    "jest": "^25.1.0",
+    "react-test-renderer": "^16.12.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
   },
   "babel": {
     "presets": [
