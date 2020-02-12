@@ -6,19 +6,31 @@
   */
 
 //#region imports
-import React, { useEffect, useRef } from 'react';
+import React, { PureComponent } from 'react';
 import ReactHtmlParser from 'react-html-parser';
+import PropTypes from 'prop-types';
+
 import codeBoxOutputStyle from './codeBoxOutputStyle';
 //#endregion
 
-const CodeBoxOutput = ({ data, style }) => {
-  if (!data) return '';
+class CodeBoxOutput extends PureComponent {
+  constructor(props){
+    super(props);
 
-  const codeAreaRef = useRef();
-  let content = null;
-  let language = null;
+    this.codeAreaRef = React.createRef();
+  }
 
-  const injectHighlightJSScriptElement = () => {
+  componentDidMount(){
+    const { data, style } = props;
+
+    if (data && data.theme && this.codeAreaRef.current) {
+      this.injectHighlightJSCSSElement(data.theme);
+      this.injectHighlightJSScriptElement();
+      hljs.highlightBlock(this.codeAreaRef.current);
+    }
+  }
+
+  injectHighlightJSScriptElement = () => {
     const highlightJSScriptURL = 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js';
     const highlightJSScriptElements = document.querySelectorAll('script');
     let isAlreadyIncluded = false;
@@ -38,7 +50,7 @@ const CodeBoxOutput = ({ data, style }) => {
     }
   };
 
-  const injectHighlightJSCSSElement = highlightJSCSSURL => {
+  injectHighlightJSCSSElement = highlightJSCSSURL => {
     if (!highlightJSCSSURL || typeof highlightJSCSSURL !== 'string') return;
 
     const highlightJSCSSElements = document.querySelectorAll('link');
@@ -61,26 +73,36 @@ const CodeBoxOutput = ({ data, style }) => {
     }
   };
 
-  // useEffect(() => {
-  //   if (data && data.theme && codeAreaRef && codeAreaRef.current) {
-  //     injectHighlightJSCSSElement(data.theme);
-  //     injectHighlightJSScriptElement();
-  //     hljs.highlightBlock(codeAreaRef.current);
-  //   }
-  // }, [data, codeAreaRef]);
+  render(){
+    const { data, style } = props;
+    if (!data) return '';
 
-  if (typeof data === 'string') content = data;
-  else if (typeof data === 'object') {
-    if (data.code && typeof data.code === 'string') content = data.code;
-    if (data.language && typeof data.language === 'string') language = data.language;
+    let content = null;
+    let language = null;
+
+    if (typeof data === 'string') content = data;
+    else if (typeof data === 'object') {
+      if (data.code && typeof data.code === 'string') content = data.code;
+      if (data.language && typeof data.language === 'string') language = data.language;
+    }
+
+    if (!content) return '';
+    return (
+      <pre>
+        <div ref={ this.codeAreaRef } style={ codeBoxOutputStyle } className={ language }>{ ReactHtmlParser(content) }</div>
+      </pre>
+    );
   }
+};
 
-  if (!content) return '';
-  return (
-    <pre>
-      <div ref={ codeAreaRef } style={ codeBoxOutputStyle } className={ language }>{ ReactHtmlParser(content) }</div>
-    </pre>
-  );
+CodeBoxOutput.propTypes = {
+  style: PropTypes.string,
+  data: PropTypes.object,
+};
+
+CodeBoxOutput.defaultProps = {
+  style: '',
+  data: {}
 };
 
 export default CodeBoxOutput;
