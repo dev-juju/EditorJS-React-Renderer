@@ -25,8 +25,8 @@ class CodeBoxOutput extends PureComponent {
 
     if (data && data.theme && this.codeAreaRef.current) {
       this.injectHighlightJSCSSElement(data.theme);
-      while(!hljs) this.injectHighlightJSScriptElement();
-      hljs.highlightBlock(this.codeAreaRef.current);
+      while(typeof hljs === 'undefined') this.injectHighlightJSScriptElement();
+      if (hljs) hljs.highlightBlock(this.codeAreaRef.current);
     }
   }
 
