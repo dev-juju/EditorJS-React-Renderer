@@ -21,7 +21,7 @@ class CodeBoxOutput extends PureComponent {
   }
 
   componentDidMount(){
-    const { data, style } = props;
+    const { data, style } = this.props;
 
     if (data && data.theme && this.codeAreaRef.current) {
       this.injectHighlightJSCSSElement(data.theme);
@@ -74,7 +74,7 @@ class CodeBoxOutput extends PureComponent {
   };
 
   render(){
-    const { data, style } = props;
+    const { data, style } = this.props;
     if (!data) return '';
 
     let content = null;
