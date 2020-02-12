@@ -67,7 +67,6 @@ class CodeBoxOutput extends PureComponent {
       const head = document.querySelector('head');
       link.setAttribute('rel', 'stylesheet');
       link.setAttribute('href', highlightJSCSSURL);
-      link.setAttribute('id', highlightCSSID);
 
       if (head) head.appendChild(link);
     }
