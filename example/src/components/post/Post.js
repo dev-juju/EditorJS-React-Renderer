@@ -26,11 +26,7 @@ const style = {
   },
 };
 
-const Post = ({ data }) => (
-  <section>
-    { Output(data, style) }
-  </section>
-);
+const Post = ({ data }) => <section><Output data={ data } style={ style } /></section>;
 
 Post.propTypes = {
   data: PropTypes.object.isRequired,

@@ -14,16 +14,9 @@ import codeBoxOutputStyle from './codeBoxOutputStyle';
 const CodeBoxOutput = ({ data, style }) => {
   if (!data) return '';
 
+  const codeAreaRef = useRef();
   let content = null;
   let language = null;
-
-  useEffect(() => {
-    if (data && codeAreaRef.current) {
-      injectHighlightJSCSSElement(data.theme || '');
-      injectHighlightJSScriptElement();
-      hljs.highlightBlock(codeAreaRef.current);
-    }
-  }, [data]);
 
   const injectHighlightJSScriptElement = () => {
     const highlightJSScriptURL = 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js';
@@ -43,7 +36,7 @@ const CodeBoxOutput = ({ data, style }) => {
 
       if (head) head.appendChild(script);
     }
-  }
+  };
 
   const injectHighlightJSCSSElement = highlightJSCSSURL => {
     if (!highlightJSCSSURL || typeof highlightJSCSSURL !== 'string') return;
@@ -66,7 +59,15 @@ const CodeBoxOutput = ({ data, style }) => {
 
       if (head) head.appendChild(link);
     }
-  }
+  };
+
+  useEffect(() => {
+    if (data && data.theme && codeAreaRef && codeAreaRef.current) {
+      injectHighlightJSCSSElement(data.theme);
+      injectHighlightJSScriptElement();
+      hljs.highlightBlock(codeAreaRef.current);
+    }
+  }, [data, codeAreaRef]);
 
   if (typeof data === 'string') content = data;
   else if (typeof data === 'object') {
@@ -75,8 +76,6 @@ const CodeBoxOutput = ({ data, style }) => {
   }
 
   if (!content) return '';
-
-  const codeAreaRef = useRef();
   return (
     <pre>
       <div ref={ codeAreaRef } style={ codeBoxOutputStyle } className={ language }>{ ReactHtmlParser(content) }</div>

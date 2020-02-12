@@ -24,7 +24,7 @@ import QuoteOutput from './renderers/quoteOutput/index.jsx';
 import WarningOutput from './renderers/warningOutput/index.jsx';
 import TableOutput from './renderers/tableOutput/index.jsx';
 import DelimiterOutput from './renderers/delimiterOutput/index.jsx';
-// import CodeBoxOutput from './renderers/codeBoxOutput/index.jsx';
+import CodeBoxOutput from './renderers/codeBoxOutput/index.jsx';
 //#endregion
 
 const Output = ({ data, style }) => {
@@ -33,7 +33,7 @@ const Output = ({ data, style }) => {
 
   return data.blocks.map(block => {
     switch (block.type) {
-      // case 'codeBox': return <CodeBoxOutput data={ block.data } style={ style.codeBox || {}} />;
+      case 'codeBox': return <CodeBoxOutput data={ block.data } style={ style.codeBox || {}} />;
       case 'header': return <HeaderOutput data={ block.data } style={ style.header || {}} />;
       case 'paragraph': return <ParagraphOutput data={ block.data } style={ style.paragraph || {}} />;
       case 'image': return <ImageOutput data={ block.data } style={ style.image || {}} />;
@@ -49,7 +49,6 @@ const Output = ({ data, style }) => {
 };
 
 export {
-  HeaderOutput, ParagraphOutput, ImageOutput, TableOutput,
-  ListOutput, QuoteOutput, WarningOutput, DelimiterOutput,
+  HeaderOutput, ParagraphOutput, ImageOutput, TableOutput, CodeBoxOutput, ListOutput, QuoteOutput, WarningOutput, DelimiterOutput,
   Output as default
 };
