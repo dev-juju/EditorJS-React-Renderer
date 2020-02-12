@@ -1,9 +1,13 @@
 /** ListOutput
-	*
-	* @version 1.0.0
-	* @created - 2019.08.20
-	* @author - Adombang Munang Mbomndih (Bomdi) <dzedock@gmail.com> (https://portfolio.bomdi.now.sh)
-	*/
+  *
+  * @version 1.0.0
+  * @created - 2019.08.20
+  * @author - Adombang Munang Mbomndih (Bomdi) <dzedock@gmail.com> (https://bomdisoft.com)
+  *
+  * Version History
+  * ---------------
+  * @version 1.0.1 - 2020.02.12 - Covert to React component - Adombang Munang Mbomndih
+  */
 
 //#region imports
 import React from 'react';
@@ -13,23 +17,23 @@ import listOutputStyle from './listOutputStyle';
 
 const validListStyles = ['ordered', 'unordered'];
 
-const ListOutput = (data, style) => {
-	if (!data) return '';
-	if (!style || typeof style !== 'object') style = {};
+const ListOutput = ({ data, style }) => {
+  if (!data) return '';
+  if (!style || typeof style !== 'object') style = {};
 
-	const listStyle = { ...listOutputStyle, ...style };
-	let content = [], listType = 'unordered';
+  const listStyle = { ...listOutputStyle, ...style };
+  let content = [], listType = 'unordered';
 
-	if (typeof data === 'string') content.push(data);
-	else if (typeof data === 'object') {
-		if (data.items && Array.isArray(data.items)) content = data.items.map((item, index) => <li key={ index }>{ ReactHtmlParser(item) }</li>);
-		if (data.style && validListStyles.includes(data.style)) listType = data.style;
-	}
+  if (typeof data === 'string') content.push(data);
+  else if (typeof data === 'object') {
+    if (data.items && Array.isArray(data.items)) content = data.items.map((item, index) => <li key={ index }>{ ReactHtmlParser(item) }</li>);
+    if (data.style && validListStyles.includes(data.style)) listType = data.style;
+  }
 
-	if (content.length <= 0) return '';
-	if (listType === 'ordered') return <ol style={ listStyle }>{ content }</ol>;
+  if (content.length <= 0) return '';
+  if (listType === 'ordered') return <ol style={ listStyle }>{ content }</ol>;
 
-	return <ul style={ listStyle }>{ content }</ul>;
+  return <ul style={ listStyle }>{ content }</ul>;
 };
 
 export default ListOutput;

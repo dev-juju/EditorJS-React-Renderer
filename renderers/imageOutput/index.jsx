@@ -1,9 +1,13 @@
 /** ImageOutput
-	*
-	* @version 1.0.0
-	* @created - 2019.08.20
-	* @author - Adombang Munang Mbomndih (Bomdi) <dzedock@gmail.com> (https://portfolio.bomdi.now.sh)
-	*/
+  *
+  * @version 1.0.0
+  * @created - 2019.08.20
+  * @author - Adombang Munang Mbomndih (Bomdi) <dzedock@gmail.com> (https://bomdisoft.com)
+  *
+  * Version History
+  * ---------------
+  * @version 1.0.1 - 2020.02.12 - Covert to React component - Adombang Munang Mbomndih
+  */
 
 //#region imports
 import React from 'react';
@@ -13,36 +17,36 @@ import imageOutputStyle from './imageOutputStyle';
 
 const supportedStyles = ['img', 'figure', 'figcaption'];
 
-const ImageOutput = (data, style) => {
-	if (!data || !data.file || !data.file.url) return '';
-	if (!style || typeof style !== 'object') style = {};
+const ImageOutput = ({ data, style }) => {
+  if (!data || !data.file || !data.file.url) return '';
+  if (!style || typeof style !== 'object') style = {};
 
-	supportedStyles.forEach(customStyle => {
-		if (!style[customStyle] || typeof style[customStyle] !== 'object') style[customStyle] = {};
-	});
+  supportedStyles.forEach(customStyle => {
+    if (!style[customStyle] || typeof style[customStyle] !== 'object') style[customStyle] = {};
+  });
 
-	const imageStyle = {
-		...imageOutputStyle.imageStyle,
-		width: data.stretched ? '100%' : '',
-		...style.img
-	};
-	const figureStyle = {
-		...imageOutputStyle.figureStyle,
-		border: data.withBorder ? '1px solid #eee' : 'none',
-		// backgroundColor: data.withBackground ? 'aliceblue' : 'none',
-		...style.figure
-	};
-	const figcaptionStyle = {
-		...imageOutputStyle.figcaptionStyle,
-		...style.figcaption
-	};
+  const imageStyle = {
+    ...imageOutputStyle.imageStyle,
+    width: data.stretched ? '100%' : '',
+    ...style.img
+  };
+  const figureStyle = {
+    ...imageOutputStyle.figureStyle,
+    border: data.withBorder ? '1px solid #eee' : 'none',
+    // backgroundColor: data.withBackground ? 'aliceblue' : 'none',
+    ...style.figure
+  };
+  const figcaptionStyle = {
+    ...imageOutputStyle.figcaptionStyle,
+    ...style.figcaption
+  };
 
-	return (
-		<figure style={ figureStyle }>
-			<img src={ data.file.url } alt={ data.caption || '' } style={ imageStyle } />
-			{ data.caption && <figcaption style={ figcaptionStyle }>{ ReactHtmlParser(data.caption) }</figcaption> }
-		</figure>
-	);
+  return (
+    <figure style={ figureStyle }>
+      <img src={ data.file.url } alt={ data.caption || '' } style={ imageStyle } />
+      { data.caption && <figcaption style={ figcaptionStyle }>{ ReactHtmlParser(data.caption) }</figcaption> }
+    </figure>
+  );
 };
 
 export default ImageOutput;
