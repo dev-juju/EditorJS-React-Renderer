@@ -51,5 +51,5 @@ const Output = ({ data, style }) => {
 export {
   HeaderOutput, ParagraphOutput, ImageOutput, CodeBoxOutput, TableOutput,
   ListOutput, QuoteOutput, WarningOutput, DelimiterOutput,
-  Output as default
+  Output
 };
