@@ -31,7 +31,7 @@ class CodeBoxOutput extends PureComponent {
   }
 
   highlightBlock = () => {
-    if (hljs) hljs.highlightBlock(this.codeAreaRef.current);
+    if (typeof hljs !== 'undefined') hljs.highlightBlock(this.codeAreaRef.current);
     else setTimeout(this.highlightBlock, 250);
   };
 
