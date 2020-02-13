@@ -1,7 +1,7 @@
 import { fontFamily } from '../../../style/template';
 
 const warningStyle = {
-  warningStyle: {
+  warning: {
     width: '100%',
     margin: '5px 0',
     display: 'flex',
@@ -9,7 +9,7 @@ const warningStyle = {
     alignItems: 'center',
     fontFamily
   },
-  contentStyle: {
+  content: {
     minWidth: '240px',
     margin: '5px 0',
     padding: '0 8px',
@@ -19,15 +19,25 @@ const warningStyle = {
     flexWrap: 'wrap',
     fontFamily
   },
-  iconStyle: {
+  icon: {
     marginRight: '10px',
     width: '20px',
     height: '20px',
     fontFamily
   },
-  messageStyle: {
+  message: {
     fontFamily,
     fontWeight: 600
+  },
+  circle: {
+    fill: '#EFCE4A'
+  },
+  line: {
+    fill: 'none',
+    stroke: '#FFFFFF',
+    strokeWidth: 2,
+    strokeLinecap: 'round',
+    strokeMiterlimit: 10
   }
 };
 
