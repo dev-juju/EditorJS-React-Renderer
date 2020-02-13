@@ -6,11 +6,15 @@ const delimiterOutputStyle = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    enableBackground: 'new 0 0 100.353 100.353'
   },
-  icons: {
+  svg: {
     width: '20px',
     height: '20px',
     margin: '5px',
+  },
+  path: {
+    fill: '#231F20'
   }
 };
 

@@ -160,92 +160,77 @@ You can style all supported components/blocks by passing a style prop to the **O
 The values can be nested objects. The following example highlights the current possible nestings and keys for the supported block.
 
 ```javascript
+// All valid JSX inline styles are allowed
 const style = {
   header: {
     textAlign: 'left',
-    // All other valid JSX inline styles are allowed here
   },
   image: {
     img: {
       maxHeight: '400px',
-      // All other valid JSX inline styles are allowed here
     },
     figure: {
       backgroundColor: 'aliceblue',
-      // All other valid JSX inline styles are allowed here
     },
     figcaption: {
       borderRadius: '5px',
-      // All other valid JSX inline styles are allowed here
     }
   },
   paragraph: {
     textAlign: 'left',
     cursor: 'default',
-    // All other valid JSX inline styles are allowed here
   },
   list: {
     textAlign: 'left',
-    // All other valid JSX inline styles are allowed here
   },
   table: {
     table: {
       margin: 0,
-      // All other valid JSX inline styles are allowed here
     },
     tr: {
       margin: 0,
-      // All other valid JSX inline styles are allowed here
     },
     th: {
       minWidth: '100px',
-      // All other valid JSX inline styles are allowed here
     },
     td: {
       padding: '12px 15px',
-      // All other valid JSX inline styles are allowed here
     },
   },
   quote: {
     container: {
       width: '100%',
-      // All other valid JSX inline styles are allowed here
     },
     content: {
       minWidth: '240px',
-      // All other valid JSX inline styles are allowed here
     },
     author: {
       fontWeight: 'bold',
-      // All other valid JSX inline styles are allowed here
     },
     message: {
       textAlign: 'left',
-      // All other valid JSX inline styles are allowed here
     }
   },
   codeBox: {
     container: {
       width: '100%',
-      // All other valid JSX inline styles are allowed here
     },
     code: {
       boxSizing: 'border-box',
-      // All other valid JSX inline styles are allowed here
     },
   },
   warning: {
     fontWeight: 600,
-    // All other valid JSX inline styles are allowed here
   },
   delimiter: {
     container: {
       margin: '8px 0',
-      // All other valid JSX inline styles are allowed here
     },
-    icons: {
+    svg: {
       width: '20px',
-      // All other valid JSX inline styles are allowed here
+    },
+    path: {
+      fill: '#231F20'
     }
   },
 };
