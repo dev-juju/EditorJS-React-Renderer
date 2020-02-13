@@ -25,10 +25,15 @@ class CodeBoxOutput extends PureComponent {
 
     if (data && data.theme && this.codeAreaRef.current) {
       this.injectHighlightJSCSSElement(data.theme);
-      while(typeof hljs === 'undefined') this.injectHighlightJSScriptElement();
-      if (hljs) hljs.highlightBlock(this.codeAreaRef.current);
+      this.injectHighlightJSScriptElement();
+      this.highlightBlock();
     }
   }
+
+  highlightBlock = () => {
+    if (hljs) hljs.highlightBlock(this.codeAreaRef.current);
+    else setTimeout(this.highlightBlock, 250);
+  };
 
   injectHighlightJSScriptElement = () => {
     const highlightJSScriptURL = 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js';
