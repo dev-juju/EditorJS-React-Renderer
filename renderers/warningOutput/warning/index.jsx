@@ -17,7 +17,7 @@ const Warning = ({ message, customStyle }) => (
   <div style={ warningStyle.warning }>
     <span style={ warningStyle.content }>
       <svg style={ warningStyle.icon }  version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' x='0px' y='0px'
-          viewBox='0 0 50 50' style='enable-background:new 0 0 50 50;' xmlSpace='preserve'>
+          viewBox='0 0 50 50' xmlSpace='preserve'>
         <circle style={ warningStyle.circle } cx='25' cy='25' r='25'/>
         <line style={ warningStyle.line } x1='25' y1='10' x2='25' y2='32'/>
         <line style={ warningStyle.line } x1='25' y1='37' x2='25' y2='39'/>
