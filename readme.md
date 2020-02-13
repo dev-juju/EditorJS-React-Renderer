@@ -239,8 +239,14 @@ const style = {
     // All other valid JSX inline styles are allowed here
   },
   delimiter: {
-    width: '80%',
-    // All other valid JSX inline styles are allowed here
+    container: {
+      margin: '8px 0',
+      // All other valid JSX inline styles are allowed here
+    },
+    icons: {
+      width: '20px',
+      // All other valid JSX inline styles are allowed here
+    }
   },
 };
 
