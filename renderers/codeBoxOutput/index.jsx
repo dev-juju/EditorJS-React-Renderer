@@ -18,6 +18,7 @@ class CodeBoxOutput extends PureComponent {
     super(props);
 
     this.codeAreaRef = React.createRef();
+    this.supportedStyles = ['container', 'code'];
   }
 
   componentDidMount(){
@@ -80,6 +81,11 @@ class CodeBoxOutput extends PureComponent {
   render(){
     const { data, style } = this.props;
     if (!data) return '';
+    if (!style || typeof style !== 'object') style = {};
+
+    this.supportedStyles.forEach(customStyle => {
+      if (!style[customStyle] || typeof style[customStyle] !== 'object') style[customStyle] = {};
+    });
 
     let content = null;
     let language = null;
@@ -92,8 +98,8 @@ class CodeBoxOutput extends PureComponent {
 
     if (!content) return '';
     return (
-      <pre>
-        <div ref={ this.codeAreaRef } style={ codeBoxOutputStyle } className={ language }>{ ReactHtmlParser(content) }</div>
+      <pre style={{ ...codeBoxOutputStyle.container, ...style.container }}>
+        <code ref={ this.codeAreaRef } style={{ ...codeBoxOutputStyle.code, ...style.code }} className={ language }>{ ReactHtmlParser(content) }</code>
       </pre>
     );
   }

@@ -7,6 +7,7 @@
   * Version History
   * ---------------
   * @version 1.0.1 - 2020.02.12 - Covert to React component - Adombang Munang Mbomndih
+  * @version 1.0.2 - 2020.02.13 - Use SVG stars as delimiter - Adombang Munang Mbomndih
  */
 
 //#region imports
@@ -14,12 +15,49 @@ import React from 'react';
 import delimiterOutputStyle from './delimiterOutputStyle';
 //#endregion
 
+const supportedStyles = ['container', 'icons'];
+
 const DelimiterOutput = ({ style }) => {
   if (!style || typeof style !== 'object') style = {};
 
-  const delimiterStyle = { ...delimiterOutputStyle, ...style };
+  supportedStyles.forEach(customStyle => {
+    if (!style[customStyle] || typeof style[customStyle] !== 'object') style[customStyle] = {};
+  });
 
-  return <hr style={ delimiterStyle } />;
+  return (
+    <div style={{ ...delimiterOutputStyle.container, ...style.container }}>
+      <svg style={{ ...delimiterOutputStyle.icons, ...style.icons }} version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg'
+        xmlnsXlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 100.353 100.353'
+        style='enable-background:new 0 0 100.353 100.353;' xmlSpace='preserve'>
+      <path style='fill:#231F20;' d='M98.544,48.543c-25.998,0-47.15-20.904-47.15-46.599c0-0.804-0.652-1.456-1.456-1.456
+        s-1.456,0.652-1.456,1.456c0,25.698-21.096,46.605-47.025,46.605c-0.804,0-1.456,0.652-1.456,1.456c0,0.805,0.652,1.457,1.456,1.457
+        c25.929,0,47.025,20.901,47.025,46.592c0,0.804,0.652,1.457,1.456,1.457s1.456-0.652,1.456-1.457
+        c0-25.694,21.152-46.599,47.15-46.599c0.804,0,1.456-0.652,1.456-1.456C100,49.195,99.348,48.543,98.544,48.543z M49.94,86.169
+        c-4.428-17.748-18.541-31.752-36.436-36.163c17.895-4.412,32.008-18.421,36.436-36.174C54.379,31.582,68.528,45.588,86.467,50
+        C68.528,54.411,54.378,68.419,49.94,86.169z'/>
+      </svg>
+      <svg style={{ ...delimiterOutputStyle.icons, ...style.icons }} version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg'
+        xmlnsXlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 100.353 100.353'
+        style='enable-background:new 0 0 100.353 100.353;' xmlSpace='preserve'>
+      <path style='fill:#231F20;' d='M98.544,48.543c-25.998,0-47.15-20.904-47.15-46.599c0-0.804-0.652-1.456-1.456-1.456
+        s-1.456,0.652-1.456,1.456c0,25.698-21.096,46.605-47.025,46.605c-0.804,0-1.456,0.652-1.456,1.456c0,0.805,0.652,1.457,1.456,1.457
+        c25.929,0,47.025,20.901,47.025,46.592c0,0.804,0.652,1.457,1.456,1.457s1.456-0.652,1.456-1.457
+        c0-25.694,21.152-46.599,47.15-46.599c0.804,0,1.456-0.652,1.456-1.456C100,49.195,99.348,48.543,98.544,48.543z M49.94,86.169
+        c-4.428-17.748-18.541-31.752-36.436-36.163c17.895-4.412,32.008-18.421,36.436-36.174C54.379,31.582,68.528,45.588,86.467,50
+        C68.528,54.411,54.378,68.419,49.94,86.169z'/>
+      </svg>
+      <svg style={{ ...delimiterOutputStyle.icons, ...style.icons }} version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg'
+        xmlnsXlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 100.353 100.353'
+        style='enable-background:new 0 0 100.353 100.353;' xmlSpace='preserve'>
+      <path style='fill:#231F20;' d='M98.544,48.543c-25.998,0-47.15-20.904-47.15-46.599c0-0.804-0.652-1.456-1.456-1.456
+        s-1.456,0.652-1.456,1.456c0,25.698-21.096,46.605-47.025,46.605c-0.804,0-1.456,0.652-1.456,1.456c0,0.805,0.652,1.457,1.456,1.457
+        c25.929,0,47.025,20.901,47.025,46.592c0,0.804,0.652,1.457,1.456,1.457s1.456-0.652,1.456-1.457
+        c0-25.694,21.152-46.599,47.15-46.599c0.804,0,1.456-0.652,1.456-1.456C100,49.195,99.348,48.543,98.544,48.543z M49.94,86.169
+        c-4.428-17.748-18.541-31.752-36.436-36.163c17.895-4.412,32.008-18.421,36.436-36.174C54.379,31.582,68.528,45.588,86.467,50
+        C68.528,54.411,54.378,68.419,49.94,86.169z'/>
+      </svg>
+    </div>
+  );
 };
 
 export default DelimiterOutput;

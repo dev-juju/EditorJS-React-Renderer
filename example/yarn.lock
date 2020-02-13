@@ -3482,10 +3482,10 @@ ecc-jsbn@~0.1.1:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
 
-editorjs-react-renderer@^2.0.14:
-  version "2.0.14"
-  resolved "https://registry.yarnpkg.com/editorjs-react-renderer/-/editorjs-react-renderer-2.0.14.tgz#13548c5eacb043793741f885e45300e159fec6e5"
-  integrity sha512-BdYD9dqeXPVUZ9mew0PZgAfin8+xlYjQTokpyfMO54mknSdOgpmO0CzbY0ugcWg+I9ZujJ8R7fol5OFgCUWVtA==
+editorjs-react-renderer@^2.0.15:
+  version "2.0.15"
+  resolved "https://registry.yarnpkg.com/editorjs-react-renderer/-/editorjs-react-renderer-2.0.15.tgz#58906510254ed170896022b46bb1b86f13537ae7"
+  integrity sha512-ykR8ifQOSvRj+kq0btpt3HJ0kgl9Ob5nyD6tfl6bDHWEuNW0svG6qfsnodTdqwIMFYMp4Z/iJNCUJ/lKYs4Fdw==
   dependencies:
     prop-types "^15.7.2"
     react "^16.12.0"

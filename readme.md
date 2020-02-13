@@ -84,8 +84,7 @@ const data = {
     {
       "type" : "warning",
       "data" : {
-        "message" : "This is a warning!",
-        "title" : ""
+        "message" : "This is a warning!"
       }
     },
     {
@@ -224,6 +223,20 @@ const style = {
       textAlign: 'left',
       // All other valid JSX inline styles are allowed here
     }
+  },
+  codeBox: {
+    container: {
+      width: '100%',
+      // All other valid JSX inline styles are allowed here
+    },
+    code: {
+      boxSizing: 'border-box',
+      // All other valid JSX inline styles are allowed here
+    },
+  },
+  warning: {
+    fontWeight: 600,
+    // All other valid JSX inline styles are allowed here
   },
   delimiter: {
     width: '80%',

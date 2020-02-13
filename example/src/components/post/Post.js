@@ -10,7 +10,9 @@ const style = {
     figure: {},
     figcaption: {}
   },
-  paragraph: {},
+  paragraph: {
+    fontSize: '16px'
+  },
   list: {},
   table: {
     table: {},
