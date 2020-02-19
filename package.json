@@ -14,6 +14,7 @@
     "EditorJS React Renderer"
   ],
   "author": "Adombang Munang Mbomndih <dzedock@gmail.com> (https://bomdisoft.com)",
+  "homepage": "https://err.bomdisoft.com/",
   "contributors": [
     "Tomáš Hylský <thylsky@gmail.com> (https://linktr.ee/thylsky)"
   ],
@@ -56,6 +57,7 @@
     "eslint-plugin-react": "^7.18.3",
     "identity-obj-proxy": "3.0.0",
     "jest": "^24.9.0",
+    "react-dom": "^16.12.0",
     "react-test-renderer": "^16.12.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.11"

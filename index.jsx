@@ -32,8 +32,8 @@ const Output = ({ data, style }) => {
   if (!style || typeof style !== 'object') style = {};
 
   return data.blocks.map(block => {
-    switch (block.type) {
-      case 'codeBox': return <CodeBoxOutput data={ block.data } style={ style.codeBox || {}} />;
+    switch (block.type.toLowerCase()) {
+      case 'codebox': return <CodeBoxOutput data={ block.data } style={ style.codeBox || {}} />;
       case 'header': return <HeaderOutput data={ block.data } style={ style.header || {}} />;
       case 'paragraph': return <ParagraphOutput data={ block.data } style={ style.paragraph || {}} />;
       case 'image': return <ImageOutput data={ block.data } style={ style.image || {}} />;

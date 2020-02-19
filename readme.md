@@ -155,8 +155,6 @@ See the [API](#api) section for more block output components
 
 You can style all supported components/blocks by passing a style prop to the **Output** component. This is an object whose keys correspond to the names of the supported blocks you intend to style.
 
-**NB:** The keys to the style prop object must be in all lowercase.
-
 The values can be nested objects. The following example highlights the current possible nestings and keys for the supported block.
 
 ```javascript

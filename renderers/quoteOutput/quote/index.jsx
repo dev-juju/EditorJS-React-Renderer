@@ -13,11 +13,11 @@ import quoteStyle from './quoteStyle';
 import PropTypes from 'prop-types';
 //#endregion
 
-const Quote = ({ author, message, style }) => (
-  <div style={{ ...quoteStyle.quoteStyle, ...style.container }}>
-    <span style={{ ...quoteStyle.contentStyle, ...style.content }}>
-      <p style={{ ...quoteStyle.messageStyle, ...style.message }}><strong>"</strong>{ message }<strong>"</strong></p>
-      <p style={{ ...quoteStyle.authorStyle, ...style.author }}><strong><small>{ author }</small></strong></p>
+const Quote = ({ author, message, style: { container, content, message: messageStyle, author: authorStyle }}) => (
+  <div style={{ ...quoteStyle.quoteStyle, ...container }}>
+    <span style={{ ...quoteStyle.contentStyle, ...content }}>
+      <p style={{ ...quoteStyle.messageStyle, ...messageStyle }}><strong>"</strong>{ message }<strong>"</strong></p>
+      <p style={{ ...quoteStyle.authorStyle, ...authorStyle }}><strong><small>{ author }</small></strong></p>
     </span>
   </div>
 );
@@ -25,7 +25,12 @@ const Quote = ({ author, message, style }) => (
 Quote.propTypes = {
   author: PropTypes.string,
   message: PropTypes.string.isRequired,
-  style: PropTypes.object.isRequired,
+  style: PropTypes.shape({
+    container: PropTypes.object.isRequired,
+    content: PropTypes.object.isRequired,
+    message: PropTypes.object.isRequired,
+    author: PropTypes.object.isRequired
+  }),
 };
 
 Quote.defaultProps = {
