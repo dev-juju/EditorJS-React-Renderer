@@ -29,7 +29,7 @@ const Warning = ({ message, customStyle }) => (
 );
 
 Warning.propTypes = {
-  message: PropTypes.string.isRequired,
+  message: PropTypes.any.isRequired,
   customStyle: PropTypes.object,
 };
 

@@ -106,7 +106,7 @@ class CodeBoxOutput extends PureComponent {
 };
 
 CodeBoxOutput.propTypes = {
-  style: PropTypes.string,
+  style: PropTypes.object,
   data: PropTypes.object,
 };
 

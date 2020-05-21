@@ -11,7 +11,12 @@ const style = {
     figcaption: {}
   },
   paragraph: {
-    fontSize: '16px'
+    textAlign: 'justify',
+    margin: '8px 0',
+    fontSize: '18px',
+    lineHeight: '1.7',
+    fontWeight: 200,
+    fontFamily: 'Source Sans Pro'
   },
   list: {},
   table: {
@@ -25,6 +30,9 @@ const style = {
     content: {},
     author: {},
     message: {}
+  },
+  codeBox: {
+    code: { lineHeight: '22px' },
   },
 };
 

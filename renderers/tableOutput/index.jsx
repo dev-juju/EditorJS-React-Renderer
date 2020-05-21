@@ -7,6 +7,7 @@
   * Version History
   * ---------------
   * @version 1.0.1 - 2020.02.12 - Covert to React component - Adombang Munang Mbomndih
+  * @version 1.0.2 - 2020.05.21 - Add key to list items - Adombang Munang Mbomndih
   */
 
 //#region imports
@@ -32,15 +33,20 @@ const TableOutput = ({ data, style }) => {
 
   return <table style={{ ...tableOutputStyle.table, ...style.table }}>
     <thead>
-      <tr style={{ ...style.tr }}>{ columnNames.map(columnName => <th style={{ ...tableOutputStyle.th, ...style.th }}>{ ReactHtmlParser(columnName) }</th>) }</tr>
+      <tr style={{ ...style.tr }}>
+        {
+          columnNames.map((columnName, index) =>
+            <th key={ index } style={{ ...tableOutputStyle.th, ...style.th }}>{ ReactHtmlParser(columnName) }</th>)
+        }
+      </tr>
     </thead>
     <tbody>
       {
         content.map((row, index) => (
-          <tr style={{ backgroundColor: index % 2 === 0 ? 'white' : '#f9f9f9', ...style.tr }}>
+          <tr key={ index } style={{ backgroundColor: index % 2 === 0 ? 'white' : '#f9f9f9', ...style.tr }}>
             {
               Array.isArray(row) && row.length > 1 &&
-              row.map(columnValue => <td style={{ ...tableOutputStyle.td, ...style.td }}>{ ReactHtmlParser(columnValue) }</td>)
+              row.map((columnValue, i) => <td key={ i } style={{ ...tableOutputStyle.td, ...style.td }}>{ ReactHtmlParser(columnValue) }</td>)
             }
           </tr>
         ))

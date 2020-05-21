@@ -12,6 +12,8 @@
   * @version 1.0.1 - 2020.02.12 - Covert functions to React component
   *                             - Add CodeBoxOutput
   *                             - Adombang Munang Mbomndih
+  * @version 1.0.2 - 2020.05.21 - Add key to list items - Adombang Munang Mbomndih
+  *
   */
 
 //#region imports
@@ -31,17 +33,17 @@ const Output = ({ data, style }) => {
   if (!data || typeof data !== 'object') return '';
   if (!style || typeof style !== 'object') style = {};
 
-  return data.blocks.map(block => {
+  return data.blocks.map((block, index) => {
     switch (block.type) {
-      case 'codeBox': return <CodeBoxOutput data={ block.data } style={ style.codeBox || {}} />;
-      case 'header': return <HeaderOutput data={ block.data } style={ style.header || {}} />;
-      case 'paragraph': return <ParagraphOutput data={ block.data } style={ style.paragraph || {}} />;
-      case 'image': return <ImageOutput data={ block.data } style={ style.image || {}} />;
-      case 'table': return <TableOutput data={ block.data } style={ style.table || {}} />;
-      case 'list': return <ListOutput data={ block.data } style={ style.list || {}} />;
-      case 'quote': return <QuoteOutput data={ block.data } style={ style.quote || {}} />;
-      case 'warning': return <WarningOutput data={ block.data } style={ style.warning || {}} />;
-      case 'delimiter': return <DelimiterOutput style={ style.delimiter || {}} />;
+      case 'codeBox': return <CodeBoxOutput key={ index } data={ block.data } style={ style.codeBox || {}} />;
+      case 'header': return <HeaderOutput key={ index } data={ block.data } style={ style.header || {}} />;
+      case 'paragraph': return <ParagraphOutput key={ index } data={ block.data } style={ style.paragraph || {}} />;
+      case 'image': return <ImageOutput key={ index } data={ block.data } style={ style.image || {}} />;
+      case 'table': return <TableOutput key={ index } data={ block.data } style={ style.table || {}} />;
+      case 'list': return <ListOutput key={ index } data={ block.data } style={ style.list || {}} />;
+      case 'quote': return <QuoteOutput key={ index } data={ block.data } style={ style.quote || {}} />;
+      case 'warning': return <WarningOutput key={ index } data={ block.data } style={ style.warning || {}} />;
+      case 'delimiter': return <DelimiterOutput key={ index } style={ style.delimiter || {}} />;
 
       default: return '';
     }

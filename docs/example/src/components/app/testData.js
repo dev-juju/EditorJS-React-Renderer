@@ -5,7 +5,7 @@ module.exports = {
       "type": "image",
       "data": {
         "file": {
-          "url": "https://firebasestorage.googleapis.com/v0/b/editorjs-react-renderer.appspot.com/o/editorjs%20react%20renderer%20npm.png?alt=media&token=d31c795b-952f-4a58-bb67-d82f02789f14"
+          "url": "https://firebasestorage.googleapis.com/v0/b/editorjs-react-renderer.appspot.com/o/editorjs-react-renderer%20-%20npm%206.png?alt=media&token=74f2d7e5-2c9c-4cd4-bcd0-1c99282dd266"
         },
         "caption": "https://bomdisoft.com",
         "withBorder": false,
