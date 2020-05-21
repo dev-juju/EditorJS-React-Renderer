@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Warning component: should match snapshot 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "fontFamily": "-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,\\"Helvetica Neue\\",Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+      "justifyContent": "flex-start",
+      "margin": "5px 0",
+      "width": "100%",
+    }
+  }
+>
+  <span
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexWrap": "wrap",
+        "fontFamily": "-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,\\"Helvetica Neue\\",Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+        "justifyContent": "flex-start",
+        "margin": "5px 0",
+        "minWidth": "240px",
+        "padding": "0 8px",
+      }
+    }
+  >
+    <svg
+      id="Capa_1"
+      style={
+        Object {
+          "enableBackground": "new 0 0 50 50",
+          "fontFamily": "-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,\\"Helvetica Neue\\",Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+          "height": "20px",
+          "marginRight": "10px",
+          "width": "20px",
+        }
+      }
+      version="1.1"
+      viewBox="0 0 50 50"
+      x="0px"
+      xmlSpace="preserve"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      y="0px"
+    >
+      <circle
+        cx="25"
+        cy="25"
+        r="25"
+        style={
+          Object {
+            "fill": "#EFCE4A",
+          }
+        }
+      />
+      <line
+        style={
+          Object {
+            "fill": "none",
+            "stroke": "#FFFFFF",
+            "strokeLinecap": "round",
+            "strokeMiterlimit": 10,
+            "strokeWidth": 2,
+          }
+        }
+        x1="25"
+        x2="25"
+        y1="10"
+        y2="32"
+      />
+      <line
+        style={
+          Object {
+            "fill": "none",
+            "stroke": "#FFFFFF",
+            "strokeLinecap": "round",
+            "strokeMiterlimit": 10,
+            "strokeWidth": 2,
+          }
+        }
+        x1="25"
+        x2="25"
+        y1="37"
+        y2="39"
+      />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+    </svg>
+    <p
+      style={
+        Object {
+          "fontFamily": "-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,\\"Helvetica Neue\\",Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+          "fontWeight": 600,
+        }
+      }
+    />
+  </span>
+</div>
+`;
