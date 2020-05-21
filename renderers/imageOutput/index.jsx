@@ -7,6 +7,7 @@
   * Version History
   * ---------------
   * @version 1.0.1 - 2020.02.12 - Covert to React component - Adombang Munang Mbomndih
+  * @version 1.0.2 - 2020.05.21 - Codex width overrides user defined width - Adombang Munang Mbomndih
   */
 
 //#region imports
@@ -27,8 +28,8 @@ const ImageOutput = ({ data, style }) => {
 
   const imageStyle = {
     ...imageOutputStyle.imageStyle,
+    ...style.img,
     width: data.stretched ? '100%' : '',
-    ...style.img
   };
   const figureStyle = {
     ...imageOutputStyle.figureStyle,
