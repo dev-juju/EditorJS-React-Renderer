@@ -12,7 +12,7 @@
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import checklistOutputStyle from './checklistOutputStyle';
-require('./style.css');
+import checklistStyle from './style.css';
 //#endregion
 
 const supportedStyles = ['container', 'item', 'checkbox', 'label'];
@@ -46,10 +46,10 @@ const ChecklistOutput = ({ data, style }) => {
 
   if (typeof data === 'object') {
     if (data.items && Array.isArray(data.items)) content = data.items.map((item, index) =>
-      <li key={ index } style={ itemStyle }>
+      <div key={ index } style={ itemStyle }>
         <input id={ index } style={ checkboxStyle } type='checkbox' checked={ item.checked } />
         <label for={ index } style={ labelStyle }>{ ReactHtmlParser(item.text) }</label>
-      </li>
+      </div>
     );
   }
 

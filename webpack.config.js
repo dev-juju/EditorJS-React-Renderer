@@ -19,7 +19,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        loader: 'isomorphic-style-loader!css-loader'
       }
     ],
   }
