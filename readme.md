@@ -62,6 +62,17 @@ const data = {
       }
     },
     {
+      "type" : "embed",
+      "data" : {
+        "service" : "coub",
+        "source" : "https://coub.com/view/1czcdf",
+        "embed" : "https://coub.com/embed/1czcdf",
+        "width" : 580,
+        "height" : 320,
+        "caption" : "My Life"
+      }
+    },
+    {
       "type": "paragraph",
       "data": {
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque accusantium veritatis dolorum cum amet! Ipsa ullam nisi, dolor explicabo ut nobis repudiandae saepe illo error facilis consectetur, quisquam assumenda dolorum."
@@ -100,6 +111,25 @@ const data = {
           "<strong>Item 3</strong>"
         ],
         "style" : "ordered"
+      }
+    },
+    {
+      "type": "checklist",
+      "data": {
+        "items": [
+          {
+            "text": "Gather requirements",
+            "checked": true
+          },
+          {
+            "text": "Develop API",
+            "checked": true
+          },
+          {
+            "text": "Notify stakeholders",
+            "checked": false
+          },
+        ]
       }
     },
     {
@@ -178,6 +208,17 @@ const style = {
       borderRadius: '5px',
     }
   },
+  embed: {
+    video: {
+      maxHeight: '400px',
+    },
+    figure: {
+      justifyContent: 'center',
+    },
+    figcaption: {
+      borderRadius: '5px',
+    }
+  },
   paragraph: {
     textAlign: 'left',
     cursor: 'default',
@@ -185,27 +226,21 @@ const style = {
   list: {
     textAlign: 'left',
   },
+  checklist: {
+    container: {},
+    item: {},
+    checkbox: {},
+    label: {},
+  },
   table: {
-    table: {
-      margin: 0,
-    },
-    tr: {
-      margin: 0,
-    },
-    th: {
-      minWidth: '100px',
-    },
-    td: {
-      padding: '12px 15px',
-    },
+    table: {},
+    tr: {},
+    th: {},
+    td: {},
   },
   quote: {
-    container: {
-      width: '100%',
-    },
-    content: {
-      minWidth: '240px',
-    },
+    container: {},
+    content: {},
     author: {
       fontWeight: 'bold',
     },
@@ -222,15 +257,11 @@ const style = {
     },
   },
   warning: {
-    fontWeight: 600,
+    fontWeight: 400,
   },
   delimiter: {
-    container: {
-      margin: '8px 0',
-    },
-    svg: {
-      width: '20px',
-    },
+    container: {},
+    svg: {},
     path: {
       fill: '#231F20'
     }
@@ -277,7 +308,9 @@ There is full support for SSR
 * ParagraphOutput(data[,style])
 * TableOutput(data[,style])
 * ImageOutput(data[,style])
+* EmbedOutput(data[,style])
 * ListOutput(data[,style])
+* ChecklistOutput(data[,style])
 * QuoteOutput(data[,style])
 * WarningOutput(data[,style])
 * DelimiterOutput([,style])
@@ -288,7 +321,9 @@ There is full support for SSR
 * [Header](https://github.com/editor-js/header)
 * [Paragraph](https://github.com/editor-js/paragraph)
 * [Image](https://github.com/editor-js/image)
+* [Embed](https://github.com/editor-js/embed)
 * [List](https://github.com/editor-js/list)
+* [Checklist](https://github.com/editor-js/checklist)
 * [Table](https://github.com/editor-js/table)
 * [Quote](https://github.com/editor-js/quote)
 * [Warning](https://github.com/editor-js/warning)

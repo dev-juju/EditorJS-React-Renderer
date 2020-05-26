@@ -22,8 +22,59 @@ module.exports = {
     {
       "type": "header",
       "data": {
-        "text": "Paragraph with ordered list",
+        "text": "Paragraph with embedded video",
         "level": 4
+      }
+    },
+    {
+      "type": "paragraph",
+      "data": {
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
+      }
+    },
+    {
+      "type" : "embed",
+      "data" : {
+        "service" : "coub",
+        "source" : "https://coub.com/view/1czcdf",
+        "embed" : "https://www.youtube.com/embed/RsMikJZhnSQ",
+        "caption" : "My Life",
+      }
+    },
+    {
+      "type": "header",
+      "data": {
+        "text": "Paragraph with list",
+        "level": 4
+      }
+    },
+    {
+      "type": "paragraph",
+      "data": {
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
+      }
+    },
+    {
+      "type": "checklist",
+      "data": {
+        "items": [
+          {
+            "text": "Gather requirements",
+            "checked": true
+          },
+          {
+            "text": "Develop API",
+            "checked": true
+          },
+          {
+            "text": "Notify stakeholders",
+            "checked": false
+          },
+          {
+            "text": "Develop Web App",
+            "checked": false
+          }
+        ]
       }
     },
     {
@@ -46,6 +97,16 @@ module.exports = {
       "type": "paragraph",
       "data": {
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
+      }
+    },
+    {
+      "type": "list",
+      "data": {
+        "style": "unordered",
+        "items": [
+          "Item one",
+          "Item two"
+        ]
       }
     },
     {
@@ -133,31 +194,8 @@ module.exports = {
     {
       "type": "header",
       "data": {
-        "text": "Paragraph with warning",
+        "text": "Paragraph with checklist and warning",
         "level": 4
-      }
-    },
-    {
-      "type": "checklist",
-      "data": {
-        "items": [
-          {
-            "text": "Gather requirements",
-            "checked": true
-          },
-          {
-            "text": "Develop API",
-            "checked": true
-          },
-          {
-            "text": "Notify stakeholders",
-            "checked": false
-          },
-          {
-            "text": "Develop Web App",
-            "checked": false
-          }
-        ]
       }
     },
     {

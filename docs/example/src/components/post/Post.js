@@ -16,7 +16,6 @@ const style = {
     fontSize: '18px',
     lineHeight: '1.7',
     fontWeight: 200,
-    fontFamily: 'Source Sans Pro'
   },
   list: {},
   table: {

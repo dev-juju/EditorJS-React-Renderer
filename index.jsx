@@ -21,8 +21,10 @@ import React from 'react';
 import HeaderOutput from './renderers/headerOutput/index.jsx';
 import ParagraphOutput from './renderers/paragraphOutput/index.jsx';
 import ImageOutput from './renderers/imageOutput/index.jsx';
+import EmbedOutput from './renderers/embedOutput/index.jsx';
 import ListOutput from './renderers/listOutput/index.jsx';
 import QuoteOutput from './renderers/quoteOutput/index.jsx';
+import ChecklistOutput from './renderers/checklistOutput/index.jsx';
 import WarningOutput from './renderers/warningOutput/index.jsx';
 import TableOutput from './renderers/tableOutput/index.jsx';
 import DelimiterOutput from './renderers/delimiterOutput/index.jsx';
@@ -39,8 +41,10 @@ const Output = ({ data, style }) => {
       case 'header': return <HeaderOutput key={ index } data={ block.data } style={ style.header || {}} />;
       case 'paragraph': return <ParagraphOutput key={ index } data={ block.data } style={ style.paragraph || {}} />;
       case 'image': return <ImageOutput key={ index } data={ block.data } style={ style.image || {}} />;
+      case 'embed': return <EmbedOutput key={ index } data={ block.data } style={ style.embed || {}} />;
       case 'table': return <TableOutput key={ index } data={ block.data } style={ style.table || {}} />;
       case 'list': return <ListOutput key={ index } data={ block.data } style={ style.list || {}} />;
+      case 'checklist': return <ChecklistOutput key={ index } data={ block.data } style={ style.checklist || {}} />;
       case 'quote': return <QuoteOutput key={ index } data={ block.data } style={ style.quote || {}} />;
       case 'warning': return <WarningOutput key={ index } data={ block.data } style={ style.warning || {}} />;
       case 'delimiter': return <DelimiterOutput key={ index } style={ style.delimiter || {}} />;
@@ -51,6 +55,6 @@ const Output = ({ data, style }) => {
 };
 
 export {
-  HeaderOutput, ParagraphOutput, ImageOutput, TableOutput, CodeBoxOutput, ListOutput, QuoteOutput, WarningOutput, DelimiterOutput,
-  Output as default
+  HeaderOutput, ParagraphOutput, ImageOutput, EmbedOutput, TableOutput, CodeBoxOutput, ListOutput, QuoteOutput,
+  ChecklistOutput, WarningOutput, DelimiterOutput, Output as default
 };

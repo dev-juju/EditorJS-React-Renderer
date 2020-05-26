@@ -28,7 +28,7 @@ const warningStyle = {
   },
   message: {
     fontFamily,
-    fontWeight: 600
+    fontWeight: 400
   },
   circle: {
     fill: '#EFCE4A'
