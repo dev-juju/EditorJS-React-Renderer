@@ -24,17 +24,17 @@ module.exports = {
       }
     ],
   },
-  resolve: {      
-    alias: {          
+  resolve: {
+    alias: {
       'react': path.resolve(__dirname, './node_modules/react'),
-    }  
-  },  
+    }
+  },
   externals: {
-    react: {          
-      commonjs: 'react',          
-      commonjs2: 'react',          
-      amd: 'React',          
-      root: 'React'      
+    react: {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'React',
+      root: 'React'
     },
-  } 
+  }
 };
