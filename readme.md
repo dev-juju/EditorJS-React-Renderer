@@ -203,6 +203,7 @@ const style = {
     },
     figure: {
       backgroundColor: 'aliceblue',
+      border: '1px solid #eee'
     },
     figcaption: {
       borderRadius: '5px',

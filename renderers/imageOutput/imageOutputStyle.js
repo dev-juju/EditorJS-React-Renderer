@@ -16,7 +16,8 @@ const imageOutputStyle = {
     maxWidth: '100%',
     maxHeight: '400px',
     overflow: 'hidden',
-    backgroundColor: 'aliceblue'
+    backgroundColor: 'aliceblue',
+    border: '1px solid #eee'
   },
   figcaptionStyle: {
     position: 'absolute',

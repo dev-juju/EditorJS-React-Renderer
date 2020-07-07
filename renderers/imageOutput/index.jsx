@@ -31,12 +31,15 @@ const ImageOutput = ({ data, style }) => {
     ...style.img,
     width: data.stretched ? '100%' : '',
   };
+
   const figureStyle = {
     ...imageOutputStyle.figureStyle,
-    border: data.withBorder ? '1px solid #eee' : 'none',
-    // backgroundColor: data.withBackground ? 'aliceblue' : 'none',
     ...style.figure
   };
+
+  if (!data.withBorder) figureStyle.border = 'none';
+  if (!data.withBackground) figureStyle.backgroundColor = 'none';
+
   const figcaptionStyle = {
     ...imageOutputStyle.figcaptionStyle,
     ...style.figcaption
