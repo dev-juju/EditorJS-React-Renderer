@@ -91,8 +91,8 @@ class CodeBoxOutput extends PureComponent {
       if (!style[customStyle] || typeof style[customStyle] !== 'object') style[customStyle] = {};
     });
 
-    const containerStyle = config.disableDefaultStyle ? style.container : { ...codeBoxOutputStyle.container, ...style.container };
-    const codeStyle = config.disableDefaultStyle ? style.code : { ...codeBoxOutputStyle.code, ...style.code };
+    const containerStyle = config && config.disableDefaultStyle ? style.container : { ...codeBoxOutputStyle.container, ...style.container };
+    const codeStyle = config && config.disableDefaultStyle ? style.code : { ...codeBoxOutputStyle.code, ...style.code };
 
     let content = null;
     let language = null;

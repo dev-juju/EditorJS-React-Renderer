@@ -20,7 +20,7 @@ const HeaderOutput = ({ data, style, config }) => {
   if (!data) return '';
   if (!style || typeof style !== 'object') style = {};
 
-  const headerStyle = config.disableDefaultStyle ? style : { ...headerOutputStyle, ...style };
+  const headerStyle = config && config.disableDefaultStyle ? style : { ...headerOutputStyle, ...style };
   let content = null;
 
   if (typeof data === 'string') content = data;

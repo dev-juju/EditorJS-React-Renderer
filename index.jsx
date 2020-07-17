@@ -38,19 +38,22 @@ const Output = ({ data, style, config }) => {
 
   return data.blocks.map((block, index) => {
     switch (block.type) {
-      case 'codeBox': return <CodeBoxOutput key={ index } data={ block.data } style={ style.codeBox || {}} config={ config.codeBox || {}} />;
-      case 'header': return <HeaderOutput key={ index } data={ block.data } style={ style.header || {}} config={ config.header || {}} />;
+      case 'codeBox':
+        return <CodeBoxOutput key={ index } data={ block.data } style={ style.codeBox || {}} config={ config.codeBox || null } />;
+      case 'header':
+        return <HeaderOutput key={ index } data={ block.data } style={ style.header || {}} config={ config.header || null } />;
       case 'paragraph':
-        return <ParagraphOutput key={ index } data={ block.data } style={ style.paragraph || {}} config={ config.paragraph || {}} />;
-      case 'image': return <ImageOutput key={ index } data={ block.data } style={ style.image || {}} config={ config.image || {}} />;
-      case 'embed': return <EmbedOutput key={ index } data={ block.data } style={ style.embed || {}} config={ config.embed || {}} />;
-      case 'table': return <TableOutput key={ index } data={ block.data } style={ style.table || {}} config={ config.table || {}} />;
-      case 'list': return <ListOutput key={ index } data={ block.data } style={ style.list || {}} config={ config.list || {}} />;
+        return <ParagraphOutput key={ index } data={ block.data } style={ style.paragraph || {}} config={ config.paragraph || null } />;
+      case 'image': return <ImageOutput key={ index } data={ block.data } style={ style.image || {}} config={ config.image || null } />;
+      case 'embed': return <EmbedOutput key={ index } data={ block.data } style={ style.embed || {}} config={ config.embed || null } />;
+      case 'table': return <TableOutput key={ index } data={ block.data } style={ style.table || {}} config={ config.table || null } />;
+      case 'list': return <ListOutput key={ index } data={ block.data } style={ style.list || {}} config={ config.list || null } />;
       case 'checklist':
-        return <ChecklistOutput key={ index } data={ block.data } style={ style.checklist || {}} config={ config.checklist || {}} />;
-      case 'quote': return <QuoteOutput key={ index } data={ block.data } style={ style.quote || {}} config={ config.quote || {}} />;
-      case 'warning': return <WarningOutput key={ index } data={ block.data } style={ style.warning || {}} config={ config.warning || {}} />;
-      case 'delimiter': return <DelimiterOutput key={ index } style={ style.delimiter || {}} config={ config.delimiter || {}} />;
+        return <ChecklistOutput key={ index } data={ block.data } style={ style.checklist || {}} config={ config.checklist || null } />;
+      case 'quote': return <QuoteOutput key={ index } data={ block.data } style={ style.quote || {}} config={ config.quote || null } />;
+      case 'warning':
+        return <WarningOutput key={ index } data={ block.data } style={ style.warning || {}} config={ config.warning || null } />;
+      case 'delimiter': return <DelimiterOutput key={ index } style={ style.delimiter || {}} config={ config.delimiter || null } />;
 
       default: return '';
     }

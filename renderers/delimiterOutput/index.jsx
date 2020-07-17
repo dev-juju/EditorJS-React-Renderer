@@ -25,9 +25,9 @@ const DelimiterOutput = ({ style, config }) => {
     if (!style[customStyle] || typeof style[customStyle] !== 'object') style[customStyle] = {};
   });
 
-  const containerStyle = config.disableDefaultStyle ? style.container : { ...delimiterOutputStyle.container, ...style.container };
-  const svgStyle = config.disableDefaultStyle ? style.svg : { ...delimiterOutputStyle.svg, ...style.svg };
-  const pathStyle = config.disableDefaultStyle ? style.path : { ...delimiterOutputStyle.path, ...style.path };
+  const containerStyle = config && config.disableDefaultStyle ? style.container : { ...delimiterOutputStyle.container, ...style.container };
+  const svgStyle = config && config.disableDefaultStyle ? style.svg : { ...delimiterOutputStyle.svg, ...style.svg };
+  const pathStyle = config && config.disableDefaultStyle ? style.path : { ...delimiterOutputStyle.path, ...style.path };
 
   return (
     <div style={ containerStyle }>

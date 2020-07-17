@@ -23,7 +23,7 @@ const Warning = ({ message, customStyle, config }) => (
         <line style={ warningStyle.line } x1='25' y1='37' x2='25' y2='39'/>
         <g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
       </svg>
-      <p style={ config.disableDefaultStyle ? customStyle : { ...warningStyle.message, ...customStyle }}>{ message }</p>
+      <p style={ config && config.disableDefaultStyle ? customStyle : { ...warningStyle.message, ...customStyle }}>{ message }</p>
     </span>
   </div>
 );

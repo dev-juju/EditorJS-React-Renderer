@@ -27,15 +27,15 @@ const ImageOutput = ({ data, style, config }) => {
     if (!style[customStyle] || typeof style[customStyle] !== 'object') style[customStyle] = {};
   });
 
-  const imageStyle = config.disableDefaultStyle ? style.img : { ...imageOutputStyle.imageStyle, ...style.img };
+  const imageStyle = config && config.disableDefaultStyle ? style.img : { ...imageOutputStyle.imageStyle, ...style.img };
   imageStyle.width = data.stretched ? '100%' : '';
 
-  const figureStyle = config.disableDefaultStyle ? style.figure : { ...imageOutputStyle.figureStyle, ...style.figure };
+  const figureStyle = config && config.disableDefaultStyle ? style.figure : { ...imageOutputStyle.figureStyle, ...style.figure };
 
   if (!data.withBorder) figureStyle.border = 'none';
   if (!data.withBackground) figureStyle.backgroundColor = 'none';
 
-  const figcaptionStyle = config.disableDefaultStyle ? style.figcaption : { ...imageOutputStyle.figcaptionStyle, ...style.figcaption };
+  const figcaptionStyle = config && config.disableDefaultStyle ? style.figcaption : { ...imageOutputStyle.figcaptionStyle, ...style.figcaption };
 
   return (
     <figure style={ figureStyle }>

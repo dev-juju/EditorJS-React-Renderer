@@ -26,10 +26,10 @@ const ChecklistOutput = ({ data, style, config }) => {
     if (!style[customStyle] || typeof style[customStyle] !== 'object') style[customStyle] = {};
   });
 
-  const containerStyle = config.disableDefaultStyle ? style.container : { ...checklistOutputStyle.container, ...style.container };
-  const itemStyle = config.disableDefaultStyle ? style.item : { ...checklistOutputStyle.item, ...style.item };
-  const checkboxStyle = config.disableDefaultStyle ? style.checkbox : { ...checklistOutputStyle.checkbox, ...style.checkbox };
-  const labelStyle = config.disableDefaultStyle ? style.label : { ...checklistOutputStyle.label, ...style.label };
+  const containerStyle = config && config.disableDefaultStyle ? style.container : { ...checklistOutputStyle.container, ...style.container };
+  const itemStyle = config && config.disableDefaultStyle ? style.item : { ...checklistOutputStyle.item, ...style.item };
+  const checkboxStyle = config && config.disableDefaultStyle ? style.checkbox : { ...checklistOutputStyle.checkbox, ...style.checkbox };
+  const labelStyle = config && config.disableDefaultStyle ? style.label : { ...checklistOutputStyle.label, ...style.label };
 
   let content = [];
 
