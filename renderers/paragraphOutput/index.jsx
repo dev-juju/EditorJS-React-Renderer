@@ -20,7 +20,7 @@ const ParagraphOutput = ({ data, style, config }) => {
   if (!data) return '';
   if (!style || typeof style !== 'object') style = {};
 
-  const paragraphStyle = config && config.disableDefaultStyle ? style : { ...paragraphOutputStyle, ...style };
+  const paragraphStyle = config.disableDefaultStyle ? style : { ...paragraphOutputStyle, ...style };
   let content = null;
 
   if (typeof data === 'string') content = data;

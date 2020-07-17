@@ -18,12 +18,12 @@ import PropTypes from 'prop-types';
 //#endregion
 
 const Quote = ({ author, message, config, style: { container, content, message: messageStyle, author: authorStyle }}) => (
-  <div style={ config && config.disableDefaultStyle ? quoteStyle.quoteStyle : { ...quoteStyle.quoteStyle, ...container }}>
-    <span style={ config && config.disableDefaultStyle ? quoteStyle.contentStyle : { ...quoteStyle.contentStyle, ...content }}>
-      <p style={ config && config.disableDefaultStyle ? quoteStyle.messageStyle : { ...quoteStyle.messageStyle, ...messageStyle }}>
+  <div style={ config.disableDefaultStyle ? quoteStyle.quoteStyle : { ...quoteStyle.quoteStyle, ...container }}>
+    <span style={ config.disableDefaultStyle ? quoteStyle.contentStyle : { ...quoteStyle.contentStyle, ...content }}>
+      <p style={ config.disableDefaultStyle ? quoteStyle.messageStyle : { ...quoteStyle.messageStyle, ...messageStyle }}>
         <strong>"</strong>{ message }<strong>"</strong>
       </p>
-      <p style={ config && config.disableDefaultStyle ? quoteStyle.authorStyle : { ...quoteStyle.authorStyle, ...authorStyle }}>
+      <p style={ config.disableDefaultStyle ? quoteStyle.authorStyle : { ...quoteStyle.authorStyle, ...authorStyle }}>
         <strong><small>{ author }</small></strong>
       </p>
     </span>

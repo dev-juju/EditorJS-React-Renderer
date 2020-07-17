@@ -35,25 +35,23 @@ import CodeBoxOutput from './renderers/codeBoxOutput/index.jsx';
 const Output = ({ data, style, config }) => {
   if (!data || typeof data !== 'object') return '';
   if (!style || typeof style !== 'object') style = {};
+  if (!config || typeof config !== 'object') config = {};
 
   return data.blocks.map((block, index) => {
     switch (block.type) {
-      case 'codeBox':
-        return <CodeBoxOutput key={ index } data={ block.data } style={ style.codeBox || {}} config={ config.codeBox || null } />;
-      case 'header':
-        return <HeaderOutput key={ index } data={ block.data } style={ style.header || {}} config={ config.header || null } />;
+      case 'codeBox': return <CodeBoxOutput key={ index } data={ block.data } style={ style.codeBox || {}} config={ config.codeBox || {}} />;
+      case 'header': return <HeaderOutput key={ index } data={ block.data } style={ style.header || {}} config={ config.header || {}} />;
       case 'paragraph':
-        return <ParagraphOutput key={ index } data={ block.data } style={ style.paragraph || {}} config={ config.paragraph || null } />;
-      case 'image': return <ImageOutput key={ index } data={ block.data } style={ style.image || {}} config={ config.image || null } />;
-      case 'embed': return <EmbedOutput key={ index } data={ block.data } style={ style.embed || {}} config={ config.embed || null } />;
-      case 'table': return <TableOutput key={ index } data={ block.data } style={ style.table || {}} config={ config.table || null } />;
-      case 'list': return <ListOutput key={ index } data={ block.data } style={ style.list || {}} config={ config.list || null } />;
+        return <ParagraphOutput key={ index } data={ block.data } style={ style.paragraph || {}} config={ config.paragraph || {}} />;
+      case 'image': return <ImageOutput key={ index } data={ block.data } style={ style.image || {}} config={ config.image || {}} />;
+      case 'embed': return <EmbedOutput key={ index } data={ block.data } style={ style.embed || {}} config={ config.embed || {}} />;
+      case 'table': return <TableOutput key={ index } data={ block.data } style={ style.table || {}} config={ config.table || {}} />;
+      case 'list': return <ListOutput key={ index } data={ block.data } style={ style.list || {}} config={ config.list || {}} />;
       case 'checklist':
-        return <ChecklistOutput key={ index } data={ block.data } style={ style.checklist || {}} config={ config.checklist || null } />;
-      case 'quote': return <QuoteOutput key={ index } data={ block.data } style={ style.quote || {}} config={ config.quote || null } />;
-      case 'warning':
-        return <WarningOutput key={ index } data={ block.data } style={ style.warning || {}} config={ config.warning || null } />;
-      case 'delimiter': return <DelimiterOutput key={ index } style={ style.delimiter || {}} config={ config.delimiter || null } />;
+        return <ChecklistOutput key={ index } data={ block.data } style={ style.checklist || {}} config={ config.checklist || {}} />;
+      case 'quote': return <QuoteOutput key={ index } data={ block.data } style={ style.quote || {}} config={ config.quote || {}} />;
+      case 'warning': return <WarningOutput key={ index } data={ block.data } style={ style.warning || {}} config={ config.warning || {}} />;
+      case 'delimiter': return <DelimiterOutput key={ index } style={ style.delimiter || {}} config={ config.delimiter || {}} />;
 
       default: return '';
     }

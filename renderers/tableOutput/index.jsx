@@ -27,10 +27,10 @@ const TableOutput = ({ data, style, config }) => {
     if (!style[customStyle] || typeof style[customStyle] !== 'object') style[customStyle] = {};
   });
 
-  const tableStyle = config && config.disableDefaultStyle ? style.table : { ...tableOutputStyle.table, ...style.table };
-  const trStyle = config && config.disableDefaultStyle ? style.tr : { ...tableOutputStyle.tr, ...style.tr };
-  const thStyle = config && config.disableDefaultStyle ? style.th : { ...tableOutputStyle.th, ...style.th };
-  const tdStyle = config && config.disableDefaultStyle ? style.td : { ...tableOutputStyle.td, ...style.td };
+  const tableStyle = config.disableDefaultStyle ? style.table : { ...tableOutputStyle.table, ...style.table };
+  const trStyle = config.disableDefaultStyle ? style.tr : { ...tableOutputStyle.tr, ...style.tr };
+  const thStyle = config.disableDefaultStyle ? style.th : { ...tableOutputStyle.th, ...style.th };
+  const tdStyle = config.disableDefaultStyle ? style.td : { ...tableOutputStyle.td, ...style.td };
 
   let content = data.content || [];
   if (!Array.isArray(content) || content.length < 1) return '';
@@ -46,7 +46,7 @@ const TableOutput = ({ data, style, config }) => {
     <tbody>
       {
         content.map((row, index) => (
-          <tr key={ index } style={ config && config.disableDefaultStyle ? trStyle : { backgroundColor: index % 2 === 0 ? 'white' : '#f9f9f9', ...trStyle }}>
+          <tr key={ index } style={ config.disableDefaultStyle ? trStyle : { backgroundColor: index % 2 === 0 ? 'white' : '#f9f9f9', ...trStyle }}>
             {
               Array.isArray(row) && row.length > 1 &&
               row.map((columnValue, i) => <td key={ i } style={ tdStyle }>{ ReactHtmlParser(columnValue) }</td>)

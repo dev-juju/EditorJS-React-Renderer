@@ -26,13 +26,13 @@ const EmbedOutput = ({ data, style, config }) => {
     if (!style[customStyle] || typeof style[customStyle] !== 'object') style[customStyle] = {};
   });
 
-  const iframeStyle = config && config.disableDefaultStyle ? style.video : { ...embedOutputStyle.iframeStyle, ...style.video };
+  const iframeStyle = config.disableDefaultStyle ? style.video : { ...embedOutputStyle.iframeStyle, ...style.video };
 
   if (data.width) iframeStyle.width = data.width;
   if (data.height) iframeStyle.height = data.height;
 
-  const figureStyle = config && config.disableDefaultStyle ? style.figure : { ...embedOutputStyle.figureStyle, ...style.figure };
-  const figcaptionStyle = config && config.disableDefaultStyle ? style.figcaption : { ...embedOutputStyle.figcaptionStyle, ...style.figcaption };
+  const figureStyle = config.disableDefaultStyle ? style.figure : { ...embedOutputStyle.figureStyle, ...style.figure };
+  const figcaptionStyle = config.disableDefaultStyle ? style.figcaption : { ...embedOutputStyle.figcaptionStyle, ...style.figcaption };
 
   return (
     <figure style={ figureStyle }>

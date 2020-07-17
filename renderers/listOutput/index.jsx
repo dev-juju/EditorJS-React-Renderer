@@ -22,7 +22,7 @@ const ListOutput = ({ data, style, config }) => {
   if (!data) return '';
   if (!style || typeof style !== 'object') style = {};
 
-  const listStyle = config && config.disableDefaultStyle ? style : { ...listOutputStyle, ...style };
+  const listStyle = config.disableDefaultStyle ? style : { ...listOutputStyle, ...style };
   let content = [], listType = 'unordered';
 
   if (typeof data === 'string') content.push(data);
