@@ -7,6 +7,7 @@
   * Version History
   * ---------------
   * @version 1.0.1 - 2020.02.12 - Covert to React component - Adombang Munang Mbomndih
+  * @version 1.0.2 - 2020.07.17 - Add config parameter - Adombang Munang Mbomndih
  */
 
 //#region imports
@@ -15,7 +16,7 @@ import ReactHtmlParser from 'react-html-parser';
 import Warning from './warning/index.jsx';
 //#endregion
 
-const WarningOutput = ({ data, style }) => {
+const WarningOutput = ({ data, style, config }) => {
   if (!data) return '';
   if (!style || typeof style !== 'object') style = {};
 
@@ -28,7 +29,7 @@ const WarningOutput = ({ data, style }) => {
   }
 
   if (!message) return '';
-  return <Warning title={ ReactHtmlParser(title) } message={ ReactHtmlParser(message) } customStyle={ style } />;
+  return <Warning title={ ReactHtmlParser(title) } message={ ReactHtmlParser(message) } customStyle={ style } config={ config } />;
 };
 
 export default WarningOutput;

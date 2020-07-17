@@ -5,6 +5,10 @@
   * @version 1.0.0
   * @created - 2019.08.20
   * @author - Adombang Munang Mbomndih (Bomdi) <dzedock@gmail.com> (https://bomdisoft.com)
+  *
+  * Version History
+  * ---------------
+  * @version 1.0.1 - 2020.07.17 - Add config parameter - Adombang Munang Mbomndih
   */
 
 //#region imports
@@ -13,11 +17,15 @@ import quoteStyle from './quoteStyle';
 import PropTypes from 'prop-types';
 //#endregion
 
-const Quote = ({ author, message, style: { container, content, message: messageStyle, author: authorStyle }}) => (
-  <div style={{ ...quoteStyle.quoteStyle, ...container }}>
-    <span style={{ ...quoteStyle.contentStyle, ...content }}>
-      <p style={{ ...quoteStyle.messageStyle, ...messageStyle }}><strong>"</strong>{ message }<strong>"</strong></p>
-      <p style={{ ...quoteStyle.authorStyle, ...authorStyle }}><strong><small>{ author }</small></strong></p>
+const Quote = ({ author, message, config, style: { container, content, message: messageStyle, author: authorStyle }}) => (
+  <div style={ config.disableDefaultStyle ? quoteStyle.quoteStyle : { ...quoteStyle.quoteStyle, ...container }}>
+    <span style={ config.disableDefaultStyle ? quoteStyle.contentStyle : { ...quoteStyle.contentStyle, ...content }}>
+      <p style={ config.disableDefaultStyle ? quoteStyle.messageStyle : { ...quoteStyle.messageStyle, ...messageStyle }}>
+        <strong>"</strong>{ message }<strong>"</strong>
+      </p>
+      <p style={ config.disableDefaultStyle ? quoteStyle.authorStyle : { ...quoteStyle.authorStyle, ...authorStyle }}>
+        <strong><small>{ author }</small></strong>
+      </p>
     </span>
   </div>
 );
@@ -25,6 +33,7 @@ const Quote = ({ author, message, style: { container, content, message: messageS
 Quote.propTypes = {
   author: PropTypes.string,
   message: PropTypes.string.isRequired,
+  config: PropTypes.object,
   style: PropTypes.shape({
     container: PropTypes.object.isRequired,
     content: PropTypes.object.isRequired,

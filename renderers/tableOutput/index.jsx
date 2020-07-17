@@ -8,6 +8,7 @@
   * ---------------
   * @version 1.0.1 - 2020.02.12 - Covert to React component - Adombang Munang Mbomndih
   * @version 1.0.2 - 2020.05.21 - Add key to list items - Adombang Munang Mbomndih
+  * @version 1.0.3 - 2020.07.17 - Add config parameter - Adombang Munang Mbomndih
   */
 
 //#region imports
@@ -18,7 +19,7 @@ import tableOutputStyle from './tableOutputStyle';
 
 const supportedStyles = ['table', 'tr', 'th', 'td'];
 
-const TableOutput = ({ data, style }) => {
+const TableOutput = ({ data, style, config }) => {
   if (!data) return '';
   if (!style || typeof style !== 'object') style = {};
 
@@ -26,27 +27,29 @@ const TableOutput = ({ data, style }) => {
     if (!style[customStyle] || typeof style[customStyle] !== 'object') style[customStyle] = {};
   });
 
+  const tableStyle = config.disableDefaultStyle ? style.table : { ...tableOutputStyle.table, ...style.table };
+  const trStyle = config.disableDefaultStyle ? style.tr : { ...tableOutputStyle.tr, ...style.tr };
+  const thStyle = config.disableDefaultStyle ? style.th : { ...tableOutputStyle.th, ...style.th };
+  const tdStyle = config.disableDefaultStyle ? style.td : { ...tableOutputStyle.td, ...style.td };
+
   let content = data.content || [];
   if (!Array.isArray(content) || content.length < 1) return '';
 
   const columnNames = content.shift();
 
-  return <table style={{ ...tableOutputStyle.table, ...style.table }}>
+  return <table style={ tableStyle }>
     <thead>
-      <tr style={{ ...style.tr }}>
-        {
-          columnNames.map((columnName, index) =>
-            <th key={ index } style={{ ...tableOutputStyle.th, ...style.th }}>{ ReactHtmlParser(columnName) }</th>)
-        }
+      <tr style={ trStyle }>
+        { columnNames.map((columnName, index) => <th key={ index } style={ thStyle }>{ ReactHtmlParser(columnName) }</th>) }
       </tr>
     </thead>
     <tbody>
       {
         content.map((row, index) => (
-          <tr key={ index } style={{ backgroundColor: index % 2 === 0 ? 'white' : '#f9f9f9', ...style.tr }}>
+          <tr key={ index } style={ config.disableDefaultStyle ? trStyle : { backgroundColor: index % 2 === 0 ? 'white' : '#f9f9f9', ...trStyle }}>
             {
               Array.isArray(row) && row.length > 1 &&
-              row.map((columnValue, i) => <td key={ i } style={{ ...tableOutputStyle.td, ...style.td }}>{ ReactHtmlParser(columnValue) }</td>)
+              row.map((columnValue, i) => <td key={ i } style={ tdStyle }>{ ReactHtmlParser(columnValue) }</td>)
             }
           </tr>
         ))

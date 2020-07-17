@@ -6,6 +6,7 @@
   *
   * Version History
   * ---------------
+  * @version 1.0.1 - 2020.07.17 - Add config parameter - Adombang Munang Mbomndih
   */
 
 //#region imports
@@ -17,7 +18,7 @@ import checklistStyle from './style.css';
 
 const supportedStyles = ['container', 'item', 'checkbox', 'label'];
 
-const ChecklistOutput = ({ data, style }) => {
+const ChecklistOutput = ({ data, style, config }) => {
   if (!data || !data.items || !Array.isArray(data.items) || data.items.length < 1) return '';
   if (!style || typeof style !== 'object') style = {};
 
@@ -25,22 +26,10 @@ const ChecklistOutput = ({ data, style }) => {
     if (!style[customStyle] || typeof style[customStyle] !== 'object') style[customStyle] = {};
   });
 
-  const containerStyle = {
-    ...checklistOutputStyle.container,
-    ...style.container,
-  };
-  const itemStyle = {
-    ...checklistOutputStyle.item,
-    ...style.item,
-  };
-  const checkboxStyle = {
-    ...checklistOutputStyle.checkbox,
-    ...style.checkbox,
-  };
-  const labelStyle = {
-    ...checklistOutputStyle.label,
-    ...style.label,
-  };
+  const containerStyle = config.disableDefaultStyle ? style.container : { ...checklistOutputStyle.container, ...style.container };
+  const itemStyle = config.disableDefaultStyle ? style.item : { ...checklistOutputStyle.item, ...style.item };
+  const checkboxStyle = config.disableDefaultStyle ? style.checkbox : { ...checklistOutputStyle.checkbox, ...style.checkbox };
+  const labelStyle = config.disableDefaultStyle ? style.label : { ...checklistOutputStyle.label, ...style.label };
 
   let content = [];
 

@@ -13,6 +13,7 @@
   *                             - Add CodeBoxOutput
   *                             - Adombang Munang Mbomndih
   * @version 1.0.2 - 2020.05.21 - Add key to list items - Adombang Munang Mbomndih
+  * @version 1.0.3 - 2020.07.17 - Add config parameter - Adombang Munang Mbomndih
   *
   */
 
@@ -31,23 +32,25 @@ import DelimiterOutput from './renderers/delimiterOutput/index.jsx';
 import CodeBoxOutput from './renderers/codeBoxOutput/index.jsx';
 //#endregion
 
-const Output = ({ data, style }) => {
+const Output = ({ data, style, config }) => {
   if (!data || typeof data !== 'object') return '';
   if (!style || typeof style !== 'object') style = {};
 
   return data.blocks.map((block, index) => {
     switch (block.type) {
-      case 'codeBox': return <CodeBoxOutput key={ index } data={ block.data } style={ style.codeBox || {}} />;
-      case 'header': return <HeaderOutput key={ index } data={ block.data } style={ style.header || {}} />;
-      case 'paragraph': return <ParagraphOutput key={ index } data={ block.data } style={ style.paragraph || {}} />;
-      case 'image': return <ImageOutput key={ index } data={ block.data } style={ style.image || {}} />;
-      case 'embed': return <EmbedOutput key={ index } data={ block.data } style={ style.embed || {}} />;
-      case 'table': return <TableOutput key={ index } data={ block.data } style={ style.table || {}} />;
-      case 'list': return <ListOutput key={ index } data={ block.data } style={ style.list || {}} />;
-      case 'checklist': return <ChecklistOutput key={ index } data={ block.data } style={ style.checklist || {}} />;
-      case 'quote': return <QuoteOutput key={ index } data={ block.data } style={ style.quote || {}} />;
-      case 'warning': return <WarningOutput key={ index } data={ block.data } style={ style.warning || {}} />;
-      case 'delimiter': return <DelimiterOutput key={ index } style={ style.delimiter || {}} />;
+      case 'codeBox': return <CodeBoxOutput key={ index } data={ block.data } style={ style.codeBox || {}} config={ config.codeBox || {}} />;
+      case 'header': return <HeaderOutput key={ index } data={ block.data } style={ style.header || {}} config={ config.header || {}} />;
+      case 'paragraph':
+        return <ParagraphOutput key={ index } data={ block.data } style={ style.paragraph || {}} config={ config.paragraph || {}} />;
+      case 'image': return <ImageOutput key={ index } data={ block.data } style={ style.image || {}} config={ config.image || {}} />;
+      case 'embed': return <EmbedOutput key={ index } data={ block.data } style={ style.embed || {}} config={ config.embed || {}} />;
+      case 'table': return <TableOutput key={ index } data={ block.data } style={ style.table || {}} config={ config.table || {}} />;
+      case 'list': return <ListOutput key={ index } data={ block.data } style={ style.list || {}} config={ config.list || {}} />;
+      case 'checklist':
+        return <ChecklistOutput key={ index } data={ block.data } style={ style.checklist || {}} config={ config.checklist || {}} />;
+      case 'quote': return <QuoteOutput key={ index } data={ block.data } style={ style.quote || {}} config={ config.quote || {}} />;
+      case 'warning': return <WarningOutput key={ index } data={ block.data } style={ style.warning || {}} config={ config.warning || {}} />;
+      case 'delimiter': return <DelimiterOutput key={ index } style={ style.delimiter || {}} config={ config.delimiter || {}} />;
 
       default: return '';
     }

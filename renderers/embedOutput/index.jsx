@@ -6,6 +6,7 @@
   *
   * Version History
   * ---------------
+  * @version 1.0.1 - 2020.07.17 - Add config parameter - Adombang Munang Mbomndih
   *
   */
 
@@ -17,7 +18,7 @@ import embedOutputStyle from './embedOutputStyle';
 
 const supportedStyles = ['video', 'figure', 'figcaption'];
 
-const EmbedOutput = ({ data, style }) => {
+const EmbedOutput = ({ data, style, config }) => {
   if (!data || !data.embed) return '';
   if (!style || typeof style !== 'object') style = {};
 
@@ -25,22 +26,13 @@ const EmbedOutput = ({ data, style }) => {
     if (!style[customStyle] || typeof style[customStyle] !== 'object') style[customStyle] = {};
   });
 
-  const iframeStyle = {
-    ...embedOutputStyle.iframeStyle,
-    ...style.video,
-  };
+  const iframeStyle = config.disableDefaultStyle ? style.video : { ...embedOutputStyle.iframeStyle, ...style.video };
 
   if (data.width) iframeStyle.width = data.width;
   if (data.height) iframeStyle.height = data.height;
 
-  const figureStyle = {
-    ...embedOutputStyle.figureStyle,
-    ...style.figure
-  };
-  const figcaptionStyle = {
-    ...embedOutputStyle.figcaptionStyle,
-    ...style.figcaption
-  };
+  const figureStyle = config.disableDefaultStyle ? style.figure : { ...embedOutputStyle.figureStyle, ...style.figure };
+  const figcaptionStyle = config.disableDefaultStyle ? style.figcaption : { ...embedOutputStyle.figcaptionStyle, ...style.figcaption };
 
   return (
     <figure style={ figureStyle }>

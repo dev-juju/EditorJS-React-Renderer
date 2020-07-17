@@ -8,6 +8,7 @@
   * ---------------
   * @version 1.0.1 - 2020.02.12 - Covert to React component - Adombang Munang Mbomndih
   * @version 1.0.2 - 2020.05.21 - Codex width overrides user defined width - Adombang Munang Mbomndih
+  * @version 1.0.3 - 2020.07.17 - Add config parameter - Adombang Munang Mbomndih
   */
 
 //#region imports
@@ -18,7 +19,7 @@ import imageOutputStyle from './imageOutputStyle';
 
 const supportedStyles = ['img', 'figure', 'figcaption'];
 
-const ImageOutput = ({ data, style }) => {
+const ImageOutput = ({ data, style, config }) => {
   if (!data || !data.file || !data.file.url) return '';
   if (!style || typeof style !== 'object') style = {};
 
@@ -26,24 +27,15 @@ const ImageOutput = ({ data, style }) => {
     if (!style[customStyle] || typeof style[customStyle] !== 'object') style[customStyle] = {};
   });
 
-  const imageStyle = {
-    ...imageOutputStyle.imageStyle,
-    ...style.img,
-    width: data.stretched ? '100%' : '',
-  };
+  const imageStyle = config.disableDefaultStyle ? style.img : { ...imageOutputStyle.imageStyle, ...style.img };
+  imageStyle.width = data.stretched ? '100%' : '';
 
-  const figureStyle = {
-    ...imageOutputStyle.figureStyle,
-    ...style.figure
-  };
+  const figureStyle = config.disableDefaultStyle ? style.figure : { ...imageOutputStyle.figureStyle, ...style.figure };
 
   if (!data.withBorder) figureStyle.border = 'none';
   if (!data.withBackground) figureStyle.backgroundColor = 'none';
 
-  const figcaptionStyle = {
-    ...imageOutputStyle.figcaptionStyle,
-    ...style.figcaption
-  };
+  const figcaptionStyle = config.disableDefaultStyle ? style.figcaption : { ...imageOutputStyle.figcaptionStyle, ...style.figcaption };
 
   return (
     <figure style={ figureStyle }>

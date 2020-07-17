@@ -7,6 +7,7 @@
   * Version History
   * ---------------
   * @version 1.0.1 - 2020.02.12 - Covert to React component - Adombang Munang Mbomndih
+  * @version 1.0.2 - 2020.07.17 - Add config parameter - Adombang Munang Mbomndih
   */
 
 //#region imports
@@ -17,7 +18,7 @@ import Quote from './quote/index.jsx';
 
 const supportedStyles = ['container', 'content', 'author', 'message'];
 
-const QuoteOutput = ({ data, style }) => {
+const QuoteOutput = ({ data, style, config }) => {
   if (!data) return '';
   if (!style || typeof style !== 'object') style = {};
 
@@ -36,7 +37,7 @@ const QuoteOutput = ({ data, style }) => {
   }
 
   if (!content) return '';
-  return <Quote author={ ReactHtmlParser(caption) } message={ ReactHtmlParser(content) } style={ style } />;
+  return <Quote author={ ReactHtmlParser(caption) } message={ ReactHtmlParser(content) } style={ style } config={ config } />;
 };
 
 export default QuoteOutput;

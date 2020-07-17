@@ -7,6 +7,7 @@
   * Version History
   * ---------------
   * @version 1.0.1 - 2020.02.12 - Covert to React component - Adombang Munang Mbomndih
+  * @version 1.0.2 - 2020.07.17 - Add config parameter - Adombang Munang Mbomndih
   */
 
 //#region imports
@@ -17,11 +18,11 @@ import listOutputStyle from './listOutputStyle';
 
 const validListStyles = ['ordered', 'unordered'];
 
-const ListOutput = ({ data, style }) => {
+const ListOutput = ({ data, style, config }) => {
   if (!data) return '';
   if (!style || typeof style !== 'object') style = {};
 
-  const listStyle = { ...listOutputStyle, ...style };
+  const listStyle = config.disableDefaultStyle ? style : { ...listOutputStyle, ...style };
   let content = [], listType = 'unordered';
 
   if (typeof data === 'string') content.push(data);

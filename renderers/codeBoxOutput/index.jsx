@@ -3,6 +3,10 @@
   * @version 1.0.0
   * @created - 2020.02.12
   * @author - Adombang Munang Mbomndih (Bomdi) <dzedock@gmail.com> (https://bomdisoft.com)
+  *
+  * Version History
+  * ---------------
+  * @version 1.0.1 - 2020.07.17 - Add config parameter - Adombang Munang Mbomndih
   */
 
 //#region imports
@@ -79,13 +83,16 @@ class CodeBoxOutput extends PureComponent {
   };
 
   render(){
-    let { data, style } = this.props;
+    let { data, style, config } = this.props;
     if (!data) return '';
     if (!style || typeof style !== 'object') style = {};
 
     this.supportedStyles.forEach(customStyle => {
       if (!style[customStyle] || typeof style[customStyle] !== 'object') style[customStyle] = {};
     });
+
+    const containerStyle = config.disableDefaultStyle ? style.container : { ...codeBoxOutputStyle.container, ...style.container };
+    const codeStyle = config.disableDefaultStyle ? style.code : { ...codeBoxOutputStyle.code, ...style.code };
 
     let content = null;
     let language = null;
@@ -98,8 +105,8 @@ class CodeBoxOutput extends PureComponent {
 
     if (!content) return '';
     return (
-      <pre style={{ ...codeBoxOutputStyle.container, ...style.container }}>
-        <code ref={ this.codeAreaRef } style={{ ...codeBoxOutputStyle.code, ...style.code }} className={ language }>{ ReactHtmlParser(content) }</code>
+      <pre style={ containerStyle }>
+        <code ref={ this.codeAreaRef } style={ codeStyle } className={ language }>{ ReactHtmlParser(content) }</code>
       </pre>
     );
   }
