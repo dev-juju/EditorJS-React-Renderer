@@ -291,7 +291,25 @@ td{
 }
 ```
 
-In the next version, you will be able to pass properties like **class** and **id** to output methods which you can target in your css files.
+
+## Config
+
+All renderers accept a **config** object parameter. If you wish to disable a default styles and only apply your own, you can pass a **disableDefaultStyle** value of **true** to the element's config options
+
+```javascript
+const config = {
+  header: {
+    disableDefaultStyle: true,
+  },
+  image: {
+    disableDefaultStyle: true,
+  },
+};
+
+const Post = () => <section><Output data={ data } style={ style } config={ config } /></section>;
+
+export default Post;
+```
 
 
 ## Server Side Rendering
@@ -338,5 +356,3 @@ There's more coming...
 Adombang Munang Mbomndih (Bomdi)
 
 LinkedIn: [LinkedIn](http://www.linkedin.com/in/adombangmunang)
-
-![](https://firebasestorage.googleapis.com/v0/b/editorjs-react-renderer.appspot.com/o/Bomdi%202.jpg?alt=media&token=323c4b3e-8542-4031-9660-74280a8cfefc)
