@@ -3741,13 +3741,11 @@ ecc-jsbn@~0.1.1:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
 
-editorjs-react-renderer@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/editorjs-react-renderer/-/editorjs-react-renderer-2.3.1.tgz#3040f495db33391f425d610fbf307f8a38b1bb91"
-  integrity sha512-ozGX+hRcD9pgoYLL3ixMIzUhL7Ux634Fs8m3rzQSV8cn47gMIkiHxXxMsfhpPUQWDHCKv4Z0pLRyrup09vbAzw==
+editorjs-react-renderer@^2.3.3:
+  version "2.3.6"
+  resolved "https://registry.yarnpkg.com/editorjs-react-renderer/-/editorjs-react-renderer-2.3.6.tgz#4fe49bfa198edbf6b3d42760e02b372f02782f6c"
+  integrity sha512-dgog3dVD7vVtndOO7Q734/u7hmOWcZbM0A+PAhHZUs+xIRbKctpq226YJfuLnnaHd7xokeRcWGk3ihbqQArXBw==
   dependencies:
-    prop-types "^15.7.2"
-    react "^16.12.0"
     react-html-parser "2.0.2"
 
 ee-first@1.1.1:
@@ -3761,9 +3759,9 @@ electron-to-chromium@^1.3.378, electron-to-chromium@^1.3.413:
   integrity sha512-eieqkoM2hCkZZRhETKyCouMziDV3l4XEKHRLuzcHG+HV+P7PeODU/z9HAmBgMQkzvHg2DoyQhfIDmmeguLZT/Q==
 
 elliptic@^6.0.0, elliptic@^6.5.2:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.5.2.tgz#05c5678d7173c049d8ca433552224a495d0e3762"
-  integrity sha512-f4x70okzZbIQl/NSRLkI/+tteV/9WqL98zx+SQ69KbXxmVrmjwsNUPn/gYJJ0sHvEak24cZgHIPegRePAtA/xw==
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.5.3.tgz#cb59eb2efdaf73a0bd78ccd7015a62ad6e0f93d6"
+  integrity sha512-IMqzv5wNQf+E6aHeIqATs0tOLeOTwj1QKbRcS3jBbYkl5oLAserA8yJTT7/VyHUYG91PRmPyeQDObKLPpeS4dw==
   dependencies:
     bn.js "^4.4.0"
     brorand "^1.0.1"
@@ -8585,7 +8583,7 @@ react-scripts@^3.4.1:
   optionalDependencies:
     fsevents "2.1.2"
 
-react@^16.12.0, react@^16.13.1:
+react@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
   integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
