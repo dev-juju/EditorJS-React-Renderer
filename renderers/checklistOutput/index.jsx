@@ -34,11 +34,15 @@ const ChecklistOutput = ({ data, style, config }) => {
   let content = [];
 
   if (typeof data === 'object') {
-    if (data.items && Array.isArray(data.items)) content = data.items.map((item, index) =>
-      <div key={ index } style={ itemStyle }>
-        <input id={ index } style={ checkboxStyle } type='checkbox' checked={ item.checked } />
-        <label for={ index } style={ labelStyle }>{ ReactHtmlParser(item.text) }</label>
-      </div>
+    if (data.items && Array.isArray(data.items)) content = data.items.map((item, index) =>{
+      const randomId=Math.ceil(Math.random()*Math.pow(36,6)).toString(36)
+      return (
+        <div key={ index } style={ itemStyle }>
+          <input id={ randomId } style={ checkboxStyle } type='checkbox' checked={ item.checked } readOnly />
+          <label htmlFor={ randomId } style={ labelStyle }>{ ReactHtmlParser(item.text) }</label>
+        </div>
+      )
+      }
     );
   }
 
