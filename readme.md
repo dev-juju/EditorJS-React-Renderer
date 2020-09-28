@@ -136,6 +136,16 @@ const data = {
       "type": "delimiter",
       "data": {}
     },
+    {
+      "type": "video",
+      "data": {
+        "url": "https://cdn.videvo.net/videvo_files/video/free/2013-07/originalContent/hd0079.mov",
+        "muted": false,
+        "caption": "Caption this",
+        "autoplay": false,
+        "controls": true,
+        "stretched": false
+      },
   ],
   "version": "2.14.0"
 };
@@ -199,6 +209,18 @@ const style = {
   },
   image: {
     img: {
+      maxHeight: '400px',
+    },
+    figure: {
+      backgroundColor: 'aliceblue',
+      border: '1px solid #eee'
+    },
+    figcaption: {
+      borderRadius: '5px',
+    }
+  },
+  video: {
+    video: {
       maxHeight: '400px',
     },
     figure: {
@@ -304,6 +326,9 @@ const config = {
   image: {
     disableDefaultStyle: true,
   },
+  video: {
+    disableDefaultStyle: true,
+  },
 };
 
 const Post = () => <section><Output data={ data } style={ style } config={ config } /></section>;
@@ -327,6 +352,7 @@ There is full support for SSR
 * ParagraphOutput(data[,style])
 * TableOutput(data[,style])
 * ImageOutput(data[,style])
+* VideoOutput(data[,style])
 * EmbedOutput(data[,style])
 * ListOutput(data[,style])
 * ChecklistOutput(data[,style])
@@ -340,6 +366,7 @@ There is full support for SSR
 * [Header](https://github.com/editor-js/header)
 * [Paragraph](https://github.com/editor-js/paragraph)
 * [Image](https://github.com/editor-js/image)
+* [Video](https://github.com/PaulKinlan/simple-video)
 * [Embed](https://github.com/editor-js/embed)
 * [List](https://github.com/editor-js/list)
 * [Checklist](https://github.com/editor-js/checklist)
