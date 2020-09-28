@@ -38,6 +38,7 @@ const VideoOutput = ({ data, style, config }) => {
     <figure style={ figureStyle }>
       <video style={ videoStyle } autoPlay={ data.autoPlay } muted={ data.muted } controls={ data.controls }>
         <source src={ data.url } />
+        Your browser does not support the video tag.
       </video>
       { data.caption && <figcaption style={ figcaptionStyle }>{ ReactHtmlParser(data.caption) }</figcaption> }
     </figure>

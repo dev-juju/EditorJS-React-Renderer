@@ -61,6 +61,6 @@ const Output = ({ data, style, config }) => {
 };
 
 export {
-  HeaderOutput, ParagraphOutput, ImageOutput, EmbedOutput, TableOutput, CodeBoxOutput, ListOutput, QuoteOutput,
+  HeaderOutput, ParagraphOutput, ImageOutput, VideoOutput, EmbedOutput, TableOutput, CodeBoxOutput, ListOutput, QuoteOutput,
   ChecklistOutput, WarningOutput, DelimiterOutput, Output as default
 };
