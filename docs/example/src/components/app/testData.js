@@ -194,7 +194,7 @@ module.exports = {
     {
       "type": "header",
       "data": {
-        "text": "Paragraph with checklist and warning",
+        "text": "Paragraph with warning and simple video",
         "level": 4
       }
     },
@@ -227,6 +227,17 @@ module.exports = {
         "controls": true,
         "stretched": false
       },
+    },
+    {
+      "type": "video",
+      "data": {
+        "url": "https://cdn.videvo.net/videvo_files/video/free/2013-07/originalContent/hd0079.mov",
+        "muted": false,
+        "caption": "Caption this",
+        "autoplay": false,
+        "controls": true,
+        "stretched": false
+      }
     }
   ],
   "version": "2.14.0"
