@@ -22,6 +22,7 @@ import React from 'react';
 import HeaderOutput from './renderers/headerOutput/index.jsx';
 import ParagraphOutput from './renderers/paragraphOutput/index.jsx';
 import ImageOutput from './renderers/imageOutput/index.jsx';
+import VideoOutput from './renderers/videoOutput/index.jsx';
 import EmbedOutput from './renderers/embedOutput/index.jsx';
 import ListOutput from './renderers/listOutput/index.jsx';
 import QuoteOutput from './renderers/quoteOutput/index.jsx';
@@ -44,6 +45,7 @@ const Output = ({ data, style, config }) => {
       case 'paragraph':
         return <ParagraphOutput key={ index } data={ block.data } style={ style.paragraph || {}} config={ config.paragraph || {}} />;
       case 'image': return <ImageOutput key={ index } data={ block.data } style={ style.image || {}} config={ config.image || {}} />;
+      case 'video': return <VideoOutput key={ index } data={ block.data } style={ style.video || {}} config={ config.video || {}} />;
       case 'embed': return <EmbedOutput key={ index } data={ block.data } style={ style.embed || {}} config={ config.embed || {}} />;
       case 'table': return <TableOutput key={ index } data={ block.data } style={ style.table || {}} config={ config.table || {}} />;
       case 'list': return <ListOutput key={ index } data={ block.data } style={ style.list || {}} config={ config.list || {}} />;

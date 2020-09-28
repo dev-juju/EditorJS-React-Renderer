@@ -217,6 +217,17 @@ module.exports = {
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
       }
     },
+    {
+      "type": "video",
+      "data": {
+        "url": "https://cdn.videvo.net/videvo_files/video/free/2013-07/originalContent/hd0079.mov",
+        "muted": false,
+        "caption": "Caption this",
+        "autoplay": false,
+        "controls": true,
+        "stretched": false
+      },
+    }
   ],
   "version": "2.14.0"
 };
