@@ -16,7 +16,7 @@ import ReactHtmlParser from 'react-html-parser';
 import Warning from './warning/index.jsx';
 //#endregion
 
-const supportedStyles = ['container', 'title', 'message'];
+const supportedStyles = ['container', 'icon', 'title', 'message'];
 
 const WarningOutput = ({ data, style, config }) => {
   if (!data) return '';

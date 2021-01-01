@@ -10,8 +10,7 @@ const warningStyle = {
     fontFamily
   },
   icon: {
-    width: '20px',
-    height: '20px',
+    width: '30px',
     enableBackground: 'new 0 0 50 50',
     fontFamily
   },
