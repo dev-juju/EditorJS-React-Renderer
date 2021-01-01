@@ -10,31 +10,26 @@
 //#region imports
 import React from 'react';
 import warningStyle from './warningStyle';
-import PropTypes from 'prop-types';
 //#endregion
 
-const Warning = ({ message, customStyle, config }) => (
-  <div style={ warningStyle.warning }>
-    <span style={ warningStyle.content }>
-      <svg style={ warningStyle.icon }  version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' x='0px' y='0px'
-          viewBox='0 0 50 50' xmlSpace='preserve'>
+const Warning = ({ title, message, customStyle={}, config }) => {
+  const containerStyle = config.disableDefaultStyle ? customStyle.container : { ...warningStyle.container, ...customStyle.container };
+  const titleStyle = config.disableDefaultStyle ? customStyle.title : { ...warningStyle.title, ...customStyle.title };
+  const messageStyle = config.disableDefaultStyle ? customStyle.message : { ...warningStyle.message, ...customStyle.message };
+
+  return (
+    <div style={ containerStyle }>
+      <svg style={ warningStyle.icon }  version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink'
+        x='0px' y='0px' viewBox='0 0 50 50' xmlSpace='preserve'>
         <circle style={ warningStyle.circle } cx='25' cy='25' r='25'/>
-        <line style={ warningStyle.line } x1='25' y1='10' x2='25' y2='32'/>
+        <line style={ warningStyle.line } x1='25' y1='10' x2='25' y2='28'/>
         <line style={ warningStyle.line } x1='25' y1='37' x2='25' y2='39'/>
         <g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
       </svg>
-      <p style={ config.disableDefaultStyle ? customStyle : { ...warningStyle.message, ...customStyle }}>{ message }</p>
-    </span>
-  </div>
-);
-
-Warning.propTypes = {
-  message: PropTypes.any.isRequired,
-  customStyle: PropTypes.object,
-};
-
-Warning.defaultProps = {
-  customStyle: {}
+      <p style={ titleStyle }>{ title }:</p>
+      <p style={ messageStyle }>{ message }</p>
+    </div>
+  );
 };
 
 export default Warning;

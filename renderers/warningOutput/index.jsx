@@ -16,10 +16,15 @@ import ReactHtmlParser from 'react-html-parser';
 import Warning from './warning/index.jsx';
 //#endregion
 
+const supportedStyles = ['container', 'title', 'message'];
+
 const WarningOutput = ({ data, style, config }) => {
   if (!data) return '';
   if (!style || typeof style !== 'object') style = {};
 
+  supportedStyles.forEach(customStyle => {
+    if (!style[customStyle] || typeof style[customStyle] !== 'object') style[customStyle] = {};
+  });
   let message = null, title = 'Warning';
 
   if (typeof data === 'string') message = data;

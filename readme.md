@@ -279,8 +279,16 @@ const style = {
       boxSizing: 'border-box',
     },
   },
-  warning: {
-    fontWeight: 400,
+  warning: {'container', 'titleHolder', 'title', 'message'
+    container: {
+      width: '100%',
+    },
+    title: {
+      fontWeight: 500
+    },
+    message: {
+      fontSize: '14px'
+    },
   },
   delimiter: {
     container: {},

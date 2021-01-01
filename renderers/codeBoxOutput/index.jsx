@@ -12,7 +12,6 @@
 //#region imports
 import React, { PureComponent } from 'react';
 import ReactHtmlParser from 'react-html-parser';
-import PropTypes from 'prop-types';
 
 import codeBoxOutputStyle from './codeBoxOutputStyle';
 //#endregion
@@ -26,7 +25,7 @@ class CodeBoxOutput extends PureComponent {
   }
 
   componentDidMount(){
-    let { data, style } = this.props;
+    let { data={}, style='' } = this.props;
 
     if (data && data.theme && this.codeAreaRef.current) {
       this.injectHighlightJSCSSElement(data.theme);
@@ -110,16 +109,6 @@ class CodeBoxOutput extends PureComponent {
       </pre>
     );
   }
-};
-
-CodeBoxOutput.propTypes = {
-  style: PropTypes.object,
-  data: PropTypes.object,
-};
-
-CodeBoxOutput.defaultProps = {
-  style: '',
-  data: {}
 };
 
 export default CodeBoxOutput;

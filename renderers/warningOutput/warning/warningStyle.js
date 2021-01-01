@@ -1,34 +1,35 @@
 import { fontFamily } from '../../../style/template';
 
 const warningStyle = {
-  warning: {
+  container: {
     width: '100%',
-    margin: '5px 0',
+    margin: '20px 8px',
     display: 'flex',
     justifyContent: 'flex-start',
-    alignItems: 'center',
-    fontFamily
-  },
-  content: {
-    minWidth: '240px',
-    margin: '5px 0',
-    padding: '0 8px',
-    display: 'flex',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    flexWrap: 'wrap',
+    alignItems: 'flex-start',
     fontFamily
   },
   icon: {
-    marginRight: '10px',
     width: '20px',
     height: '20px',
     enableBackground: 'new 0 0 50 50',
     fontFamily
   },
+  title: {
+    fontFamily,
+    fontWeight: 400,
+    textTransform: 'uppercase',
+    margin: 0,
+    marginRight: '15px',
+    marginLeft: '5px',
+    fontSize: '90%',
+  },
   message: {
     fontFamily,
-    fontWeight: 400
+    color: 'goldenrod',
+    textAlight: 'left',
+    fontSize: '90%',
+    margin: 0,
   },
   circle: {
     fill: '#EFCE4A'
@@ -36,7 +37,7 @@ const warningStyle = {
   line: {
     fill: 'none',
     stroke: '#FFFFFF',
-    strokeWidth: 2,
+    strokeWidth: 5,
     strokeLinecap: 'round',
     strokeMiterlimit: 10
   }

@@ -14,10 +14,9 @@
 //#region imports
 import React from 'react';
 import quoteStyle from './quoteStyle';
-import PropTypes from 'prop-types';
 //#endregion
 
-const Quote = ({ author, message, config, style: { container, content, message: messageStyle, author: authorStyle }}) => (
+const Quote = ({ author='Unknown', message, config, style: { container, content, message: messageStyle, author: authorStyle }}) => (
   <div style={ config.disableDefaultStyle ? quoteStyle.quoteStyle : { ...quoteStyle.quoteStyle, ...container }}>
     <span style={ config.disableDefaultStyle ? quoteStyle.contentStyle : { ...quoteStyle.contentStyle, ...content }}>
       <p style={ config.disableDefaultStyle ? quoteStyle.messageStyle : { ...quoteStyle.messageStyle, ...messageStyle }}>
@@ -29,21 +28,5 @@ const Quote = ({ author, message, config, style: { container, content, message: 
     </span>
   </div>
 );
-
-Quote.propTypes = {
-  author: PropTypes.string,
-  message: PropTypes.string.isRequired,
-  config: PropTypes.object,
-  style: PropTypes.shape({
-    container: PropTypes.object.isRequired,
-    content: PropTypes.object.isRequired,
-    message: PropTypes.object.isRequired,
-    author: PropTypes.object.isRequired
-  }),
-};
-
-Quote.defaultProps = {
-  author: 'Unknown'
-};
 
 export default Quote;
