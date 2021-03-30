@@ -39,7 +39,7 @@ const Output = ({ data, style, config }) => {
   if (!config || typeof config !== 'object') config = {};
 
   return data.blocks.map((block, index) => {
-    switch (block.type) {
+    switch (block.type.toLowerCase()) {
       case 'codeBox': return <CodeBoxOutput key={ index } data={ block.data } style={ style.codeBox || {}} config={ config.codeBox || {}} />;
       case 'header': return <HeaderOutput key={ index } data={ block.data } style={ style.header || {}} config={ config.header || {}} />;
       case 'paragraph':
