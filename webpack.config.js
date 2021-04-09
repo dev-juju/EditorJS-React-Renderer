@@ -15,12 +15,12 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        loader: 'babel-loader',
+        use: 'babel-loader',
         exclude: /node_modules/,
       },
       {
         test: /\.css$/,
-        loader: 'isomorphic-style-loader!css-loader',
+        use: ['isomorphic-style-loader', 'css-loader'],
         exclude: /node_modules/,
       }
     ],

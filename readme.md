@@ -11,6 +11,11 @@ A library for rendering styled, responsive and flexible React components from [b
 This package works well with output from the Editor.js rich text editor library.
 However, there is no dependency on Editor.js. We only require that your data is in a similar block style format.
 
+## 💗 If you like this package 💗
+
+Support us on Patreon
+
+ 👉  [https://www.patreon.com/bomdisoft](https://www.patreon.com/bomdisoft)
 
 ## Setup
 
