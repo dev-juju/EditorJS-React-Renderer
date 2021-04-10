@@ -15,7 +15,7 @@ However, there is no dependency on Editor.js. We only require that your data is 
 
 Support us on Patreon
 
- 👉  [https://www.patreon.com/bomdisoft](https://www.patreon.com/bomdisoft)
+ 👉  [https://www.patreon.com/devjuju](https://www.patreon.com/devjuju)
 
 ## Setup
 
