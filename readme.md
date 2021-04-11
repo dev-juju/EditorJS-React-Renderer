@@ -67,17 +67,6 @@ const data = {
       }
     },
     {
-      "type" : "embed",
-      "data" : {
-        "service" : "coub",
-        "source" : "https://coub.com/view/1czcdf",
-        "embed" : "https://coub.com/embed/1czcdf",
-        "width" : 580,
-        "height" : 320,
-        "caption" : "My Life"
-      }
-    },
-    {
       "type": "paragraph",
       "data": {
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque accusantium veritatis dolorum cum amet! Ipsa ullam nisi, dolor explicabo ut nobis repudiandae saepe illo error facilis consectetur, quisquam assumenda dolorum."
@@ -131,6 +120,37 @@ export default Todo;
 ```
 
 See the [API](#api) section for more block output components
+
+
+## Custom Renderers
+
+We provide several granular styling options so that you have the ability and flexibility to customize the look and feel of the rendered components.
+However, you might still have a need to override the default renderers for certain blocks.
+You can do that by passing a *renderers* prop to the **Output** component. The renderers prop is an object whose keys are the names of the supported components and whose values are the corresponding renderer definitions to override the defaults.
+Custom renderers should expect to receive *data*, *style*, *classNames* and *config* props.
+
+```javascript
+// Define your custom renderer
+// It should expect to receive data, style, classNames and config props. It's up to you to handle those props.
+const CustomParagraphRenderer = ({ data, style, classNames, config }) => {
+  // validate props here...or not :)
+
+  let content = null;
+
+  if (typeof data === 'string') content = data;
+  else if (typeof data === 'object' && data.text && typeof data.text === 'string') content = data.text;
+
+  return content ? <p style={ style } className={ classNames }>{ ReactHtmlParser(content) }</p> : '';
+};
+
+const renderers = {
+  paragraph: CustomParagraphRenderer
+};
+
+const Todo = () => <Output renderers={ renderers } data={...} style={...} classNames={...} config={...} />;
+
+export default Todo;
+```
 
 
 ## Style
@@ -343,6 +363,7 @@ There's more coming...
 
 ## Author
 
-Adombang Munang Mbomndih (Bomdi)
+Dev Juju (Bomdi)
 
-LinkedIn: [LinkedIn](http://www.linkedin.com/in/adombangmunang)
+[Website](https://devjuju.com)
+[LinkedIn](http://www.linkedin.com/in/adombangmunang)
