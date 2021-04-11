@@ -14,46 +14,76 @@
   *                             - Adombang Munang Mbomndih
   * @version 1.0.2 - 2020.05.21 - Add key to list items - Adombang Munang Mbomndih
   * @version 1.0.3 - 2020.07.17 - Add config parameter - Adombang Munang Mbomndih
+  * @version 1.1.0 - 2021.04.11 - Add classNames parameter - Adombang Munang Mbomndih
   *
   */
 
 //#region imports
 import React from 'react';
-import HeaderOutput from './renderers/headerOutput/index.jsx';
-import ParagraphOutput from './renderers/paragraphOutput/index.jsx';
-import ImageOutput from './renderers/imageOutput/index.jsx';
-import VideoOutput from './renderers/videoOutput/index.jsx';
-import EmbedOutput from './renderers/embedOutput/index.jsx';
-import ListOutput from './renderers/listOutput/index.jsx';
-import QuoteOutput from './renderers/quoteOutput/index.jsx';
-import ChecklistOutput from './renderers/checklistOutput/index.jsx';
-import WarningOutput from './renderers/warningOutput/index.jsx';
-import TableOutput from './renderers/tableOutput/index.jsx';
-import DelimiterOutput from './renderers/delimiterOutput/index.jsx';
-import CodeBoxOutput from './renderers/codeBoxOutput/index.jsx';
+import HeaderOutput from './renderers/header/index.jsx';
+import ParagraphOutput from './renderers/paragraph/index.jsx';
+import ImageOutput from './renderers/image/index.jsx';
+import VideoOutput from './renderers/video/index.jsx';
+import EmbedOutput from './renderers/embed/index.jsx';
+import ListOutput from './renderers/list/index.jsx';
+import QuoteOutput from './renderers/quote/index.jsx';
+import ChecklistOutput from './renderers/checklist/index.jsx';
+import WarningOutput from './renderers/warning/index.jsx';
+import TableOutput from './renderers/table/index.jsx';
+import DelimiterOutput from './renderers/delimiter/index.jsx';
+import CodeBoxOutput from './renderers/codeBox/index.jsx';
 //#endregion
 
-const Output = ({ data, style, config }) => {
+const Output = ({ data, style, classNames, config, renderers }) => {
   if (!data || typeof data !== 'object') return '';
   if (!style || typeof style !== 'object') style = {};
+  if (!classNames || typeof classNames !== 'object') classNames = {};
   if (!config || typeof config !== 'object') config = {};
+  if (!renderers || typeof renderers !== 'object') renderers = {};
 
-  return data.blocks.map((block, index) => {
+  return data.blocks.map((block, i) => {
+    let Renderer = null;
+
     switch (block.type.toLowerCase()) {
-      case 'codebox': return <CodeBoxOutput key={ index } data={ block.data } style={ style.codeBox || {}} config={ config.codeBox || {}} />;
-      case 'header': return <HeaderOutput key={ index } data={ block.data } style={ style.header || {}} config={ config.header || {}} />;
+      case 'codebox':
+        Renderer = renderers.codeBox || CodeBoxOutput;
+        return <Renderer key={ i } data={ block.data } style={ style.codeBox || {}} config={ config.codeBox || {}} classNames={ classNames.codeBox || {}} />;
+      case 'header':
+        Renderer = renderers.header || HeaderOutput;
+        return <Renderer key={ i } data={ block.data } style={ style.header || {}} config={ config.header || {}} classNames={ classNames.header || {}} />;
       case 'paragraph':
-        return <ParagraphOutput key={ index } data={ block.data } style={ style.paragraph || {}} config={ config.paragraph || {}} />;
-      case 'image': return <ImageOutput key={ index } data={ block.data } style={ style.image || {}} config={ config.image || {}} />;
-      case 'video': return <VideoOutput key={ index } data={ block.data } style={ style.video || {}} config={ config.video || {}} />;
-      case 'embed': return <EmbedOutput key={ index } data={ block.data } style={ style.embed || {}} config={ config.embed || {}} />;
-      case 'table': return <TableOutput key={ index } data={ block.data } style={ style.table || {}} config={ config.table || {}} />;
-      case 'list': return <ListOutput key={ index } data={ block.data } style={ style.list || {}} config={ config.list || {}} />;
+        Renderer = renderers.paragraph || ParagraphOutput;
+        return <Renderer key={ i } data={ block.data } style={ style.paragraph || {}} config={ config.paragraph || {}}
+          classNames={ classNames.paragraph || {}} />;
+      case 'image':
+        Renderer = renderers.image || ImageOutput;
+        return <Renderer key={ i } data={ block.data } style={ style.image || {}} config={ config.image || {}} classNames={ classNames.image || {}} />;
+      case 'video':
+        Renderer = renderers.video || VideoOutput;
+        return <Renderer key={ i } data={ block.data } style={ style.video || {}} config={ config.video || {}} classNames={ classNames.video || {}} />;
+      case 'embed':
+        Renderer = renderers.embed || EmbedOutput;
+        return <Renderer key={ i } data={ block.data } style={ style.embed || {}} config={ config.embed || {}} classNames={ classNames.embed || {}} />;
+      case 'table':
+        Renderer = renderers.table || TableOutput;
+        return <Renderer key={ i } data={ block.data } style={ style.table || {}} config={ config.table || {}} classNames={ classNames.table || {}} />;
+      case 'list':
+        Renderer = renderers.list || ListOutput;
+        return <Renderer key={ i } data={ block.data } style={ style.list || {}} config={ config.list || {}} classNames={ classNames.list || {}} />;
       case 'checklist':
-        return <ChecklistOutput key={ index } data={ block.data } style={ style.checklist || {}} config={ config.checklist || {}} />;
-      case 'quote': return <QuoteOutput key={ index } data={ block.data } style={ style.quote || {}} config={ config.quote || {}} />;
-      case 'warning': return <WarningOutput key={ index } data={ block.data } style={ style.warning || {}} config={ config.warning || {}} />;
-      case 'delimiter': return <DelimiterOutput key={ index } style={ style.delimiter || {}} config={ config.delimiter || {}} />;
+        Renderer = renderers.checklist || ChecklistOutput;
+        return <Renderer key={ i } data={ block.data } style={ style.checklist || {}} config={ config.checklist || {}}
+          classNames={ classNames.checklist || {}} />;
+      case 'quote':
+        Renderer = renderers.quote || QuoteOutput;
+        return <Renderer key={ i } data={ block.data } style={ style.quote || {}} config={ config.quote || {}} classNames={ classNames.quote || {}} />;
+      case 'warning':
+        Renderer = renderers.warning || WarningOutput;
+        return <Renderer key={ i } data={ block.data } style={ style.warning || {}} config={ config.warning || {}}
+          classNames={ classNames.warning || {}} />;
+      case 'delimiter':
+        Renderer = renderers.delimiter || DelimiterOutput;
+        return <Renderer key={ i } style={ style.delimiter || {}} config={ config.delimiter || {}} classNames={ classNames.delimiter || {}} />;
 
       default: return '';
     }

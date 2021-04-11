@@ -83,74 +83,7 @@ const data = {
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque accusantium veritatis dolorum cum amet! Ipsa ullam nisi, dolor explicabo ut nobis repudiandae saepe illo error facilis consectetur, quisquam assumenda dolorum."
       }
     },
-    {
-      "type": "quote",
-      "data": {
-        "text": "&nbsp;<b>Lorem</b>&nbsp; ipsum dolor sit amet <mark class=\"cdx-marker\">consectetur</mark> adipisicing elit. Doloremque accusantium veritatis dolorum cum amet! Ipsa ullam nisi, dolor explicabo ut nobis repudiandae saepe illo error facilis consectetur, quisquam assumenda dolorum.",
-        "caption": "Anonymous",
-        "alignment": "left"
-      }
-    },
-    {
-      "type": "table",
-      "data": {
-        "content": [
-          ["Name", "Age", "Position", "SSN"],
-          ["Jack&nbsp;", "<strong>51</strong>", "All trades", "654654414131333"],
-          ["John Doe", "<strong>32</strong>", "Senior Consultant", "0002145465145641"]
-        ]
-      }
-    },
-    {
-      "type" : "warning",
-      "data" : {
-        "message" : "This is a warning!"
-      }
-    },
-    {
-      "type" : "list",
-      "data" : {
-        "items" : [
-          "<i>Item one</i>",
-          "Another item",
-          "<strong>Item 3</strong>"
-        ],
-        "style" : "ordered"
-      }
-    },
-    {
-      "type": "checklist",
-      "data": {
-        "items": [
-          {
-            "text": "Gather requirements",
-            "checked": true
-          },
-          {
-            "text": "Develop API",
-            "checked": true
-          },
-          {
-            "text": "Notify stakeholders",
-            "checked": false
-          },
-        ]
-      }
-    },
-    {
-      "type": "delimiter",
-      "data": {}
-    },
-    {
-      "type": "video",
-      "data": {
-        "url": "https://cdn.videvo.net/videvo_files/video/free/2013-07/originalContent/hd0079.mov",
-        "muted": false,
-        "caption": "Caption this",
-        "autoplay": false,
-        "controls": true,
-        "stretched": false
-      },
+    ...
   ],
   "version": "2.14.0"
 };
@@ -201,132 +134,146 @@ See the [API](#api) section for more block output components
 
 
 ## Style
-
-You can style all supported components/blocks by passing a style prop to the **Output** component. This is an object whose keys correspond to the names of the supported blocks you intend to style.
-
-The values can be nested objects. The following example highlights the current possible nestings and keys for the supported block.
+You can use inline and/or className styling to change the default look and feel of all supported components
+The following examples will show you how to use both
 
 ```javascript
+import { HeaderOutput, ParagraphOutput } from 'editorjs-react-renderer';
+
+const data = {
+  header: {...},
+  paragraph: {...}
+};
+
 // All valid JSX inline styles are allowed
 const style = {
   header: {
     textAlign: 'left',
+    margin: '10px 20px',
   },
+  paragraph: {
+    fontSize: '16px',
+  }
+};
+
+const classes = {
+  header: 'header-class1 header-class2',
+  paragraph: 'paragraph-class',
+};
+
+const Post = () => (
+  <section>
+    <HeaderOutput data={ data.header } style={ style.header } classNames={ classes.header } />
+    <ParagraphOutput data={ data.paragraph } style={ style.paragraph } classNames={ classes.paragraph } />
+  </section>
+);
+
+export default Post;
+```
+
+Most components have sub-components which can also be styled separately
+
+```javascript
+import { ImageOutput } from 'editorjs-react-renderer';
+
+const image = {...};
+
+// All valid JSX inline styles are allowed
+const style = {
   image: {
     img: {
       maxHeight: '400px',
     },
-    figure: {
-      backgroundColor: 'aliceblue',
-      border: '1px solid #eee'
-    },
-    figcaption: {
-      borderRadius: '5px',
-    }
+    figure: {...},
+    figcaption: {...}
+  },
+};
+
+const classes = {
+  image: {
+    img: 'img-class',
+    figure: 'figure-c',
+    figcaption: 'someClassName'
+  },
+};
+
+const Post = () => (
+  <section>
+    <ImageOutput data={ image } style={ style.image } classNames={ classes.image } />
+  </section>
+);
+
+export default Post;
+```
+
+You can also pass these styles through the **Output** component.
+In this case, the style prop must be an object whose keys correspond to the names of the supported blocks you intend to style.
+The following example highlights the current possible nestings and keys for the supported block.
+
+**NB** If you prefer classes, remember the keys are the same but the values must be class names (strings NOT objects) and the prop name should be classNames
+
+```javascript
+// All valid JSX inline styles are allowed
+const style = {
+  header: {...},
+  image: {
+    img: {...},
+    figure: {...},
+    figcaption: {...}
   },
   video: {
-    video: {
-      maxHeight: '400px',
-    },
-    figure: {
-      backgroundColor: 'aliceblue',
-      border: '1px solid #eee'
-    },
-    figcaption: {
-      borderRadius: '5px',
-    }
+    video: {...},
+    figure: {...},
+    figcaption: {...}
   },
   embed: {
-    video: {
-      maxHeight: '400px',
-    },
-    figure: {
-      justifyContent: 'center',
-    },
-    figcaption: {
-      borderRadius: '5px',
-    }
+    video: {...},
+    figure: {...},
+    figcaption: {...}
   },
-  paragraph: {
-    textAlign: 'left',
-    cursor: 'default',
-  },
+  paragraph: {...},
   list: {
-    textAlign: 'left',
+    container: {...},
+    listItem: {...},
   },
   checklist: {
-    container: {},
-    item: {},
-    checkbox: {},
-    label: {},
+    container: {...},
+    item: {...},
+    checkbox: {...},
+    label: {...},
   },
   table: {
-    table: {},
-    tr: {},
-    th: {},
-    td: {},
+    table: {...},
+    tr: {...},
+    th: {...},
+    td: {...},
   },
   quote: {
-    container: {},
-    content: {},
-    author: {
-      fontWeight: 'bold',
-    },
-    message: {
-      textAlign: 'left',
-    }
+    container: {...},
+    content: {...},
+    author: {...},
+    message: {...}
   },
   codeBox: {
-    container: {
-      width: '100%',
-    },
-    code: {
-      boxSizing: 'border-box',
-    },
+    container: {...},
+    code: {...},
   },
   warning: {
-    container: {
-      width: '100%',
-    },
-    icon: {
-      width: '30px',
-    },
-    title: {
-      fontWeight: 500
-    },
-    message: {
-      fontSize: '14px'
-    },
+    container: {...},
+    icon: {...},
+    title: {...},
+    message: {...},
   },
   delimiter: {
-    container: {},
-    svg: {},
-    path: {
-      fill: '#231F20'
-    }
+    container: {...},
+    svg: {...},
+    path: {...}
   },
 };
 
 const Post = () => <section><Output data={ data } style={ style } /></section>;
 
 export default Post;
-```
-Of course, there is a limit to what you can do with JSX inline styling. But don't forget you can just as well style these components in your separate css file if you need features like media queries or pseudo-selectors.
-
-```css
-/* example.css */
-table{
-  margin: 0;
-}
-tr{
-  margin: 0;
-}
-th{
-  min-width: 100px;
-}
-td{
-  padding: 12px 15px;
-}
 ```
 
 
