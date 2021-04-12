@@ -292,7 +292,7 @@ const style = {
   },
 };
 
-const Post = () => <section><Output data={ data } style={ style } /></section>;
+const Post = () => <section><Output data={...} style={ style } /></section>;
 
 export default Post;
 ```
@@ -315,7 +315,7 @@ const config = {
   },
 };
 
-const Post = () => <section><Output data={ data } style={ style } config={ config } /></section>;
+const Post = () => <section><Output data={...} config={ config } /></section>;
 
 export default Post;
 ```
@@ -328,24 +328,22 @@ There is full support for SSR
 
 ## API
 
-### Components/Functions
-
-* Output(data[,style])
-* CodeBoxOutput(data[,style])
-* HeaderOutput(data[,style])
-* ParagraphOutput(data[,style])
-* TableOutput(data[,style])
-* ImageOutput(data[,style])
-* VideoOutput(data[,style])
-* EmbedOutput(data[,style])
-* ListOutput(data[,style])
-* ChecklistOutput(data[,style])
-* QuoteOutput(data[,style])
-* WarningOutput(data[,style])
-* DelimiterOutput([,style])
+* Output(data[,style, config, classNames, renderers])
+* CodeBoxOutput(data[,style, config, classNames])
+* HeaderOutput(data[,style, config, classNames])
+* ParagraphOutput(data[,style, config, classNames])
+* TableOutput(data[,style, config, classNames])
+* ImageOutput(data[,style, config, classNames])
+* VideoOutput(data[,style, config, classNames])
+* EmbedOutput(data[,style, config, classNames])
+* ListOutput(data[,style, config, classNames])
+* ChecklistOutput(data[,style, config, classNames])
+* QuoteOutput(data[,style, config, classNames])
+* WarningOutput(data[,style, config, classNames])
+* DelimiterOutput([,style, config, classNames])
 
 
-## Supported blocks/components
+## Supported blocks
 * [CodeBox](https://github.com/BomdiZane/codebox)
 * [Header](https://github.com/editor-js/header)
 * [Paragraph](https://github.com/editor-js/paragraph)
