@@ -25,10 +25,10 @@ Install the package via NPM
 npm i editorjs-react-renderer
 ```
 
-Install peer dependencies if you don't already have them in your project
+Install React if you don't already have it in your project
 
 ```shell
-npm i react prop-types
+npm i react
 ```
 
 CDN usage will be available soon...
@@ -81,7 +81,6 @@ const data = {
 *The **time** and **version** properties are not required. Only the **blocks** array is required*
 
 Notice that your block data can also be HTML markup.
-
 Pass your block style data to **Output()** and ERR will take care of the rest :)
 
 ```javascript
@@ -110,11 +109,13 @@ const listData = {
 };
 
 // Your custom style will be merged with the defaults, with yours as priority
+// You can use inline styles or classes
 const listStyle = {
   textAlign: 'left'
 };
+const listClass = 'some-class-name';
 
-const Todo = () => <ListOutput data={ listData } style={ style } />;
+const Todo = () => <ListOutput data={ listData } style={ style } classNames={ listClass } />;
 
 export default Todo;
 ```
@@ -366,4 +367,5 @@ There's more coming...
 Dev Juju (Bomdi)
 
 [Website](https://devjuju.com)
+
 [LinkedIn](http://www.linkedin.com/in/adombangmunang)

@@ -7,6 +7,7 @@
   * Version History
   * ---------------
   * @version 1.1.0 - 2021.04.11 - Add classNames parameter - Adombang Munang Mbomndih
+  * @version 1.1.1 - 2021.04.12 - Add validation for config parameter - Adombang Munang Mbomndih
   */
 
 //#region imports
@@ -20,7 +21,8 @@ const supportedKeys = ['video', 'figure', 'figcaption'];
 const VideoOutput = ({ data, style, classNames, config }) => {
   if (!data || !data.url) return '';
   if (!style || typeof style !== 'object') style = {};
-  if (!classNames || typeof classNames !== 'object') classNames = '';
+  if (!config || typeof config !== 'object') config = {};
+  if (!classNames || typeof classNames !== 'object') classNames = {};
 
   supportedKeys.forEach(key => {
     if (!style[key] || typeof style[key] !== 'object') style[key] = {};

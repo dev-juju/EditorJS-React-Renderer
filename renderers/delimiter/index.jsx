@@ -10,6 +10,7 @@
   * @version 1.0.2 - 2020.02.13 - Use SVG stars as delimiter - Adombang Munang Mbomndih
   * @version 1.0.3 - 2020.07.17 - Add config parameter - Adombang Munang Mbomndih
   * @version 1.1.0 - 2021.04.11 - Add classNames parameter - Adombang Munang Mbomndih
+  * @version 1.1.1 - 2021.04.12 - Add validation for config parameter - Adombang Munang Mbomndih
  */
 
 //#region imports
@@ -21,6 +22,7 @@ const supportedKeys = ['container', 'svg', 'path'];
 
 const DelimiterOutput = ({ style, classNames, config }) => {
   if (!style || typeof style !== 'object') style = {};
+  if (!config || typeof config !== 'object') config = {};
   if (!classNames || typeof classNames !== 'object') classNames = {};
 
   supportedKeys.forEach(key => {

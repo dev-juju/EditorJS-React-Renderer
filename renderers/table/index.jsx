@@ -10,6 +10,7 @@
   * @version 1.0.2 - 2020.05.21 - Add key to list items - Adombang Munang Mbomndih
   * @version 1.0.3 - 2020.07.17 - Add config parameter - Adombang Munang Mbomndih
   * @version 1.1.0 - 2021.04.11 - Add classNames parameter - Adombang Munang Mbomndih
+  * @version 1.1.1 - 2021.04.12 - Add validation for config parameter - Adombang Munang Mbomndih
   */
 
 //#region imports
@@ -23,6 +24,7 @@ const supportedKeys = ['table', 'tr', 'th', 'td'];
 const TableOutput = ({ data, style, classNames, config }) => {
   if (!data) return '';
   if (!style || typeof style !== 'object') style = {};
+  if (!config || typeof config !== 'object') config = {};
   if (!classNames || typeof classNames !== 'object') classNames = {};
 
   supportedKeys.forEach(key => {

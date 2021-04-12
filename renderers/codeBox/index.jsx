@@ -8,6 +8,7 @@
   * ---------------
   * @version 1.0.1 - 2020.07.17 - Add config parameter - Adombang Munang Mbomndih
   * @version 1.1.0 - 2021.04.11 - Add classNames parameter - Adombang Munang Mbomndih
+  * @version 1.1.1 - 2021.04.12 - Add validation for config parameter - Adombang Munang Mbomndih
   */
 
 //#region imports
@@ -87,6 +88,7 @@ class CodeBoxOutput extends PureComponent {
     let { data, style, classNames, config } = this.props;
     if (!data) return '';
     if (!style || typeof style !== 'object') style = {};
+    if (!config || typeof config !== 'object') config = {};
     if (!classNames || typeof classNames !== 'object') classNames = {};
 
     this.supportedKeys.forEach(key => {

@@ -8,6 +8,7 @@
   * ---------------
   * @version 1.0.1 - 2020.07.17 - Add config parameter - Adombang Munang Mbomndih
   * @version 1.1.0 - 2021.04.11 - Add classNames parameter - Adombang Munang Mbomndih
+  * @version 1.1.1 - 2021.04.12 - Add validation for config parameter - Adombang Munang Mbomndih
   */
 
 //#region imports
@@ -23,6 +24,7 @@ const supportedKeys = ['container', 'item', 'checkbox', 'label'];
 const ChecklistOutput = ({ data, style, classNames, config }) => {
   if (!data || !data.items || !Array.isArray(data.items) || data.items.length < 1) return '';
   if (!style || typeof style !== 'object') style = {};
+  if (!config || typeof config !== 'object') config = {};
   if (!classNames || typeof classNames !== 'object') classNames = {};
 
   supportedKeys.forEach(key => {

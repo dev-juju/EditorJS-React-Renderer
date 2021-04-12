@@ -9,6 +9,7 @@
   * @version 1.0.1 - 2020.02.12 - Covert to React component - Adombang Munang Mbomndih
   * @version 1.0.2 - 2020.07.17 - Add config parameter - Adombang Munang Mbomndih
   * @version 1.1.0 - 2021.04.11 - Add classNames parameter - Adombang Munang Mbomndih
+  * @version 1.1.1 - 2021.04.12 - Add validation for config parameter - Adombang Munang Mbomndih
   */
 
 //#region imports
@@ -20,6 +21,7 @@ import paragraphOutputStyle from './style';
 const ParagraphOutput = ({ data, style, classNames, config }) => {
   if (!data) return '';
   if (!style || typeof style !== 'object') style = {};
+  if (!config || typeof config !== 'object') config = {};
   if (!classNames || typeof classNames !== 'string') classNames = '';
 
   const paragraphStyle = config.disableDefaultStyle ? style : { ...paragraphOutputStyle, ...style };
