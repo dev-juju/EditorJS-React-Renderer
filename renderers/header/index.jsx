@@ -24,7 +24,7 @@ const HeaderOutput = ({ data, style, classNames, config }) => {
   if (!config || typeof config !== 'object') config = {};
   if (!classNames || (typeof classNames !== 'string' && typeof classNames !== 'object')) classNames = '';
 
-  if(typeof classNames === 'object' && data.level) classNames = classNames[`h${data.level}`];
+  if(typeof classNames === 'object' && data.level) classNames = classNames[`h${data.level}`] || '';
 
   const headerStyle = config.disableDefaultStyle ? style : { ...headerOutputStyle, ...style };
   let content = null;
