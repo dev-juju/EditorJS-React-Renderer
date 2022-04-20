@@ -2,6 +2,13 @@ module.exports = {
   "time": 1572712253468,
   "blocks": [
     {
+      "type": "header",
+      "data": {
+        "text": "ERR",
+        "level": 1
+      }
+    },
+    {
       "type": "image",
       "data": {
         "file": {
@@ -127,22 +134,22 @@ module.exports = {
       "data": {
         "content": [
           [
-            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\" contenteditable=\"true\">Name</div></div>",
-            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\" contenteditable=\"true\">Age</div></div>",
-            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\" contenteditable=\"true\">Position</div></div>",
-            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\" contenteditable=\"true\">SSN</div></div>"
+            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\">Name</div></div>",
+            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\">Age</div></div>",
+            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\">Position</div></div>",
+            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\">SSN</div></div>"
           ],
           [
-            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\" contenteditable=\"true\">Jack&nbsp;</div></div>",
-            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\" contenteditable=\"true\">51</div></div>",
-            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\" contenteditable=\"true\">All trades</div></div>",
-            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\" contenteditable=\"true\">654654414131333</div></div>"
+            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\">Jack&nbsp;</div></div>",
+            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\">51</div></div>",
+            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\">All trades</div></div>",
+            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\">654654414131333</div></div>"
           ],
           [
-            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\" contenteditable=\"true\">John Doe</div></div>",
-            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\" contenteditable=\"true\">21</div></div>",
-            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\" contenteditable=\"true\">Senior Consultant</div></div>",
-            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\" contenteditable=\"true\">0002145465145641</div></div>"
+            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\">John Doe</div></div>",
+            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\">21</div></div>",
+            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\">Senior Consultant</div></div>",
+            "<div class=\"tc-table__area\"><div class=\"tc-table__inp\">0002145465145641</div></div>"
           ]
         ]
       }
@@ -208,7 +215,7 @@ module.exports = {
       "type": "warning",
       "data": {
         "title": "",
-        "message": "There is a down to every up, a left to every right, a demon to every angel"
+        "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
       }
     },
     {
@@ -226,12 +233,6 @@ module.exports = {
         "autoplay": false,
         "controls": true,
         "stretched": false
-      },
-    },
-    {
-      "type": "paragraph",
-      "data": {
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
       }
     }
   ],

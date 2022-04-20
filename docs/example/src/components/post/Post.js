@@ -4,7 +4,12 @@ import PropTypes from 'prop-types';
 import './Post.css';
 
 const style = {
-  header: {},
+  header: {
+    h1: {
+      color: 'lightseagreen',
+      fontFamily: 'cursive'
+    },
+  },
   image: {
     img: {},
     figure: {},
@@ -32,6 +37,17 @@ const style = {
   },
   codeBox: {
     code: { lineHeight: '22px' },
+  },
+  warning: {
+    icon: {
+      width: '28px',
+    },
+    title: {
+      marginRight: '10px'
+    },
+    message: {
+      textAlign: 'left'
+    },
   },
 };
 

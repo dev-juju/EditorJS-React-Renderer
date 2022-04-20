@@ -9,6 +9,7 @@
   * @version 1.0.1 - 2020.07.17 - Add config parameter - Adombang Munang Mbomndih
   * @version 1.1.0 - 2021.04.11 - Add classNames parameter - Adombang Munang Mbomndih
   * @version 1.1.1 - 2021.04.12 - Add validation for config parameter - Adombang Munang Mbomndih
+  * @version 1.1.2 - 2022.04.20 - fix console errors (make input readOnly)  - Adombang Munang Mbomndih
   */
 
 //#region imports
@@ -42,8 +43,8 @@ const ChecklistOutput = ({ data, style, classNames, config }: ErrRendererProps) 
   if (typeof data === 'object') {
     if (data.items && Array.isArray(data.items)) content = data.items.map((item, index) =>
       <div key={ index } style={ itemStyle } className={ classNames.item }>
-        <input id={ index } style={ checkboxStyle } className={ classNames.checkbox } type='checkbox' checked={ item.checked } />
-        <label for={ index } style={ labelStyle } className={ classNames.label }>{ parse(item.text) }</label>
+        <input id={ index } style={ checkboxStyle } className={ classNames.checkbox } type='checkbox' checked={ item.checked } readOnly />
+        <label htmlFor={ index } style={ labelStyle } className={ classNames.label }>{ parse(item.text) }</label>
       </div>
     );
   }

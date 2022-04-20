@@ -11,11 +11,6 @@ A library for rendering styled, responsive and flexible React components from [b
 This package works well with output from the Editor.js rich text editor library.
 However, there is no dependency on Editor.js. We only require that your data is in a similar block style format.
 
-## 💗 If you like this package 💗
-
-Support us on Patreon
-
- 👉  [https://www.patreon.com/devjuju](https://www.patreon.com/devjuju)
 
 ## Setup
 
@@ -236,7 +231,15 @@ The following example highlights the current possible nestings and keys for the 
 ```javascript
 // All valid JSX inline styles are allowed
 const style = {
-  header: {...},
+  paragraph: {...},
+  header: {
+    h1: {...},
+    h2: {...},
+    h3: {...},
+    h4: {...},
+    h5: {...},
+    h6: {...},
+  },
   image: {
     img: {...},
     figure: {...},
@@ -252,7 +255,6 @@ const style = {
     figure: {...},
     figcaption: {...}
   },
-  paragraph: {...},
   list: {
     container: {...},
     listItem: {...},
@@ -323,7 +325,21 @@ export default Post;
 
 ## Server Side Rendering
 
-There is full support for SSR
+SSR was broken in V3 to reduce bundle size.
+This package can only be loaded client-side.
+
+In nextjs you can use dynamic imports to only load the renderers on the client.
+
+```javascript
+import dynamic from 'next/dynamic';
+
+const Output = dynamic(
+  async () => (await import('editorjs-react-renderer')).default,
+  { ssr: false }
+);
+```
+
+Note that dynamic imports only work with nextjs 12.0 and above. If you are using a lower version you might need another solution. e.g only import inside useEffect hook.
 
 
 ## API
@@ -364,6 +380,5 @@ There's more coming...
 
 Dev Juju (Bomdi)
 
-[Website](https://devjuju.com)
-
-[LinkedIn](http://www.linkedin.com/in/adombangmunang)
+[Contact Us](https://bomdisoft.com)
+[Learn](https://devjuju.com)
