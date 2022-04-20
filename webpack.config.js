@@ -4,7 +4,7 @@ module.exports = {
   mode: 'production',
   // mode: 'development',
   // devtool: 'source-map',
-  entry: path.normalize(`${__dirname}/index.jsx`),
+  entry: path.normalize(`${__dirname}/index.tsx`),
   output: {
     path: path.normalize(`${__dirname}/dist`),
     filename: 'index.min.js',
@@ -14,28 +14,31 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        use: 'babel-loader',
-        exclude: /node_modules/,
+        test: /\.(js|jsx|tsx)$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+            },
+          },
+          {
+            loader: 'ts-loader',
+            options: {
+              compilerOptions: {
+                noEmit: false,
+              },
+            },
+          }
+        ]
       },
       {
         test: /\.css$/,
-        use: ['isomorphic-style-loader', 'css-loader'],
-        exclude: /node_modules/,
+        use: ['isomorphic-style-loader', 'css-loader']
       }
     ],
   },
   resolve: {
-    alias: {
-      'react': path.resolve(__dirname, './node_modules/react'),
-    }
+    extensions: ['.tsx', '.ts', '.js'],
   },
-  externals: {
-    react: {
-      commonjs: 'react',
-      commonjs2: 'react',
-      amd: 'React',
-      root: 'React'
-    },
-  }
 };
