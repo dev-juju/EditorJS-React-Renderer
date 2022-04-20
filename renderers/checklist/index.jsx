@@ -42,8 +42,8 @@ const ChecklistOutput = ({ data, style, classNames, config }) => {
   if (typeof data === 'object') {
     if (data.items && Array.isArray(data.items)) content = data.items.map((item, index) =>
       <div key={ index } style={ itemStyle } className={ classNames.item }>
-        <input id={ index } style={ checkboxStyle } className={ classNames.checkbox } type='checkbox' checked={ item.checked } />
-        <label for={ index } style={ labelStyle } className={ classNames.label }>{ ReactHtmlParser(item.text) }</label>
+        <input id={ index } style={ checkboxStyle } className={ classNames.checkbox } type='checkbox' checked={ item.checked } onChange={() => null} />
+        <label htmlFor={ index } style={ labelStyle } className={ classNames.label }>{ ReactHtmlParser(item.text) }</label>
       </div>
     );
   }
