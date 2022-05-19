@@ -15,6 +15,7 @@
   * @version 1.0.2 - 2020.05.21 - Add key to list items - Adombang Munang Mbomndih
   * @version 1.0.3 - 2020.07.17 - Add config parameter - Adombang Munang Mbomndih
   * @version 1.1.0 - 2021.04.11 - Add classNames parameter - Adombang Munang Mbomndih
+  * @version 1.2.0 - 2022.05.19 - Add LinkToolOutput and PersonalityOutput - Adombang Munang Mbomndih
   *
   */
 
@@ -32,6 +33,8 @@ import WarningOutput from './renderers/warning/index';
 import TableOutput from './renderers/table/index';
 import DelimiterOutput from './renderers/delimiter/index';
 import CodeBoxOutput from './renderers/codeBox/index';
+import LinkToolOutput from './renderers/linkTool/index';
+import PersonalityOutput from './renderers/personality/index';
 //#endregion
 
 const Output = ({ data, style, classNames, config, renderers }: ErrOutputProps) => {
@@ -81,6 +84,12 @@ const Output = ({ data, style, classNames, config, renderers }: ErrOutputProps) 
         Renderer = renderers.warning || WarningOutput;
         return <Renderer key={ i } data={ block.data } style={ style.warning || {}} config={ config.warning || {}}
           classNames={ classNames.warning || {}} />;
+      case 'linktool':
+        Renderer = renderers.linktool || LinkToolOutput;
+        return <Renderer key={ i } data={ block.data } style={ style.linktool || {}} config={ config.linktool || {}} classNames={ classNames.linktool || {}} />;
+      case 'personality':
+        Renderer = renderers.personality || PersonalityOutput;
+        return <Renderer key={ i } data={ block.data } style={ style.personality || {}} config={ config.personality || {}} classNames={ classNames.personality || {}} />;
       case 'delimiter':
         Renderer = renderers.delimiter || DelimiterOutput;
         return <Renderer key={ i } style={ style.delimiter || {}} config={ config.delimiter || {}} classNames={ classNames.delimiter || {}} />;
@@ -92,5 +101,5 @@ const Output = ({ data, style, classNames, config, renderers }: ErrOutputProps) 
 
 export {
   HeaderOutput, ParagraphOutput, ImageOutput, VideoOutput, EmbedOutput, TableOutput, CodeBoxOutput, ListOutput, QuoteOutput,
-  ChecklistOutput, WarningOutput, DelimiterOutput, Output as default
+  ChecklistOutput, WarningOutput, DelimiterOutput, LinkToolOutput, PersonalityOutput, Output as default
 };

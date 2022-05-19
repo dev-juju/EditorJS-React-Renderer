@@ -5,6 +5,8 @@
 [![](https://flat.badgen.net/npm/v/editorjs-react-renderer?icon=npm)](https://www.npmjs.com/package/editorjs-react-renderer)
 ![npm](https://img.shields.io/npm/dw/editorjs-react-renderer)
 [![](https://flat.badgen.net/npm/license/editorjs-react-renderer)](https://www.npmjs.com/package/editorjs-react-renderer)
+[![](https://flat.badgen.net/github/stars/dev-juju/editorjs-react-renderer)](https://www.npmjs.com/package/editorjs-react-renderer)
+[![](https://flat.badgen.net/badge/icon/typescript?icon=typescript&label)](https://www.npmjs.com/package/editorjs-react-renderer)
 
 A library for rendering styled, responsive and flexible React components from [block style](https://editorjs.io/saving-data) data objects.
 
@@ -292,6 +294,22 @@ const style = {
     svg: {...},
     path: {...}
   },
+  personality: {
+    container: {...},
+    textHolder: {...},
+    name: {...},
+    description: {...},
+    photo: {...},
+    link: {...}
+  },
+  linkTool: {
+    container: {...},
+    textHolder: {...},
+    title: {...},
+    description: {...},
+    image: {...},
+    siteName: {...}
+  },
 };
 
 const Post = () => <section><Output data={...} style={ style } /></section>;
@@ -357,6 +375,8 @@ Note that dynamic imports only work with nextjs 12.0 and above. If you are using
 * QuoteOutput(data[,style, config, classNames])
 * WarningOutput(data[,style, config, classNames])
 * DelimiterOutput([,style, config, classNames])
+* LinkToolOutput([,style, config, classNames])
+* PersonalityOutput([,style, config, classNames])
 
 
 ## Supported blocks
@@ -372,6 +392,8 @@ Note that dynamic imports only work with nextjs 12.0 and above. If you are using
 * [Quote](https://github.com/editor-js/quote)
 * [Warning](https://github.com/editor-js/warning)
 * [Delimiter](https://github.com/editor-js/delimiter)
+* [Personality](https://github.com/editor-js/personality)
+* [Link](https://github.com/editor-js/link)
 
 There's more coming...
 

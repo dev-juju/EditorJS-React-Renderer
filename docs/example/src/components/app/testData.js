@@ -4,8 +4,14 @@ module.exports = {
     {
       "type": "header",
       "data": {
-        "text": "ERR",
-        "level": 1
+        "text": "Image",
+        "level": 4
+      }
+    },
+    {
+      "type": "paragraph",
+      "data": {
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
       }
     },
     {
@@ -21,15 +27,9 @@ module.exports = {
       }
     },
     {
-      "type": "paragraph",
-      "data": {
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
-      }
-    },
-    {
       "type": "header",
       "data": {
-        "text": "Paragraph with embedded video",
+        "text": "Video",
         "level": 4
       }
     },
@@ -51,7 +51,112 @@ module.exports = {
     {
       "type": "header",
       "data": {
-        "text": "Paragraph with list",
+        "text": "Delimiter",
+        "level": 4
+      }
+    },
+    {
+      "type": "paragraph",
+      "data": {
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
+      }
+    },
+    {
+      "type": "delimiter",
+      "data": {}
+    },
+    {
+      "type": "paragraph",
+      "data": {
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
+      }
+    },
+    {
+      "type": "header",
+      "data": {
+        "text": "Personality",
+        "level": 4
+      }
+    },
+    {
+      "type": "paragraph",
+      "data": {
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
+      }
+    },
+    {
+      "type" : "personality",
+      "data" : {
+        "name" : "Elon Musk",
+        "description" : "Elon Reeve Musk FRS is a technology entrepreneur, investor, and engineer. He holds South African, Canadian, and U.S. citizenship and is the founder",
+        "link" : "https://twitter.com/elonmusk",
+        "photo" : "https://capella.pics/3c0e1b97-bc56-4961-b54e-2a6c2c3260f2.jpg"
+      }
+    },
+    {
+      "type": "paragraph",
+      "data": {
+        "text": "Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
+      }
+    },
+    {
+      "type": "header",
+      "data": {
+        "text": "Link",
+        "level": 4
+      }
+    },
+    {
+      "type": "paragraph",
+      "data": {
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
+      }
+    },
+    {
+      "type" : "linkTool",
+      "data" : {
+        "link" : "https://codex.so",
+        "meta" : {
+          "title" : "CodeX Team",
+          "site_name" : "CodeX",
+          "description" : "Club of web-development, design and marketing. We build team learning how to build full-valued projects on the world market.",
+          "image" : {
+            "url" : "https://codex.so/public/app/img/meta_img.png"
+          }
+        }
+      }
+    },
+    {
+      "type": "paragraph",
+      "data": {
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
+      }
+    },
+    {
+      "type": "header",
+      "data": {
+        "text": "Code block",
+        "level": 4
+      }
+    },
+    {
+      "type": "codeBox",
+      "data": {
+        "code": ".codeBoxTextArea{\n  width: 100%;\n  min-height: 30px;\n  padding: 10px;\n  border-radius: 2px 2px 2px 0;\n  border: none !important;\n  outline: none !important;\n  font: 14px monospace;\n}\n\n.codeBoxSelectDiv{\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: flex-start;\n  position: relative;\n}",
+        "language": "css",
+        "theme": "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/atom-one-dark.min.css"
+      }
+    },
+    {
+      "type": "paragraph",
+      "data": {
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
+      }
+    },
+    {
+      "type": "header",
+      "data": {
+        "text": "Lists",
         "level": 4
       }
     },
@@ -119,7 +224,7 @@ module.exports = {
     {
       "type": "header",
       "data": {
-        "text": "Paragraph with table",
+        "text": "Table",
         "level": 4
       }
     },
@@ -157,51 +262,7 @@ module.exports = {
     {
       "type": "header",
       "data": {
-        "text": "Paragraph with delimiter",
-        "level": 4
-      }
-    },
-    {
-      "type": "paragraph",
-      "data": {
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
-      }
-    },
-    {
-      "type": "delimiter",
-      "data": {}
-    },
-    {
-      "type": "paragraph",
-      "data": {
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
-      }
-    },
-    {
-      "type": "header",
-      "data": {
-        "text": "Paragraph with code block",
-        "level": 4
-      }
-    },
-    {
-      "type": "codeBox",
-      "data": {
-        "code": ".codeBoxTextArea{\n  width: 100%;\n  min-height: 30px;\n  padding: 10px;\n  border-radius: 2px 2px 2px 0;\n  border: none !important;\n  outline: none !important;\n  font: 14px monospace;\n}\n\n.codeBoxSelectDiv{\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: flex-start;\n  position: relative;\n}",
-        "language": "css",
-        "theme": "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/atom-one-dark.min.css"
-      }
-    },
-    {
-      "type": "paragraph",
-      "data": {
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
-      }
-    },
-    {
-      "type": "header",
-      "data": {
-        "text": "Paragraph with warning and simple video",
+        "text": "Warning and simple video",
         "level": 4
       }
     },
@@ -224,17 +285,6 @@ module.exports = {
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
       }
     },
-    {
-      "type": "video",
-      "data": {
-        "url": "https://cdn.videvo.net/videvo_files/video/free/2013-07/originalContent/hd0079.mov",
-        "muted": false,
-        "caption": "Caption this",
-        "autoplay": false,
-        "controls": true,
-        "stretched": false
-      }
-    }
   ],
   "version": "2.14.0"
 };

@@ -50,6 +50,8 @@ declare global {
     table?: ErrConfig
     video?: ErrConfig
     warning?: ErrConfig
+    linktool?: ErrConfig
+    personality?: ErrConfig
   }
 
   interface ErrOutputClassNames {
@@ -65,6 +67,8 @@ declare global {
     table?: string
     video?: string
     warning?: string
+    linktool?: string
+    personality?: string
   }
 
   interface ErrOutputStyle {
@@ -80,6 +84,8 @@ declare global {
     table?: ErrGenericData
     video?: ErrGenericData
     warning?: ErrGenericData
+    linktool?: ErrGenericData
+    personality?: ErrGenericData
   }
 
   interface ErrOutputRenderers {
@@ -95,6 +101,8 @@ declare global {
     table?: ReactNode
     video?: ReactNode
     warning?: ReactNode
+    linktool?: ReactNode
+    personality?: ReactNode
   }
 }
 
