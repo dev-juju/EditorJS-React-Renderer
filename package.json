@@ -1,5 +1,5 @@
 {
-  "name": "editorjs-react-renderer",
+  "name": "editorjs-react-renderer-ts",
   "version": "3.2.0",
   "license": "ISC",
   "description": "A library for rendering styled, responsive and flexible React components from block style data objects",
@@ -45,6 +45,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
     "@babel/preset-react": "^7.16.0",
+    "@types/react": "^17.0.47",
     "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
