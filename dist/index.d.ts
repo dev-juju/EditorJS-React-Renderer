@@ -33,5 +33,5 @@ import QuoteOutput from "./renderers/quote/index";
 import TableOutput from "./renderers/table/index";
 import VideoOutput from "./renderers/video/index";
 import WarningOutput from "./renderers/warning/index";
-declare const Output: ({ data, style, classNames, config, renderers, }: ErrOutputProps) => JSX.Element[];
+declare const Output: ({ data, style, classNames, config, renderers, }: ErrOutputProps) => JSX.Element;
 export { HeaderOutput, ParagraphOutput, ImageOutput, VideoOutput, EmbedOutput, TableOutput, CodeBoxOutput, ListOutput, QuoteOutput, ChecklistOutput, WarningOutput, DelimiterOutput, LinkToolOutput, PersonalityOutput, Output as default, };
