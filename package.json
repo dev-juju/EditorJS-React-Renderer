@@ -25,6 +25,7 @@
   },
   "scripts": {
     "build": "webpack --progress",
+    "postbuild": "tsc -p tsconfig.json --emitDeclarationOnly --declaration --declarationDir ./dist --skipLibCheck",
     "start": "babel-node test.js",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -66,5 +67,6 @@
   "files": [
     "dist"
   ],
-  "main": "dist/index.min.js"
+  "main": "dist/index.min.js",
+  "types": "dist/index.d.ts"
 }
