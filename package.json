@@ -1,6 +1,6 @@
 {
   "name": "editorjs-react-renderer-ts",
-  "version": "3.2.1",
+  "version": "3.2.1-beta1",
   "license": "ISC",
   "description": "A library for rendering styled, responsive and flexible React components from block style data objects",
   "keywords": [
