@@ -42,181 +42,185 @@ const Output = ({
   classNames = {},
   config = {},
   renderers = {},
-}: ErrOutputProps) => {
-  return data.blocks.map((block, i) => {
-    switch (block.type.toLowerCase()) {
-      case "codebox": {
-        const Renderer = renderers.codeBox || CodeBoxOutput;
-        return (
-          <Renderer
-            key={i}
-            data={block.data}
-            style={style.codeBox || {}}
-            config={config.codeBox || {}}
-            classNames={classNames.codeBox || ""}
-          />
-        );
-      }
-      case "header": {
-        const Renderer = renderers.header || HeaderOutput;
-        return (
-          <Renderer
-            key={i}
-            data={block.data}
-            style={style.header || {}}
-            config={config.header || {}}
-            classNames={classNames.header || ""}
-          />
-        );
-      }
-      case "paragraph": {
-        const Renderer = renderers.paragraph || ParagraphOutput;
-        return (
-          <Renderer
-            key={i}
-            data={block.data}
-            style={style.paragraph || {}}
-            config={config.paragraph || {}}
-            classNames={classNames.paragraph || ""}
-          />
-        );
-      }
-      case "image": {
-        const Renderer = renderers.image || ImageOutput;
-        return (
-          <Renderer
-            key={i}
-            data={block.data}
-            style={style.image || {}}
-            config={config.image || {}}
-            classNames={classNames.image || ""}
-          />
-        );
-      }
-      case "video": {
-        const Renderer = renderers.video || VideoOutput;
-        return (
-          <Renderer
-            key={i}
-            data={block.data}
-            style={style.video || {}}
-            config={config.video || {}}
-            classNames={classNames.video || ""}
-          />
-        );
-      }
-      case "embed": {
-        const Renderer = renderers.embed || EmbedOutput;
-        return (
-          <Renderer
-            key={i}
-            data={block.data}
-            style={style.embed || {}}
-            config={config.embed || {}}
-            classNames={classNames.embed || ""}
-          />
-        );
-      }
-      case "table": {
-        const Renderer = renderers.table || TableOutput;
-        return (
-          <Renderer
-            key={i}
-            data={block.data}
-            style={style.table || {}}
-            config={config.table || {}}
-            classNames={classNames.table || ""}
-          />
-        );
-      }
-      case "list": {
-        const Renderer = renderers.list || ListOutput;
-        return (
-          <Renderer
-            key={i}
-            data={block.data}
-            style={style.list || {}}
-            config={config.list || {}}
-            classNames={classNames.list || ""}
-          />
-        );
-      }
-      case "checklist": {
-        const Renderer = renderers.checklist || ChecklistOutput;
-        return (
-          <Renderer
-            key={i}
-            data={block.data}
-            style={style.checklist || {}}
-            config={config.checklist || {}}
-            classNames={classNames.checklist || ""}
-          />
-        );
-      }
-      case "quote": {
-        const Renderer = renderers.quote || QuoteOutput;
-        return (
-          <Renderer
-            key={i}
-            data={block.data}
-            style={style.quote || {}}
-            config={config.quote || {}}
-            classNames={classNames.quote || ""}
-          />
-        );
-      }
-      case "warning": {
-        const Renderer = renderers.warning || WarningOutput;
-        return (
-          <Renderer
-            key={i}
-            data={block.data}
-            style={style.warning || {}}
-            config={config.warning || {}}
-            classNames={classNames.warning || ""}
-          />
-        );
-      }
-      case "linktool": {
-        const Renderer = renderers.linktool || LinkToolOutput;
-        return (
-          <Renderer
-            key={i}
-            data={block.data}
-            style={style.linktool || {}}
-            config={config.linktool || {}}
-            classNames={classNames.linktool || ""}
-          />
-        );
-      }
-      case "personality": {
-        const Renderer = renderers.personality || PersonalityOutput;
-        return (
-          <Renderer
-            key={i}
-            data={block.data}
-            style={style.personality || {}}
-            config={config.personality || {}}
-            classNames={classNames.personality || ""}
-          />
-        );
-      }
-      case "delimiter": {
-        const Renderer = renderers.delimiter || DelimiterOutput;
-        return (
-          <Renderer
-            key={i}
-            style={style.delimiter || {}}
-            config={config.delimiter || {}}
-            classNames={classNames.delimiter || ""}
-          />
-        );
-      }
+}: ErrOutputProps): JSX.Element => {
+  return (
+    <>
+      {data.blocks.map((block, i) => {
+        switch (block.type.toLowerCase()) {
+          case "codebox": {
+            const Renderer = renderers.codeBox || CodeBoxOutput;
+            return (
+              <Renderer
+                key={i}
+                data={block.data}
+                style={style.codeBox || {}}
+                config={config.codeBox || {}}
+                classNames={classNames.codeBox || ""}
+              />
+            );
+          }
+          case "header": {
+            const Renderer = renderers.header || HeaderOutput;
+            return (
+              <Renderer
+                key={i}
+                data={block.data}
+                style={style.header || {}}
+                config={config.header || {}}
+                classNames={classNames.header || ""}
+              />
+            );
+          }
+          case "paragraph": {
+            const Renderer = renderers.paragraph || ParagraphOutput;
+            return (
+              <Renderer
+                key={i}
+                data={block.data}
+                style={style.paragraph || {}}
+                config={config.paragraph || {}}
+                classNames={classNames.paragraph || ""}
+              />
+            );
+          }
+          case "image": {
+            const Renderer = renderers.image || ImageOutput;
+            return (
+              <Renderer
+                key={i}
+                data={block.data}
+                style={style.image || {}}
+                config={config.image || {}}
+                classNames={classNames.image || ""}
+              />
+            );
+          }
+          case "video": {
+            const Renderer = renderers.video || VideoOutput;
+            return (
+              <Renderer
+                key={i}
+                data={block.data}
+                style={style.video || {}}
+                config={config.video || {}}
+                classNames={classNames.video || ""}
+              />
+            );
+          }
+          case "embed": {
+            const Renderer = renderers.embed || EmbedOutput;
+            return (
+              <Renderer
+                key={i}
+                data={block.data}
+                style={style.embed || {}}
+                config={config.embed || {}}
+                classNames={classNames.embed || ""}
+              />
+            );
+          }
+          case "table": {
+            const Renderer = renderers.table || TableOutput;
+            return (
+              <Renderer
+                key={i}
+                data={block.data}
+                style={style.table || {}}
+                config={config.table || {}}
+                classNames={classNames.table || ""}
+              />
+            );
+          }
+          case "list": {
+            const Renderer = renderers.list || ListOutput;
+            return (
+              <Renderer
+                key={i}
+                data={block.data}
+                style={style.list || {}}
+                config={config.list || {}}
+                classNames={classNames.list || ""}
+              />
+            );
+          }
+          case "checklist": {
+            const Renderer = renderers.checklist || ChecklistOutput;
+            return (
+              <Renderer
+                key={i}
+                data={block.data}
+                style={style.checklist || {}}
+                config={config.checklist || {}}
+                classNames={classNames.checklist || ""}
+              />
+            );
+          }
+          case "quote": {
+            const Renderer = renderers.quote || QuoteOutput;
+            return (
+              <Renderer
+                key={i}
+                data={block.data}
+                style={style.quote || {}}
+                config={config.quote || {}}
+                classNames={classNames.quote || ""}
+              />
+            );
+          }
+          case "warning": {
+            const Renderer = renderers.warning || WarningOutput;
+            return (
+              <Renderer
+                key={i}
+                data={block.data}
+                style={style.warning || {}}
+                config={config.warning || {}}
+                classNames={classNames.warning || ""}
+              />
+            );
+          }
+          case "linktool": {
+            const Renderer = renderers.linktool || LinkToolOutput;
+            return (
+              <Renderer
+                key={i}
+                data={block.data}
+                style={style.linktool || {}}
+                config={config.linktool || {}}
+                classNames={classNames.linktool || ""}
+              />
+            );
+          }
+          case "personality": {
+            const Renderer = renderers.personality || PersonalityOutput;
+            return (
+              <Renderer
+                key={i}
+                data={block.data}
+                style={style.personality || {}}
+                config={config.personality || {}}
+                classNames={classNames.personality || ""}
+              />
+            );
+          }
+          case "delimiter": {
+            const Renderer = renderers.delimiter || DelimiterOutput;
+            return (
+              <Renderer
+                key={i}
+                style={style.delimiter || {}}
+                config={config.delimiter || {}}
+                classNames={classNames.delimiter || ""}
+              />
+            );
+          }
 
-      default:
-        return <></>;
-    }
-  });
+          default:
+            return <></>;
+        }
+      })}
+    </>
+  );
 };
 
 export {
