@@ -75,43 +75,43 @@ const HeaderOutput = ({
     switch (data.level) {
       case 1:
         return (
-          <h1 style={h1Style} className={classNames}>
+          <h1 style={h1Style} className={classNames.h1}>
             {parse(content)}
           </h1>
         );
       case 2:
         return (
-          <h2 style={h2Style} className={classNames}>
+          <h2 style={h2Style} className={classNames.h2}>
             {parse(content)}
           </h2>
         );
       case 3:
         return (
-          <h3 style={h3Style} className={classNames}>
+          <h3 style={h3Style} className={classNames.h3}>
             {parse(content)}
           </h3>
         );
       case 4:
         return (
-          <h4 style={h4Style} className={classNames}>
+          <h4 style={h4Style} className={classNames.h4}>
             {parse(content)}
           </h4>
         );
       case 5:
         return (
-          <h5 style={h5Style} className={classNames}>
+          <h5 style={h5Style} className={classNames.h5}>
             {parse(content)}
           </h5>
         );
       case 6:
         return (
-          <h6 style={h6Style} className={classNames}>
+          <h6 style={h6Style} className={classNames.h6}>
             {parse(content)}
           </h6>
         );
       default:
         return (
-          <h4 style={h4Style} className={classNames}>
+          <h4 style={h4Style} className={classNames.h4}>
             {parse(content)}
           </h4>
         );
@@ -119,7 +119,7 @@ const HeaderOutput = ({
   }
 
   return (
-    <h4 style={h4Style} className={classNames}>
+    <h4 style={h4Style} className={classNames.h4}>
       {parse(content)}
     </h4>
   );

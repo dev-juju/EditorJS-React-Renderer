@@ -3,10 +3,10 @@ declare global {
     hljs: any;
   }
 
-  interface ErrRendererProps<TClassNames extends keyof ErrOutputClassNames> {
+  interface ErrRendererProps<TRendererType extends keyof ErrOutputClassNames> {
     data: ErrGenericData;
     style?: ErrGenericData;
-    classNames: ErrOutputClassNames[TClassNames];
+    classNames: ErrOutputClassNames[TRendererType];
     config?: ErrConfig;
   }
 
@@ -54,6 +54,8 @@ declare global {
     personality?: ErrConfig;
   }
 
+  type ErrHeadingLevels = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
   interface ErrOutputClassNames {
     checklist?: {
       container?: string;
@@ -64,7 +66,7 @@ declare global {
     codeBox?: { container?: string; code?: string };
     delimiter?: { container?: string; svg?: string; path?: string };
     embed?: { figure?: string; video?: string; figcaption?: string };
-    header?: string;
+    header?: Record<ErrHeadingLevels, string>;
     image?: { figure?: string; img?: string; figcaption?: string };
     list?: { container?: string; listItem?: string };
     paragraph?: string;
