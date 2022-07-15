@@ -2,6 +2,7 @@ const path = require("path");
 
 module.exports = {
   mode: "production",
+  externals: ["react", "html-react-parser", "buffer", "classnames"],
   // mode: 'development',
   // devtool: 'source-map',
   entry: path.normalize(`${__dirname}/index.tsx`),
