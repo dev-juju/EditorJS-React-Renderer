@@ -42,7 +42,7 @@ class CodeBoxOutput extends React.PureComponent {
   }
 
   highlightBlock = () => {
-    if (typeof window.hljs !== "undefined")
+    if (typeof window !== "undefined" && typeof window.hljs !== "undefined")
       window.hljs.highlightBlock(this.codeAreaRef.current);
     else setTimeout(this.highlightBlock, 250);
   };
