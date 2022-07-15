@@ -1,3 +1,4 @@
+import { CSSProperties } from "react";
 declare const warningStyle: {
     container: {
         width: string;
@@ -27,12 +28,6 @@ declare const warningStyle: {
     circle: {
         fill: string;
     };
-    line: {
-        fill: string;
-        stroke: string;
-        strokeWidth: number;
-        strokeLinecap: string;
-        strokeMiterlimit: number;
-    };
+    line: CSSProperties;
 };
 export default warningStyle;

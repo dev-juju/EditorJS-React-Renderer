@@ -6,5 +6,6 @@
   * @created - 2019.08.20
   * @author - Adombang Munang Mbomndih (Bomdi) <dzedock@gmail.com> (https://bomdisoft.com)
   */
-declare const Warning: ({ title, message, classNames, customStyle, config }: any) => any;
+/// <reference types="react" />
+declare const Warning: ({ title, message, classNames, customStyle, config }: any) => JSX.Element;
 export default Warning;

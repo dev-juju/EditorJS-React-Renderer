@@ -24,7 +24,7 @@
     "url": "git+https://github.com/dev-juju/EditorJS-React-Renderer.git"
   },
   "scripts": {
-    "build": "webpack --progress",
+    "build": "rm -rf ./dist && webpack --progress",
     "postbuild": "tsc -p tsconfig.json --emitDeclarationOnly --declaration --declarationDir ./dist --skipLibCheck",
     "start": "babel-node test.js",
     "test": "jest",

@@ -37,18 +37,12 @@ import WarningOutput from "./renderers/warning/index";
 //#endregion
 
 const Output = ({
-  data,
-  style,
-  classNames,
-  config,
-  renderers,
+  data = { blocks: [] },
+  style = {},
+  classNames = {},
+  config = {},
+  renderers = {},
 }: ErrOutputProps) => {
-  if (!data || typeof data !== "object") return "";
-  if (!style || typeof style !== "object") style = {};
-  if (!classNames || typeof classNames !== "object") classNames = {};
-  if (!config || typeof config !== "object") config = {};
-  if (!renderers || typeof renderers !== "object") renderers = {};
-
   return data.blocks.map((block, i) => {
     switch (block.type.toLowerCase()) {
       case "codebox": {
@@ -59,7 +53,7 @@ const Output = ({
             data={block.data}
             style={style.codeBox || {}}
             config={config.codeBox || {}}
-            classNames={classNames.codeBox || {}}
+            classNames={classNames.codeBox || ""}
           />
         );
       }
@@ -71,7 +65,7 @@ const Output = ({
             data={block.data}
             style={style.header || {}}
             config={config.header || {}}
-            classNames={classNames.header || {}}
+            classNames={classNames.header || ""}
           />
         );
       }
@@ -83,7 +77,7 @@ const Output = ({
             data={block.data}
             style={style.paragraph || {}}
             config={config.paragraph || {}}
-            classNames={classNames.paragraph || {}}
+            classNames={classNames.paragraph || ""}
           />
         );
       }
@@ -95,7 +89,7 @@ const Output = ({
             data={block.data}
             style={style.image || {}}
             config={config.image || {}}
-            classNames={classNames.image || {}}
+            classNames={classNames.image || ""}
           />
         );
       }
@@ -107,7 +101,7 @@ const Output = ({
             data={block.data}
             style={style.video || {}}
             config={config.video || {}}
-            classNames={classNames.video || {}}
+            classNames={classNames.video || ""}
           />
         );
       }
@@ -119,7 +113,7 @@ const Output = ({
             data={block.data}
             style={style.embed || {}}
             config={config.embed || {}}
-            classNames={classNames.embed || {}}
+            classNames={classNames.embed || ""}
           />
         );
       }
@@ -131,7 +125,7 @@ const Output = ({
             data={block.data}
             style={style.table || {}}
             config={config.table || {}}
-            classNames={classNames.table || {}}
+            classNames={classNames.table || ""}
           />
         );
       }
@@ -143,7 +137,7 @@ const Output = ({
             data={block.data}
             style={style.list || {}}
             config={config.list || {}}
-            classNames={classNames.list || {}}
+            classNames={classNames.list || ""}
           />
         );
       }
@@ -155,7 +149,7 @@ const Output = ({
             data={block.data}
             style={style.checklist || {}}
             config={config.checklist || {}}
-            classNames={classNames.checklist || {}}
+            classNames={classNames.checklist || ""}
           />
         );
       }
@@ -167,7 +161,7 @@ const Output = ({
             data={block.data}
             style={style.quote || {}}
             config={config.quote || {}}
-            classNames={classNames.quote || {}}
+            classNames={classNames.quote || ""}
           />
         );
       }
@@ -179,7 +173,7 @@ const Output = ({
             data={block.data}
             style={style.warning || {}}
             config={config.warning || {}}
-            classNames={classNames.warning || {}}
+            classNames={classNames.warning || ""}
           />
         );
       }
@@ -191,7 +185,7 @@ const Output = ({
             data={block.data}
             style={style.linktool || {}}
             config={config.linktool || {}}
-            classNames={classNames.linktool || {}}
+            classNames={classNames.linktool || ""}
           />
         );
       }
@@ -203,7 +197,7 @@ const Output = ({
             data={block.data}
             style={style.personality || {}}
             config={config.personality || {}}
-            classNames={classNames.personality || {}}
+            classNames={classNames.personality || ""}
           />
         );
       }
@@ -214,7 +208,7 @@ const Output = ({
             key={i}
             style={style.delimiter || {}}
             config={config.delimiter || {}}
-            classNames={classNames.delimiter || {}}
+            classNames={classNames.delimiter || ""}
           />
         );
       }
