@@ -6,6 +6,7 @@
   *
   * Version History
   * ---------------
+  * @version 1.0.1 - 2022.08.14 - image metadata is optional - Adombang Munang Mbomndih
   *
   */
 
@@ -47,7 +48,7 @@ const LinkToolOutput = ({ data, style, classNames, config }: ErrRendererProps) =
         { data.meta?.description && <p style={ descriptionStyle } className={ classNames.description }>{ parse(data.meta?.description) }</p> }
         { data.meta?.site_name && <p style={ siteNameStyle } className={ classNames.siteName }>{ parse(data.meta?.site_name) }</p> }
       </div>
-      { data.meta?.image.url && <img src={ data.meta?.image.url } alt='image of link' style={ imageStyle } className={ classNames.image } /> }
+      { data.meta?.image?.url && <img src={ data.meta?.image?.url } alt='image of link' style={ imageStyle } className={ classNames.image } /> }
     </div>
   );
 };

@@ -400,7 +400,7 @@ There's more coming...
 
 ## Author
 
-Dev Juju (Bomdi)
+Dev Juju
 
 [Contact Us](https://bomdisoft.com)
 
