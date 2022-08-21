@@ -39,7 +39,7 @@ declare global {
 
   interface ErrOutputConfig {
     checklist?: ErrConfig
-    codeBox?: ErrConfig
+    codebox?: ErrConfig
     delimiter?: ErrConfig
     embed?: ErrConfig
     header?: ErrConfig
@@ -56,7 +56,7 @@ declare global {
 
   interface ErrOutputClassNames {
     checklist?: string
-    codeBox?: string
+    codebox?: string
     delimiter?: string
     embed?: string
     header?: string
@@ -73,7 +73,7 @@ declare global {
 
   interface ErrOutputStyle {
     checklist?: ErrGenericData
-    codeBox?: ErrGenericData
+    codebox?: ErrGenericData
     delimiter?: ErrGenericData
     embed?: ErrGenericData
     header?: ErrGenericData
@@ -90,7 +90,7 @@ declare global {
 
   interface ErrOutputRenderers {
     checklist?: ReactNode
-    codeBox?: ReactNode
+    codebox?: ReactNode
     delimiter?: ReactNode
     embed?: ReactNode
     header?: ReactNode

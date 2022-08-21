@@ -1,6 +1,5 @@
 import React from 'react';
 import Output from 'editorjs-react-renderer';
-import PropTypes from 'prop-types';
 import './Post.css';
 
 const style = {
@@ -35,7 +34,7 @@ const style = {
     author: {},
     message: {}
   },
-  codeBox: {
+  codebox: {
     code: { lineHeight: '22px' },
   },
   warning: {
@@ -49,12 +48,29 @@ const style = {
       textAlign: 'left'
     },
   },
+  avatar: {
+    height: '40px',
+    width: '40px',
+    borderRadius: '20px',
+    margin: '8px',
+    boxShadow: '0 0 4px 0 rgba(0,0,0,0.5)',
+    backgroundColor: '#1e242a'
+  }
 };
 
-const Post = ({ data }) => <section><Output data={ data } style={ style } /></section>;
+const AvatarRenderer = ({ data, style, classNames, config }) => {
+  let content = null;
 
-Post.propTypes = {
-  data: PropTypes.object.isRequired,
+  if (typeof data === 'string') content = data;
+  else if (typeof data === 'object' && data.imageURL && typeof data.imageURL === 'string') content = data.imageURL;
+
+  return content ? <img style={ style } className={ classNames } src={ content } /> : '';
 };
+
+const renderers = {
+  avatar: AvatarRenderer
+};
+
+const Post = ({ data }) => <section><Output data={ data } style={ style } renderers={ renderers } /></section>;
 
 export default Post;

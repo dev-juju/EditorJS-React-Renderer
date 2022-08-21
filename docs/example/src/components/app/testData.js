@@ -29,7 +29,7 @@ module.exports = {
     {
       "type": "header",
       "data": {
-        "text": "Video",
+        "text": "Embed",
         "level": 4
       }
     },
@@ -267,22 +267,34 @@ module.exports = {
       }
     },
     {
-      "type": "paragraph",
-      "data": {
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
-      }
-    },
-    {
       "type": "warning",
       "data": {
         "title": "",
         "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
       }
     },
+    // {
+    //   "type" : "video",
+    //   "data" : {
+    //     "url" : "https://pixabay.com/videos/id-7101/",
+    //     "caption" : "An aweomse video",
+    //     "autoplay" : false,
+    //     "controls" : false,
+    //     "muted": false,
+    //     "stretched" : false
+    //   }
+    // },
     {
-      "type": "paragraph",
+      "type": "header",
       "data": {
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
+        "text": "Custom Renderer",
+        "level": 4
+      }
+    },
+    {
+      "type": "avatar",
+      "data": {
+        "imageURL": "https://firebasestorage.googleapis.com/v0/b/bomdisoft-28c17.appspot.com/o/logo%2Flogo%20icon%20white%20-%20192.png?alt=media&token=b1cf145a-89b9-43f4-bcbe-7380cce32138"
       }
     },
   ],

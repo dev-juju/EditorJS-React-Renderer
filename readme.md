@@ -55,7 +55,7 @@ const data = {
       "type": "image",
       "data": {
         "file": {
-          "url": "https://cdn1.imggmi.com/uploads/2019/8/24/fdbf3465641e401ebe0ec58d278656d1-full.jpg"
+          "url": "<image url here>"
         },
         "caption": "Test Caption",
         "withBorder": false,
@@ -123,7 +123,7 @@ See the [API](#api) section for more block output components
 ## Custom Renderers
 
 We provide several granular styling options so that you have the ability and flexibility to customize the look and feel of the rendered components.
-However, you might still have a need to override the default renderers for certain blocks.
+However, you might still have a need to override the default renderers for certain blocks or implement a renderer for an unsupported block.
 You can do that by passing a *renderers* prop to the **Output** component. The renderers prop is an object whose keys are the names of the supported components and whose values are the corresponding renderer definitions to override the defaults.
 Custom renderers should expect to receive *data*, *style*, *classNames* and *config* props.
 
@@ -141,14 +141,41 @@ const CustomParagraphRenderer = ({ data, style, classNames, config }) => {
   return content ? <p style={ style } className={ classNames }>{ ReactHtmlParser(content) }</p> : '';
 };
 
-const renderers = {
-  paragraph: CustomParagraphRenderer
+// You can define a renderer for unsupported blocks.
+// Structure your data however you like, and handle it in your custom renderer.
+const AvatarRenderer = ({ data, style, classNames, config }) => {
+  let content = null;
+
+  if (typeof data === 'string') content = data;
+  else if (typeof data === 'object' && data.imageURL && typeof data.imageURL === 'string') content = data.imageURL;
+
+  return content ? <img style={ style } className={ classNames } src={ content } /> : '';
 };
 
-const Todo = () => <Output renderers={ renderers } data={...} style={...} classNames={...} config={...} />;
+// Pass your custom renderers to Output
+const renderers = {
+  paragraph: CustomParagraphRenderer,
+  avatar: AvatarRenderer
+};
+
+// **Your data type should match the renderer key
+const data = {
+  blocks: [
+    ...,
+    {
+      "type": "avatar",
+      "data": {
+        "imageURL": "<image url here>"
+      }
+    },
+  ]
+}
+
+const Todo = () => <Output renderers={ renderers } data={ data } style={...} classNames={...} config={...} />;
 
 export default Todo;
 ```
+
 
 
 ## Style
