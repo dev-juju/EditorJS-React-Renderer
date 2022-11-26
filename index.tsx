@@ -11,35 +11,35 @@
   * ---------------
   * @version 1.0.1 - 2020.02.12 - Covert functions to React component
   *                             - Add CodeBoxOutput
-  *                             - Adombang Munang Mbomndih
-  * @version 1.0.2 - 2020.05.21 - Add key to list items - Adombang Munang Mbomndih
-  * @version 1.0.3 - 2020.07.17 - Add config parameter - Adombang Munang Mbomndih
-  * @version 1.1.0 - 2021.04.11 - Add classNames parameter - Adombang Munang Mbomndih
-  * @version 1.2.0 - 2022.05.19 - Add LinkToolOutput and PersonalityOutput - Adombang Munang Mbomndih
-  * @version 1.3.0 - 2022.08.21 - Allow custom renderers for unsupported blocks - Adombang Munang Mbomndih
-  *
+  * @version 1.0.2 - 2020.05.21 - Add key to list items
+  * @version 1.0.3 - 2020.07.17 - Add config parameter
+  * @version 1.1.0 - 2021.04.11 - Add classNames parameter
+  * @version 1.2.0 - 2022.05.19 - Add LinkToolOutput and PersonalityOutput
+  * @version 1.3.0 - 2022.08.21 - Allow custom renderers for unsupported blocks
+  * @version 1.3.1 - 2022.11.26 - Redefine types
   */
 
 //#region imports
 import React from 'react';
-import HeaderOutput from './renderers/header/index';
-import ParagraphOutput from './renderers/paragraph/index';
-import ImageOutput from './renderers/image/index';
-import VideoOutput from './renderers/video/index';
-import EmbedOutput from './renderers/embed/index';
-import ListOutput from './renderers/list/index';
-import QuoteOutput from './renderers/quote/index';
-import ChecklistOutput from './renderers/checklist/index';
-import WarningOutput from './renderers/warning/index';
-import TableOutput from './renderers/table/index';
-import DelimiterOutput from './renderers/delimiter/index';
-import CodeBoxOutput from './renderers/codeBox/index';
-import LinkToolOutput from './renderers/linkTool/index';
-import PersonalityOutput from './renderers/personality/index';
+import HeaderOutput from './renderers/header';
+import ParagraphOutput from './renderers/paragraph';
+import ImageOutput from './renderers/image';
+import VideoOutput from './renderers/video';
+import EmbedOutput from './renderers/embed';
+import ListOutput from './renderers/list';
+import QuoteOutput from './renderers/quote';
+import ChecklistOutput from './renderers/checklist';
+import WarningOutput from './renderers/warning';
+import TableOutput from './renderers/table';
+import DelimiterOutput from './renderers/delimiter';
+import CodeBoxOutput from './renderers/codeBox';
+import LinkToolOutput from './renderers/linkTool';
+import PersonalityOutput from './renderers/personality';
+import type { ErrOutputProps } from './err';
 //#endregion
 
-const Output = ({ data, style, classNames, config, renderers }: ErrOutputProps) => {
-  if (!data || typeof data !== 'object') return '';
+const Output = ({ data, style, classNames, config, renderers }: ErrOutputProps): JSX.Element[] => {
+  if (!data || typeof data !== 'object') return [];
   if (!style || typeof style !== 'object') style = {};
   if (!classNames || typeof classNames !== 'object') classNames = {};
   if (!config || typeof config !== 'object') config = {};
