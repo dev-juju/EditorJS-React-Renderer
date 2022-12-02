@@ -13,9 +13,9 @@
   */
 
 //#region imports
-import { createRef, useEffect, useCallback, CSSProperties } from 'react';
+import React, { createRef, useEffect, useCallback } from 'react';
+import type { CSSProperties } from 'react';
 import parse from 'html-react-parser';
-import type { CodeBoxOutputProps } from '../err';
 //#endregion
 
 /**********************************************      GLOBALS      ******************************************/
@@ -82,6 +82,32 @@ const defaultStyle: {[key: string]: CSSProperties} = {
     fontSize: '14px',
   }
 };
+
+
+/**********************************************       TYPES       ******************************************/
+
+type CodeBoxOutputData = {
+  code: string
+  theme?: string
+  language?: string
+}
+
+type CodeBoxOutputClassNames = {
+  container?: string
+  code?: string
+}
+
+type CodeBoxOutputStyles = {
+  container?: CSSProperties
+  code?: CSSProperties
+}
+
+type CodeBoxOutputProps = {
+  data: CodeBoxOutputData
+  style?: CodeBoxOutputStyles
+  classNames?: CodeBoxOutputClassNames
+  config?: ErrConfig
+}
 
 
 /**********************************************     FUNCTIONS     ******************************************/

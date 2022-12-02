@@ -15,7 +15,7 @@
  */
 
 //#region imports
-import type { DelimiterOutputProps } from '../err';
+import React from 'react';
 import type { CSSProperties } from 'react';
 //#endregion
 
@@ -42,6 +42,27 @@ const defaultStyle: {[key: string]: CSSProperties} = {
     fill: '#231F20'
   }
 };
+
+
+/**********************************************       TYPES       ******************************************/
+
+type DelimiterOutputClassNames = {
+  container?: string
+  svg?: string
+  path?: string
+}
+
+type DelimiterOutputStyles = {
+  container?: CSSProperties
+  svg?: CSSProperties
+  path?: CSSProperties
+}
+
+type DelimiterOutputProps = {
+  style?: DelimiterOutputStyles
+  classNames?: DelimiterOutputClassNames
+  config?: ErrConfig
+}
 
 
 /**********************************************     FUNCTIONS     ******************************************/

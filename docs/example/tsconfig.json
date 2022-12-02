@@ -12,23 +12,19 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "CommonJS",
+    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react",
     "incremental": true,
-    "declaration": true,
-    "removeComments": true,
-    "outDir": "./dist/"
+    "jsx": "preserve",
   },
   "include": [
+    "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-  ],
+    "**/*.tsx" ],
   "exclude": [
     "node_modules",
-    "docs",
-    "dist"
+    "builds"
   ]
 }

@@ -35,24 +35,30 @@ import DelimiterOutput from './renderers/delimiter';
 import CodeBoxOutput from './renderers/codeBox';
 import LinkToolOutput from './renderers/linkTool';
 import PersonalityOutput from './renderers/personality';
-import type { ErrOutputProps } from './err';
 //#endregion
 
-const Output = ({ data, style, classNames, config, renderers }: ErrOutputProps): JSX.Element[] => {
-  if (!data || typeof data !== 'object') return [];
+const Output = ({ data, style, classNames, config, renderers }: ErrOutputProps): JSX.Element => {
+  if (!data || typeof data !== 'object') return <></>;
   if (!style || typeof style !== 'object') style = {};
   if (!classNames || typeof classNames !== 'object') classNames = {};
   if (!config || typeof config !== 'object') config = {};
   if (!renderers || typeof renderers !== 'object') renderers = {};
 
-  return data.blocks.map((block, i) => {
-    const key = block.type.toLowerCase();
-    let Renderer = renderers[key] || getDefaultRenderer(key);
+  return (
+    <>
+      {
+        data.blocks.map((block, i) => {
+          const key = block.type.toLowerCase();
+          let Renderer = renderers[key] || getDefaultRenderer(key);
 
-    if (!Renderer) return <></>;
+          if (!Renderer) return <></>;
 
-    return <Renderer key={ i } data={ block.data } style={ style[key] || {}} config={ config[key] || {}} classNames={ classNames[key] || {}} />;
-  });
+          return <Renderer key={ i } data={ block.data } style={ style[key] || {}}
+            config={ config[key] || {}} classNames={ classNames[key] || {}} />;
+        })
+      }
+    </>
+  );
 };
 
 const getDefaultRenderer = (key: string) => {
@@ -76,6 +82,7 @@ const getDefaultRenderer = (key: string) => {
 };
 
 export {
-  HeaderOutput, ParagraphOutput, ImageOutput, VideoOutput, EmbedOutput, TableOutput, CodeBoxOutput, ListOutput, QuoteOutput,
-  ChecklistOutput, WarningOutput, DelimiterOutput, LinkToolOutput, PersonalityOutput, Output as default
+  HeaderOutput, ParagraphOutput, ImageOutput, VideoOutput, EmbedOutput, TableOutput,
+  CodeBoxOutput, ListOutput, QuoteOutput, ChecklistOutput, WarningOutput, DelimiterOutput,
+  LinkToolOutput, PersonalityOutput, Output as default
 };

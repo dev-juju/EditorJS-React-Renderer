@@ -14,9 +14,9 @@
   */
 
 //#region imports
+import React from 'react';
 import parse from 'html-react-parser';
 import type { CSSProperties } from 'react';
-import type { ChecklistOutputProps } from '../err';
 //#endregion
 
 /**********************************************      GLOBALS      ******************************************/
@@ -59,6 +59,39 @@ const defaultStyle: {[key: string]: CSSProperties} = {
     marginLeft: '4px',
   },
 };
+
+
+/**********************************************       TYPES       ******************************************/
+
+type ChecklistOutputItemData = {
+  text: string
+  checked: boolean
+}
+
+type ChecklistOutputData = {
+  items: ChecklistOutputItemData[]
+}
+
+type ChecklistOutputClassNames = {
+  container?: string
+  item?: string
+  checkbox?: string
+  label?: string
+}
+
+type ChecklistOutputStyles = {
+  container?: CSSProperties
+  item?: CSSProperties
+  checkbox?: CSSProperties
+  label?: CSSProperties
+}
+
+type ChecklistOutputProps = {
+  data: ChecklistOutputData
+  style?: ChecklistOutputStyles
+  classNames?: ChecklistOutputClassNames
+  config?: ErrConfig
+}
 
 
 /**********************************************     FUNCTIONS     ******************************************/

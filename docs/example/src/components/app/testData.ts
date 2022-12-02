@@ -1,4 +1,4 @@
-module.exports = {
+export const data = {
   "time": 1572712253468,
   "blocks": [
     {
@@ -273,17 +273,18 @@ module.exports = {
         "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem temporibus quae distinctio facilis in minus quaerat non illum adipisci ab similique eos est eligendi cumque, quibusdam, fugit voluptates omnis pariatur!"
       }
     },
-    // {
-    //   "type" : "video",
-    //   "data" : {
-    //     "url" : "https://pixabay.com/videos/id-7101/",
-    //     "caption" : "An aweomse video",
-    //     "autoplay" : false,
-    //     "controls" : false,
-    //     "muted": false,
-    //     "stretched" : false
-    //   }
-    // },
+    {
+      "type" : "video",
+      "data" : {
+        // "url" : "https://paul.kinlan.me/videos/2019-11-05--test-post-video-upload-0.mp4",
+        "file": { "url" : "https://paul.kinlan.me/videos/2019-11-05--test-post-video-upload-0.mp4" },
+        "caption" : "An aweomse video",
+        "autoplay" : false,
+        "controls" : false,
+        "muted": false,
+        "stretched" : false
+      }
+    },
     {
       "type": "header",
       "data": {

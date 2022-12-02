@@ -1,17 +1,36 @@
-/** LinkToolOutput
-  *
-  * @version 1.0.0
-  * @created - 2022.05.19
-  * @author - Adombang Munang Mbomndih (Bomdi) <dzedock@gmail.com> (https://bomdisoft.com)
-  *
-  * Version History
-  * ---------------
-  * @version 1.0.1 - 2022.08.14 - image metadata is optional
-  * @version 1.1.2 - 2022.11.26 - Redefine types
-  *
-  */
-/// <reference types="react" />
-import type { LinkToolOutputProps } from '../err';
-/**********************************************     FUNCTIONS     ******************************************/
+import type { CSSProperties } from 'react';
+type LinkToolOutputData = {
+    link: string;
+    meta?: {
+        title?: string;
+        description?: string;
+        site_name?: string;
+        image?: {
+            url: string;
+        };
+    };
+};
+type LinkToolOutputClassNames = {
+    container?: string;
+    textHolder?: string;
+    title?: string;
+    description?: string;
+    image?: string;
+    siteName?: string;
+};
+type LinkToolOutputStyles = {
+    container?: CSSProperties;
+    textHolder?: CSSProperties;
+    title?: CSSProperties;
+    description?: CSSProperties;
+    image?: CSSProperties;
+    siteName?: CSSProperties;
+};
+type LinkToolOutputProps = {
+    data: LinkToolOutputData;
+    style?: LinkToolOutputStyles;
+    classNames?: LinkToolOutputClassNames;
+    config?: ErrConfig;
+};
 declare const LinkToolOutput: ({ data, style, classNames, config }: LinkToolOutputProps) => JSX.Element;
 export default LinkToolOutput;

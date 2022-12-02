@@ -15,8 +15,8 @@
   */
 
 //#region imports
+import React from 'react';
 import parse from 'html-react-parser';
-import type { ImageOutputProps } from '../err';
 import type { CSSProperties } from 'react';
 //#endregion
 
@@ -55,6 +55,36 @@ const defaultStyle: {[key: string]: CSSProperties} = {
     cursor: 'default',
   }
 };
+
+
+/**********************************************       TYPES       ******************************************/
+
+type ImageOutputData = {
+  file: { url: string }
+  caption?: string
+  stretched?: boolean
+  withBorder?: boolean
+  withBackground?: boolean
+}
+
+type ImageOutputClassNames = {
+  img?: string
+  figure?: string
+  figcaption?: string
+}
+
+type ImageOutputStyles = {
+  img?: CSSProperties
+  figure?: CSSProperties
+  figcaption?: CSSProperties
+}
+
+type ImageOutputProps = {
+  data: ImageOutputData
+  style?: ImageOutputStyles
+  classNames?: ImageOutputClassNames
+  config?: ErrConfig
+}
 
 
 /**********************************************     FUNCTIONS     ******************************************/

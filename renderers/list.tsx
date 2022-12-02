@@ -14,9 +14,9 @@
   */
 
 //#region imports
+import React from 'react';
 import parse from 'html-react-parser';
 import type { CSSProperties } from 'react';
-import type { ListOutputProps } from '../err';
 //#endregion
 
 /**********************************************      GLOBALS      ******************************************/
@@ -29,6 +29,31 @@ const defaultStyle: {[key: string]: CSSProperties} = {
     margin: '5px 0',
   },
 };
+
+
+/**********************************************       TYPES       ******************************************/
+
+type ListOutputData = {
+  items: string[]
+  style?: 'ordered' | 'unordered'
+}
+
+type ListOutputClassNames = {
+  container?: string
+  listItem?: string
+}
+
+type ListOutputStyles = {
+  container?: CSSProperties
+  listItem?: CSSProperties
+}
+
+type ListOutputProps = {
+  data: ListOutputData
+  style?: ListOutputStyles
+  classNames?: ListOutputClassNames
+  config?: ErrConfig
+}
 
 
 /**********************************************     FUNCTIONS     ******************************************/

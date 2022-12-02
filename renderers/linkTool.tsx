@@ -12,8 +12,8 @@
   */
 
 //#region imports
+import React from 'react';
 import parse from 'html-react-parser';
-import type { LinkToolOutputProps } from '../err';
 import type { CSSProperties } from 'react';
 //#endregion
 
@@ -68,6 +68,44 @@ const defaultStyle: {[key: string]: CSSProperties} = {
     fontSize: '12px',
   },
 };
+
+
+/**********************************************       TYPES       ******************************************/
+
+type LinkToolOutputData = {
+  link: string
+  meta?: {
+    title?: string
+    description?: string
+    site_name?: string
+    image?: { url: string }
+  }
+}
+
+type LinkToolOutputClassNames = {
+  container?: string
+  textHolder?: string
+  title?: string
+  description?: string
+  image?: string
+  siteName?: string
+}
+
+type LinkToolOutputStyles = {
+  container?: CSSProperties
+  textHolder?: CSSProperties
+  title?: CSSProperties
+  description?: CSSProperties
+  image?: CSSProperties
+  siteName?: CSSProperties
+}
+
+type LinkToolOutputProps = {
+  data: LinkToolOutputData
+  style?: LinkToolOutputStyles
+  classNames?: LinkToolOutputClassNames
+  config?: ErrConfig
+}
 
 
 /**********************************************     FUNCTIONS     ******************************************/

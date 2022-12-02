@@ -12,9 +12,9 @@
   */
 
 //#region imports
+import React from 'react';
 import parse from 'html-react-parser';
 import type { CSSProperties } from 'react';
-import type { VideoOutputProps } from '../err';
 //#endregion
 
 /**********************************************      GLOBALS      ******************************************/
@@ -52,10 +52,48 @@ const defaultStyle: {[key: string]: CSSProperties} = {
 };
 
 
+/**********************************************       TYPES       ******************************************/
+
+type VideoOutputData = {
+  url?: string
+  file?: { url: string }
+  caption?: string
+  autoPlay?: boolean
+  muted?: boolean
+  controls?: boolean
+  stretched?: boolean
+  withBorder?: boolean
+  withBackground?: boolean
+}
+
+type VideoOutputClassNames = {
+  video?: string
+  figure?: string
+  figcaption?: string
+}
+
+type VideoOutputStyles = {
+  video?: CSSProperties
+  figure?: CSSProperties
+  figcaption?: CSSProperties
+}
+
+type VideoOutputProps = {
+  data: VideoOutputData
+  style?: VideoOutputStyles
+  classNames?: VideoOutputClassNames
+  config?: ErrConfig
+}
+
+
 /**********************************************     FUNCTIONS     ******************************************/
 
 const VideoOutput = ({ data, style, classNames, config }: VideoOutputProps): JSX.Element => {
-  if (!data || !data.url) return <></>;
+  console.log(`dat: ${data}`);
+  if (!data?.url && !data?.file?.url) {
+    console.log(data);
+    return <></>;
+  }
   if (!style || typeof style !== 'object') style = {};
   if (!config || typeof config !== 'object') config = { disableDefaultStyle: false };
   if (!classNames || typeof classNames !== 'object') classNames = {};
@@ -78,7 +116,7 @@ const VideoOutput = ({ data, style, classNames, config }: VideoOutputProps): JSX
   return (
     <figure style={ figureStyle } className={ classNames.figure }>
       <video style={ videoStyle } className={ classNames.video } autoPlay={ data.autoPlay } muted={ data.muted } controls={ data.controls }>
-        <source src={ data.url } />
+        <source src={ data.url || data.file.url } />
         Your browser does not support the video tag.
       </video>
       { data.caption && <figcaption style={ figcaptionStyle } className={ classNames.figcaption }>{ parse(data.caption) }</figcaption> }

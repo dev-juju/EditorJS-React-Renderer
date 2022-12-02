@@ -14,8 +14,8 @@
   */
 
 //#region imports
+import React from 'react';
 import parse from 'html-react-parser';
-import type { EmbedOutputProps } from '../err';
 import type { CSSProperties } from 'react';
 //#endregion
 
@@ -53,6 +53,35 @@ const defaultStyle: {[key: string]: CSSProperties} = {
     cursor: 'default',
   }
 };
+
+
+/**********************************************       TYPES       ******************************************/
+
+type EmbedOutputData = {
+  embed: string
+  width?: number
+  height?: number
+  caption?: string
+}
+
+type EmbedOutputClassNames = {
+  video?: string
+  figure?: string
+  figcaption?: string
+}
+
+type EmbedOutputStyles = {
+  video?: CSSProperties
+  figure?: CSSProperties
+  figcaption?: CSSProperties
+}
+
+type EmbedOutputProps = {
+  data: EmbedOutputData
+  style?: EmbedOutputStyles
+  classNames?: EmbedOutputClassNames
+  config?: ErrConfig
+}
 
 
 /**********************************************     FUNCTIONS     ******************************************/

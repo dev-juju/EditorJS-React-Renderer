@@ -14,9 +14,9 @@
   */
 
 //#region imports
-import React, { CSSProperties } from 'react';
+import React from 'react';
+import type { CSSProperties } from 'react';
 import parse from 'html-react-parser';
-import type { QuoteOutputProps, QuoteProps } from '../err';
 //#endregion
 
 /**********************************************      GLOBALS      ******************************************/
@@ -50,6 +50,44 @@ const defaultStyle: {[key: string]: CSSProperties} = {
 		margin: '0 5px 5px 5px',
 	},
 };
+
+
+/**********************************************       TYPES       ******************************************/
+
+type QuoteOutputData = {
+  text: string
+  caption?: string
+  alignment?: string
+}
+
+type QuoteOutputClassNames = {
+  container?: string
+  content?: string
+  author?: string
+  message?: string
+}
+
+type QuoteOutputStyles = {
+  container?: CSSProperties
+  content?: CSSProperties
+  author?: CSSProperties
+  message?: CSSProperties
+}
+
+type QuoteOutputProps = {
+  data: QuoteOutputData
+  style?: QuoteOutputStyles
+  classNames?: QuoteOutputClassNames
+  config?: ErrConfig
+}
+
+type QuoteProps = {
+  author?: string
+  message: string
+  style: QuoteOutputStyles
+  classNames: QuoteOutputClassNames
+  config: ErrConfig
+}
 
 
 /**********************************************     FUNCTIONS     ******************************************/

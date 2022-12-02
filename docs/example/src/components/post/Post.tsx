@@ -1,4 +1,3 @@
-import React from 'react';
 import Output from 'editorjs-react-renderer';
 import './Post.css';
 
@@ -58,19 +57,23 @@ const style = {
   }
 };
 
-const AvatarRenderer = ({ data, style, classNames, config }) => {
+const AvatarRenderer = ({ data, style, classNames, config }: any) => {
   let content = null;
 
   if (typeof data === 'string') content = data;
   else if (typeof data === 'object' && data.imageURL && typeof data.imageURL === 'string') content = data.imageURL;
 
-  return content ? <img style={ style } className={ classNames } src={ content } /> : '';
+  return content ? <img style={ style } className={ classNames } src={ content } /> : <></>;
 };
 
 const renderers = {
   avatar: AvatarRenderer
 };
 
-const Post = ({ data }) => <section><Output data={ data } style={ style } renderers={ renderers } /></section>;
+const Post = ({ data }) => (
+    <section>
+      <Output data={ data } style={ style } renderers={ renderers as any } />
+    </section>
+  );
 
 export default Post;

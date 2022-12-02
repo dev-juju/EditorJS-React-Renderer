@@ -15,9 +15,9 @@
   */
 
 //#region imports
-import { CSSProperties } from 'react';
+import React from 'react';
+import type { CSSProperties } from 'react';
 import parse from 'html-react-parser';
-import { TableOutputProps } from '../err';
 //#endregion
 
 /**********************************************      GLOBALS      ******************************************/
@@ -42,6 +42,34 @@ const defaultStyle: {[key: string]: CSSProperties} = {
     textAlign: 'left',
   },
 };
+
+
+/**********************************************       TYPES       ******************************************/
+
+type TableOutputData = {
+  content: string[][]
+}
+
+type TableOutputClassNames = {
+  table?: string
+  tr?: string
+  th?: string
+  td?: string
+}
+
+type TableOutputStyles = {
+  table?: CSSProperties
+  tr?: CSSProperties
+  th?: CSSProperties
+  td?: CSSProperties
+}
+
+type TableOutputProps = {
+  data: TableOutputData
+  style?: TableOutputStyles
+  classNames?: TableOutputClassNames
+  config?: ErrConfig
+}
 
 
 /**********************************************     FUNCTIONS     ******************************************/

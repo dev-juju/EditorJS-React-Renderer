@@ -14,9 +14,9 @@
   */
 
 //#region imports
+import React from 'react';
 import parse from 'html-react-parser';
 import type { CSSProperties } from 'react';
-import type { ParagraphOutputProps } from '../err';
 //#endregion
 
 /**********************************************      GLOBALS      ******************************************/
@@ -25,6 +25,20 @@ const defaultStyle: CSSProperties = {
 	margin: '5px 0',
 	textAlign: 'left',
 };
+
+/**********************************************       TYPES       ******************************************/
+
+type ParagraphOutputData = {
+  text: string
+}
+
+type ParagraphOutputProps = {
+  data: string | ParagraphOutputData
+  style?: CSSProperties
+  className?: string
+  config?: ErrConfig
+}
+
 
 /**********************************************     FUNCTIONS     ******************************************/
 

@@ -1,20 +1,29 @@
-/** HeaderOutput
-  *
-  * @version 1.0.0
-  * @created - 2019.08.20
-  * @author - Adombang Munang Mbomndih (Bomdi) <dzedock@gmail.com> (https://bomdisoft.com)
-  *
-  * Version History
-  * ---------------
-  * @version 1.0.1 - 2020.02.12 - Covert to React component
-  * @version 1.0.2 - 2020.07.17 - Add config parameter
-  * @version 1.1.0 - 2021.04.11 - Add classNames parameter
-  * @version 1.1.1 - 2021.04.12 - Add validation for config parameter
-  * @version 1.2.0 - 2022.04.20 - Add support for applying different styles/classes to each header level
-  * @version 1.2.1 - 2022.11.26 - Redefine types
-  */
-/// <reference types="react" />
-import type { HeaderOutputProps } from '../err';
-/**********************************************     FUNCTIONS     ******************************************/
+import type { CSSProperties } from 'react';
+type HeaderOutputData = {
+    text: string;
+    level?: 1 | 2 | 3 | 4 | 5 | 6;
+};
+type HeaderOutputClassNames = {
+    h1?: string;
+    h2?: string;
+    h3?: string;
+    h4?: string;
+    h5?: string;
+    h6?: string;
+};
+type HeaderOutputStyles = {
+    h1?: CSSProperties;
+    h2?: CSSProperties;
+    h3?: CSSProperties;
+    h4?: CSSProperties;
+    h5?: CSSProperties;
+    h6?: CSSProperties;
+};
+type HeaderOutputProps = {
+    data: HeaderOutputData;
+    style?: HeaderOutputStyles;
+    classNames?: HeaderOutputClassNames;
+    config?: ErrConfig;
+};
 declare const HeaderOutput: ({ data, style, classNames, config }: HeaderOutputProps) => JSX.Element;
 export default HeaderOutput;

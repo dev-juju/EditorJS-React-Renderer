@@ -14,9 +14,9 @@
  */
 
 //#region imports
+import React from 'react';
 import parse from 'html-react-parser';
 import type { CSSProperties } from 'react';
-import { WarningOutputProps, WarningProps } from '../err';
 //#endregion
 
 /**********************************************      GLOBALS      ******************************************/
@@ -60,6 +60,43 @@ const defaultStyle: {[key: string]: CSSProperties} = {
     strokeMiterlimit: 10
   }
 };
+
+
+/**********************************************       TYPES       ******************************************/
+
+type WarningOutputData = {
+  message: string
+  title?: string
+}
+
+type WarningOutputClassNames = {
+  container?: string
+  icon?: string
+  title?: string
+  message?: string
+}
+
+type WarningOutputStyles = {
+  container?: CSSProperties
+  icon?: CSSProperties
+  title?: CSSProperties
+  message?: CSSProperties
+}
+
+type WarningOutputProps = {
+  data: WarningOutputData
+  style?: WarningOutputStyles
+  classNames?: WarningOutputClassNames
+  config?: ErrConfig
+}
+
+type WarningProps = {
+  title: string
+  message: string
+  style: WarningOutputStyles
+  classNames: WarningOutputClassNames
+  config: ErrConfig
+}
 
 
 /**********************************************     FUNCTIONS     ******************************************/
