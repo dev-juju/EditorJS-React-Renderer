@@ -1,6 +1,6 @@
 {
   "name": "editorjs-react-renderer",
-  "version": "3.5.0",
+  "version": "3.5.1",
   "license": "ISC",
   "description": "A library for rendering styled, responsive and flexible React components from block style data objects",
   "keywords": [
@@ -17,7 +17,8 @@
   "contributors": [
     "Tomáš Hylský <thylsky@gmail.com> (https://linktr.ee/thylsky)",
     "Gabrijel Gavranović",
-    "Alvaro Lozano"
+    "Alvaro Lozano",
+    "remoblaser <me@remoblaser.ch> (http://www.remoblaser.ch)"
   ],
   "repository": {
     "type": "git",
