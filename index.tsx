@@ -54,7 +54,7 @@ const Output = ({ data, style, classNames, config, renderers }: ErrOutputProps):
           if (!Renderer) return <></>;
 
           return <Renderer key={ i } data={ block.data } style={ style[key] || {}}
-            config={ config[key] || {}} className={ classNames[key] || {}} />;
+            config={ config[key] || {}} classNames={ classNames[key] || {}} />;
         })
       }
     </>

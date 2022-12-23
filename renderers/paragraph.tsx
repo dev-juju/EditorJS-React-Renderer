@@ -35,14 +35,14 @@ type ParagraphOutputData = {
 type ParagraphOutputProps = {
   data: string | ParagraphOutputData
   style?: CSSProperties
-  className?: string
+  classNames?: string
   config?: ErrConfig
 }
 
 
 /**********************************************     FUNCTIONS     ******************************************/
 
-const ParagraphOutput = ({ data, style, className, config }: ParagraphOutputProps): JSX.Element => {
+const ParagraphOutput = ({ data, style, classNames, config }: ParagraphOutputProps): JSX.Element => {
   if (!data) return <></>;
   if (!style || typeof style !== 'object') style = {};
   if (!config || typeof config !== 'object') config = { disableDefaultStyle: false };
@@ -53,7 +53,7 @@ const ParagraphOutput = ({ data, style, className, config }: ParagraphOutputProp
   if (typeof data === 'string') content = data;
   else if (typeof data === 'object' && data.text && typeof data.text === 'string') content = data.text;
 
-  return content ? <p style={ paragraphStyle } className={ className }>{ parse(content) }</p> : <></>;
+  return content ? <p style={ paragraphStyle } className={ classNames }>{ parse(content) }</p> : <></>;
 };
 
 export default ParagraphOutput;
