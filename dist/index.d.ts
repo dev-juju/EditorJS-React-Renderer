@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import HeaderOutput from './renderers/header';
 import ParagraphOutput from './renderers/paragraph';
 import ImageOutput from './renderers/image';

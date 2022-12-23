@@ -5,8 +5,8 @@ type ParagraphOutputData = {
 type ParagraphOutputProps = {
     data: string | ParagraphOutputData;
     style?: CSSProperties;
-    className?: string;
+    classNames?: string;
     config?: ErrConfig;
 };
-declare const ParagraphOutput: ({ data, style, className, config }: ParagraphOutputProps) => JSX.Element;
+declare const ParagraphOutput: ({ data, style, classNames, config }: ParagraphOutputProps) => JSX.Element;
 export default ParagraphOutput;
