@@ -69,7 +69,7 @@ const HeaderOutput = ({ data, style, classNames, config }: HeaderOutputProps): J
   if (!data || !data.text || typeof data.text != 'string') return <></>;
   if (!style || typeof style !== 'object') style = {};
   if (!config || typeof config !== 'object') config = { disableDefaultStyle: false };
-  if (!classNames || typeof classNames !== 'string') classNames = {};
+  if (!classNames || typeof classNames !== 'object') classNames = {};
 
   supportedKeys.forEach(key => {
     if (!style[key] || typeof style[key] !== 'object') style[key] = {};
