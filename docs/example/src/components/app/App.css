@@ -12,3 +12,18 @@ header {
 .App-intro {
   font-size: large;
 }
+
+.deprecation-banner {
+  background-color: #fff7d6;
+  border-bottom: 1px solid #e6d9a0;
+  color: #4a3f10;
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 12px 5%;
+  text-align: left;
+}
+
+.deprecation-banner a {
+  color: #1a6b62;
+  font-weight: 600;
+}

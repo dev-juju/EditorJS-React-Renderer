@@ -1,5 +1,19 @@
 # [EditorJS-React Renderer (ERR)](https://err.bomdisoft.com/)
 
+> ## Deprecated
+>
+> **This package is no longer maintained. Its successor is [Clepit](https://clepit.com).**
+>
+> Clepit is a block-style editor and renderer from the same team: the same block-document idea ERR renders, grown into a full editor, a server-first React renderer with real SSR, and a framework-agnostic core.
+>
+> - Rendering documents: use [`ClepitContent`](https://clepit.com/docs/react) from [`@clepit/react`](https://www.npmjs.com/package/@clepit/react)
+> - Editing documents: [`@clepit/core`](https://www.npmjs.com/package/@clepit/core)
+> - Block types and JSON shapes: [clepit.com/docs/blocks](https://clepit.com/docs/blocks)
+>
+> Clepit documents share ERR's block-style structure, but some block payloads differ (for example `paragraph.html` where Editor.js uses `paragraph.text`), so review the block reference when migrating.
+>
+> Existing installs keep working. The documentation below remains for legacy use.
+
 [View live example](https://err.bomdisoft.com/)
 
 [![](https://flat.badgen.net/npm/v/editorjs-react-renderer?icon=npm)](https://www.npmjs.com/package/editorjs-react-renderer)
